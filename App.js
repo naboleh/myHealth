@@ -1,59 +1,46 @@
-import React from 'react';
-import type {Node} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  ImageBackground,
-} from 'react-native';
+/*
+Stack navigator to move between the pages
+1. import the page in here (e.g. import HomePage from './src/pages/HomePage';)
+2. enter it as a stack.screen
+3. in the page, the touchableopacity/button should have an action (e.g. onPress={() => navigation.navigate('HomePage')}>)
+*/
+import * as React from 'react';
 
-import MainPageItem from './app/components/MainPageItem';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <ImageBackground
-        source={require('./app/icon/zzMAINBG.png')}
-        style={styles.container}>
-        <View style={styles.overlayContainer}>
-            <View style={styles.top}>
-              </View>
-              <View style={styles.menuContainer}>
-                <MainPageItem itemImage={require('./app/icon/zzAPPT.png')} />
-                <MainPageItem itemImage={require('./app/icon/zzECONSULT.png')} />
-                <MainPageItem itemImage={require('./app/icon/zzHEALTH.png')} />
-                <MainPageItem itemImage={require('./app/icon/zzDIET.png')} />
-                <MainPageItem itemImage={require('./app/icon/zzPAYMENT.png')} />
-                <MainPageItem itemImage={require('./app/icon/zzCAREGIVER.png')} />
-              </View>
-        </View>
-      </ImageBackground>
-    );
-  }
-}
+import LandingPage from './app/pages/LandingPage';
+import SingpassLogin from './app/pages/SingpassLogin';
+import HomePage from './app/pages/HomePage';
+import Appointments from './app/pages/Appointments';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-  },
-  overlayContainer: {
-    flex: 1,
-  },
-  top:{
-    height: '15%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  menuContainer:{
-    height: '50%',
-    width: '100%',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
+const Stack = createNativeStackNavigator();
 
-
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="LandingPage"
+          component={LandingPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen 
+          name="SingpassLogin" 
+          component={SingpassLogin} 
+          options={{headerShown: false}}
+        />
+        <Stack.Screen 
+          name="HomePage" 
+          component={HomePage} 
+          options={{headerShown: false}}
+        />
+        <Stack.Screen 
+          name="Appointments" 
+          component={Appointments} 
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
