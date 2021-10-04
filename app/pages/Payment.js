@@ -23,8 +23,6 @@ export default function Payment({ navigation }) {
             <View style={styles.overlayContainer}>
                 <Text style={styles.title2Text}>View your bills</Text>
 
-                
-
                 <TouchableOpacity onPress={() => navigation.navigate('Bills')}>
                   <Text style={styles.paymentbutton}>My bills</Text>
                 </TouchableOpacity>
