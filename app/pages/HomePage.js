@@ -12,7 +12,7 @@ import MainPageItem from '../components/MainPageItem';
 export default function HomePage({ navigation }) {
     return (
       <ImageBackground
-        source={require('../icon/zzMAINBG.png')}
+        source={require('../backgrounds/zzMAINBG.png')}
         style={styles.container}>
         <View style={styles.overlayContainer}>
             <View style={styles.top}>

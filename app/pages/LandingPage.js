@@ -18,9 +18,9 @@ export default function LandingPage({ navigation }) {
 
     return (
       <View style={styles.container}>
-        <ImageBackground source={require('../icon/login_bg.jpg')} style={{height: '100%', width: '100%'}}>
+        <ImageBackground source={require('../backgrounds/zzLOGINBG.jpg')} style={{height: '100%', width: '100%'}}>
           <Logo/>
-          <FatherLion/>
+          <FatherLion style={{width:250, height:250}}/>
           <TouchableOpacity onPress={() => navigation.navigate('SingpassLogin')}>
             <Text style={styles.loginbutton}>Login with Singpass</Text>
           </TouchableOpacity>

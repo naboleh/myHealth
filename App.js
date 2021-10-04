@@ -13,6 +13,12 @@ import LandingPage from './app/pages/LandingPage';
 import SingpassLogin from './app/pages/SingpassLogin';
 import HomePage from './app/pages/HomePage';
 import Appointments from './app/pages/Appointments';
+import NewAppt from './app/pages/NewAppt';
+import Payment from './app/pages/Payment';
+import Bills from './app/pages/Bills';
+import BillsLO from './app/pages/BillsLO';
+import Caregiver from './app/pages/Caregiver';
+import HealthRecords from './app/pages/HealthRecords';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,11 +41,50 @@ export default function App() {
           component={HomePage} 
           options={{headerShown: false}}
         />
+
+
         <Stack.Screen 
           name="Appointments" 
           component={Appointments} 
           options={{headerShown: false}}
         />
+
+        <Stack.Screen 
+          name="NewAppt" 
+          component={NewAppt} 
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="Caregiver"
+          component={Caregiver}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="HealthRecords"
+          component={HealthRecords}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen 
+          name="Payment" 
+          component={Payment} 
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen 
+          name="Bills" 
+          component={Bills} 
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen 
+          name="BillsLO" 
+          component={BillsLO} 
+          options={{headerShown: false}}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

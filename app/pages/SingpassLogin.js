@@ -1,8 +1,28 @@
 /* Singpass Login page
 I'll look into databases later
+  const auth = useSelector((state: any) => state.auth);
+  const error = useSelector((state: any) => state.err);
+
+  const [singpassID, setUser] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+
+  const onLogin() => {
+    navigate('HomePage');
+  }
+
+  useEffect(() => {
+    if (auth.isAuthenticated) {
+      onLogin();
+    }
+  }, [auth]);
+
+
+  onChangeText={(singpassID)} => setUser(singpassID)}
+  onChangeText={(password)} => setUser(password)}
+
 */
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   StyleSheet,
   Text,
@@ -15,6 +35,7 @@ import {
 
 
 export default function SingpassLogin({ navigation }) {
+
     return (
       <View style={styles.topcontainer}>
         <Image source={require('../icon/singpass-logo.png')} style={{height:50, width: '100%'}}/>
@@ -32,7 +53,7 @@ export default function SingpassLogin({ navigation }) {
                   style={styles.TextInput}
                   placeholder="Password"
                   placeholderTextColor="#003f5c"
-                  secureTextEntry={true}
+                  secureTextEntry={true}             
                 />
 
                 <TouchableOpacity onPress={() => navigation.navigate('HomePage')}>
