@@ -12,7 +12,8 @@ export default class TopBar extends React.Component{
         return(
             <View style={styles.TopItem}>
                 <Image
-                source={this.props.imageTop}  />
+                source={this.props.imageTop}
+                style={styles.image} />  />
             </View>
         );
     }
