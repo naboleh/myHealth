@@ -19,6 +19,7 @@ import Bills from './app/pages/Bills';
 import BillsLO from './app/pages/BillsLO';
 import Caregiver from './app/pages/Caregiver';
 import HealthRecords from './app/pages/HealthRecords';
+import DietTracking from './app/pages/DietTracking';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="DietTracking"
+          component={DietTracking}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="LandingPage"
           component={LandingPage}

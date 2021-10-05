@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   subtitleText: {
-    fontFamily: 'Quicksand-Medium',
-    fontSize: 20,
+    fontFamily: 'Quicksand-Bold',
+    fontSize: 15,
     alignSelf: 'center',
     textAlign: 'center',
     marginVertical: "5%",
