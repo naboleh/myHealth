@@ -22,13 +22,13 @@ export default class MainPageItem extends React.Component{
 const styles = StyleSheet.create({
     MainPageItem: {
         width: 150,
-        height: 150,
+        height: 130,
         padding: 50,
         alignItems: 'center',
-        margin: 10
+        margin: 5
     },
     image: {
-        backgroundColor: "#e6fff9",
+        backgroundColor: "#f5fffd",
         width: 155,
         height: 135,
         margin: 1,
