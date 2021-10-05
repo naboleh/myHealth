@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Text,
   View,
-  ImageBackground,
+  ImageBackground
 } from 'react-native';
 
 import MainPageItem from '../components/MainPageItem';
