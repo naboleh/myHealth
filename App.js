@@ -86,11 +86,7 @@ export default function App() {
           options={{headerShown: false}}
         />
 
-        <Stack.Screen
-          name="DietTracking"
-          component={DietTracking}
-          options={{headerShown: false}}
-        />
+
 
       </Stack.Navigator>
     </NavigationContainer>
