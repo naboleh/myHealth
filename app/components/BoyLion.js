@@ -9,7 +9,7 @@ import {
 export default function BoyLion() {
 		return(
 			<View style={styles.container}>
-				<Image style={{width:'100%', height:'100%'}}
+				<Image style={{width:'150%', height:'120%'}}
 					source={require('../mascots/boylion.png')}/>
 			</View>
 		)
@@ -18,8 +18,9 @@ export default function BoyLion() {
 const styles = StyleSheet.create({
 	container: {
 	flexGrow: 1,
-	justifyContent: 'flex-end',
-	alignItems: 'center'
+	marginTop: '10%',
+	justifyContent: 'space-around',
+	alignItems: 'flex-end'
 	}
 });
 

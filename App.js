@@ -19,7 +19,7 @@ import Bills from './app/pages/Bills';
 import BillsLO from './app/pages/BillsLO';
 import Caregiver from './app/pages/Caregiver';
 import HealthRecords from './app/pages/HealthRecords';
-import DietTracking from './app/pages/DietTracking';
+import DietTracking from './app/pages/DietTracking2';
 
 const Stack = createNativeStackNavigator();
 

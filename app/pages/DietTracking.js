@@ -5,9 +5,13 @@ import {
   StyleSheet,
   TouchableOpacity,
   ImageBackground,
+  Picker,
 } from 'react-native';
 
+import { useState } from "react";
+
 import BoyLion from '../components/BoyLion';
+import App from '../components/CatDrop';
 
 export default function DietTracking({ navigation }) {
     return (
@@ -39,13 +43,36 @@ export default function DietTracking({ navigation }) {
                   <TouchableOpacity style={styles.checkmymealbtn} onPress={() => navigation.navigate('nil')}>
                     <Text style={styles.title2Text}>Check my meal</Text>
                   </TouchableOpacity>
+                  <Category/>
                 </View>
-
-
+                <App/>
             </View>
       </ImageBackground>
       </View>
       );
+  }
+
+  const Category = () => {
+    const [selectedValue, setSelectedValue] = useState("Category");
+    return (
+      <View style={styles.container}>
+        <Picker
+          selectedValue={selectedValue}
+          style={{ height: 50, width: 150 }}
+          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+        >
+          <Picker.Item label="Rice" value="Rice" />
+          <Picker.Item label="Noodle" value="Noodle" />
+          <Picker.Item label="Bread" value="Bread" />
+          <Picker.Item label="Meat" value="Meat" />
+          <Picker.Item label="Dairy" value="Dairy" />
+          <Picker.Item label="Fruits" value="Fruits" />
+          <Picker.Item label="Vegetables" value="Vegetables" />
+          <Picker.Item label="Dessert" value="Dessert" />
+
+        </Picker>
+      </View>
+    );
   }
 
 const styles = StyleSheet.create({
@@ -171,5 +198,12 @@ const styles = StyleSheet.create({
               marginVertical: "3%",
               marginLeft: "8%",
               textAlign: 'center'
-            }
+            },
+
+    container: {
+        flex: 1,
+        paddingTop: 40,
+        alignItems: "center"
+      }
 });
+
