@@ -9,6 +9,8 @@ import {
   Image
 } from 'react-native';
 
+import NurseLion from '../mascots/LionNurse.js';
+
 export default function HealthRecords({ navigation }) {
     return (
       <View style={styles.topcontainer}>
@@ -31,6 +33,11 @@ export default function HealthRecords({ navigation }) {
                 <Image style={styles.btnimg} source={require('../icon/immunisation.png')}/>
                 <Text style={styles.subtitleText}>Immunisation Records</Text>
               </TouchableOpacity>
+
+               <View style={styles.container}>
+                 <NurseLion width={220} height={220} marginRight={30}/>
+                 <Text style={styles.subtitleText}>Your one stop access to all Health Records!</Text>
+               </View>
                
             </View>
       </ImageBackground>
@@ -43,6 +50,13 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'flex-end',
     backgroundColor: 'green'
+  },
+  container: {
+    justifyContent: 'space-evenly',
+    width: '50%',
+    marginLeft: '18%',
+    paddingHorizontal: 30,
+    flexDirection: 'row'
   },
   overlayContainer: {
     flexGrow: 1,
@@ -77,14 +91,16 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     fontSize:  18,
     fontFamily: 'Quicksand-Bold',
-    marginVertical: "5%",
+    marginTop: "5%",
     marginLeft: "5%"
     },
   btnimg: {
     justifyContent: 'center',
-    height: '60%',
-    width: '50%',
-    alignSelf: 'center'
+    height: '40%',
+    width: '40%',
+    alignSelf: 'center',
+    marginVertical: "10%",
+
   }
 });
 
