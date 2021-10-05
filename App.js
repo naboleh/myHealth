@@ -42,7 +42,6 @@ export default function App() {
           options={{headerShown: false}}
         />
 
-
         <Stack.Screen 
           name="Appointments" 
           component={Appointments} 
@@ -56,14 +55,14 @@ export default function App() {
         />
 
         <Stack.Screen
-          name="Caregiver"
-          component={Caregiver}
+          name="HealthRecords"
+          component={HealthRecords}
           options={{headerShown: false}}
         />
 
         <Stack.Screen
-          name="HealthRecords"
-          component={HealthRecords}
+          name="Caregiver"
+          component={Caregiver}
           options={{headerShown: false}}
         />
 

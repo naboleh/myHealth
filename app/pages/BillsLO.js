@@ -13,11 +13,11 @@ export default function BillsLO({ navigation }) {
     return (
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../backgrounds/zzPAYMENTBG.png')} style={{height:'100%', width: '100%'}}>
-        <Text style={styles.titleText}>Caregiver</Text>
+        <Text style={styles.titleText}>Payment</Text>
 
             <View style={styles.overlayContainer}>
                 <View style={styles.messageContainer}>
-                      <Text style={styles.message}>Choose a bill to view</Text>
+                      <Text style={styles.message}>Choose bills to view</Text>
                       <MotherLion />
                 </View>
 

@@ -23,22 +23,22 @@ export default function Appointments({ navigation }) {
                     <NurseSmiling />
                 </View>
 
-                <TouchableOpacity style={styles.apptbutton} onPress={() => navigation.navigate('BillsLO')}>
+                <TouchableOpacity style={styles.apptbutton} onPress={() => navigation.navigate('nil')}>
                   <Text style={styles.title2Text}>3 Oct 2021 (Sunday)</Text>
                   <Text style={styles.subtitleText}>10:30 AM</Text>
                   <Text style={styles.subtitleText}>Bedok Polyclinic</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.apptbutton} onPress={() => navigation.navigate('BillsLO')}>
-                  <Text style={styles.title2Text}>7 Sept 2021 (Sunday)</Text>
+                <TouchableOpacity style={styles.apptbutton} onPress={() => navigation.navigate('nil')}>
+                  <Text style={styles.title2Text}>7 Sept 2021 (Tuesday)</Text>
                   <Text style={styles.subtitleText}>08:30 AM</Text>
                   <Text style={styles.subtitleText}>Singapore General Hospital</Text>
                   <Text style={styles.subtitle2Text}>Clinic H</Text>
                   <Text style={styles.subtitleText}>Building 2</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.apptbutton} onPress={() => navigation.navigate('BillsLO')}>
-                  <Text style={styles.title2Text}>10 Jun 2021 (Sunday)</Text>
+                <TouchableOpacity style={styles.apptbutton} onPress={() => navigation.navigate('nil')}>
+                  <Text style={styles.title2Text}>10 Jun 2021 (Thursday)</Text>
                   <Text style={styles.subtitleText}>09:30 AM</Text>
                   <Text style={styles.subtitleText}>Singapore General Hospital</Text>
                   <Text style={styles.subtitle2Text}>Clinic H</Text>
@@ -54,8 +54,7 @@ export default function Appointments({ navigation }) {
 const styles = StyleSheet.create({
   topcontainer: {
     flexGrow: 1,
-    justifyContent: 'flex-end',
-    backgroundColor: 'green'
+    justifyContent: 'center',
   },
   overlayContainer: {
     flexGrow: 1,
