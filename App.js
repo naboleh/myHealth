@@ -75,12 +75,6 @@ export default function App() {
         />
 
         <Stack.Screen 
-          name="Payment" 
-          component={Payment} 
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen 
           name="Bills" 
           component={Bills} 
           options={{headerShown: false}}
@@ -89,6 +83,12 @@ export default function App() {
         <Stack.Screen 
           name="BillsLO" 
           component={BillsLO} 
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="DietTracking"
+          component={DietTracking}
           options={{headerShown: false}}
         />
 

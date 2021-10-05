@@ -9,7 +9,7 @@ import {
 export default function Logo() {
 		return(
 			<View style={styles.container}>
-				<Image style={{width:150, height:60}}
+				<Image style={{width:130, height:60}}
 					source={require('../icon/logo.png')}/>
 				<Text style={styles.logoText}>Your one-stop to health.</Text>
 			</View>
