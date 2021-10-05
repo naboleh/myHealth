@@ -21,15 +21,15 @@ export default function Caregiver({ navigation }) {
                       <MotherLion />
                 </View>
 
-                <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('BillsLO')}>
+                <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('nil')}>
                   <Text style={styles.title2Text}>Careperson 1</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('BillsLO')}>
+                <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('nil')}>
                   <Text style={styles.title2Text}>Careperson 2</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('BillsLO')}>
+                <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('nil')}>
                   <Text style={styles.title2Text}>Careperson 3</Text>
                 </TouchableOpacity>
             </View>

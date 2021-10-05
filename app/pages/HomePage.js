@@ -5,53 +5,116 @@ import {
   Text,
   View,
   ImageBackground,
+  Image,
+  TouchableOpacity,
 } from 'react-native';
 
-import MainPageItem from '../components/MainPageItem';
-
 export default function HomePage({ navigation }) {
-    return (
-      <ImageBackground
-        source={require('../backgrounds/zzMAINBG.png')}
-        style={styles.container}>
-        <View style={styles.overlayContainer}>
-            <View style={styles.top}>
-              </View>
-              <View style={styles.menuContainer}>
-                <MainPageItem itemImage={require('../icon/zzAPPT.png')} />
-                <MainPageItem itemImage={require('../icon/zzECONSULT.png')} />
-                <MainPageItem itemImage={require('../icon/zzHEALTH.png')} />
-                <MainPageItem itemImage={require('../icon/zzDIET.png')} />
-                <MainPageItem itemImage={require('../icon/zzPAYMENT.png')} />
-                <MainPageItem itemImage={require('../icon/zzCAREGIVER.png')} />
-              </View>
-        </View>
+   return (
+      <View style={styles.topcontainer}>
+        <ImageBackground source={require('../backgrounds/zzMAINBG.png')} style={{height:'100%', width: '100%'}}>
+        <Text style={styles.titleText}>Home</Text>
+            <View style={styles.overlayContainer}>
+
+                <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('Appointments')}>
+                  <Image style={styles.image} source={require('../icon/zzAPPT.png')}/>
+                </TouchableOpacity>
+
+                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('Econsult')}>
+                  <Image style={styles.image} source={require('../icon/zzECONSULT.png')}/>
+                </TouchableOpacity>
+
+                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('HealthRecords')}>
+                  <Image style={styles.image} source={require('../icon/zzHEALTH.png')}/>
+                </TouchableOpacity>
+
+                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('DietTracking')}>
+                  <Image style={styles.image} source={require('../icon/zzDIET.png')}/>
+                </TouchableOpacity>
+
+                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('Payment')}>
+                  <Image style={styles.image} source={require('../icon/zzPAYMENT.png')}/>
+                </TouchableOpacity>
+
+                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('Caregiver')}>
+                  <Image style={styles.image} source={require('../icon/zzCAREGIVER.png')}/>
+                </TouchableOpacity>
+
+                
+
+            </View>
       </ImageBackground>
-    )
+      </View>
+      );
   }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
+  topcontainer: {
+    flexGrow: 1,
+    justifyContent: 'flex-end',
+    backgroundColor: 'green'
   },
   overlayContainer: {
-    flex: 1,
-  },
-  top:{
-    height: '15%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  menuContainer:{
-    height: '50%',
-    width: '100%',
+    flexGrow: 1,
+    textAlign: 'center',
+    backgroundColor: '#fff',
+    height: '90%',
+    width: '90%',
+    borderRadius: 25,
+    marginLeft: '5%',
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'center',
-  }
+  },
+
+  titleText: {
+    marginLeft: "7%",
+    marginVertical: "5%",
+    fontFamily: 'Roboto-Medium',
+    fontSize: 28,
+  },
+     MainPageItem: {
+        width: 150,
+        height: 150,
+        padding: 50,
+        alignItems: 'center',
+        margin: 10
+    },
+    image: {
+        backgroundColor: "#e6fff9",
+        width: 155,
+        height: 135,
+        margin: 1,
+        borderRadius: 15,
+        alignItems: 'center',
+        padding: 7,
+    },
+  MainItem: {
+      backgroundColor: '#e9b430',
+      color: 'white',
+      width: '90%',
+      height: '80%',
+      borderRadius: 15,
+      textAlign: 'center',
+      justifyContent: 'center',
+      textAlignVertical: "center",
+      fontSize:  18,
+      fontFamily: 'Quicksand-Bold',
+      marginLeft: "5%",
+      marginVertical: "10%",
+    },
+  apptbutton: {
+      flexDirection: 'column',
+      backgroundColor: '#fbe5a0',
+      color: 'black',
+      width: '90%',
+      height: '30%',
+      borderRadius: 15,
+      paddingVertical: '5%',
+      fontSize:  18,
+      fontFamily: 'Quicksand-Bold',
+      marginVertical: "2%",
+      marginLeft: "5%"
+    }
 });
-
-
