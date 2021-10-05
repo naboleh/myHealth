@@ -28,15 +28,11 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="DietTracking"
-          component={DietTracking}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
           name="LandingPage"
           component={LandingPage}
           options={{headerShown: false}}
         />
+
         <Stack.Screen 
           name="SingpassLogin" 
           component={SingpassLogin} 
@@ -63,6 +59,12 @@ export default function App() {
         <Stack.Screen
           name="HealthRecords"
           component={HealthRecords}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="DietTracking"
+          component={DietTracking}
           options={{headerShown: false}}
         />
 
