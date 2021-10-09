@@ -4,7 +4,7 @@ import { OTSession } from 'opentok-react-native';
 import { placeholder } from '@babel/types';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
-//LogBox.ignoreAllLogs();
+LogBox.ignoreAllLogs();
 
 class ChatFragment extends Component {
     constructor(props) {
@@ -26,7 +26,6 @@ class ChatFragment extends Component {
           if (event.data) {
             const myConnectionId = this.session.getSessionInfo().connection.connectionId;
             const oldMessages = this.state.messages;
-            // type = 0 refers to message by me, 1 refers to message by others
             const messages = (event.connectionId === myConnectionId) ? [...oldMessages, {data: `Me: ${event.data}`, type: 0}] : [...oldMessages, {data: `Other: ${event.data}`, type: 1}];
             this.setState({
               messages,
@@ -48,18 +47,10 @@ class ChatFragment extends Component {
       }
     }
   
-    //functions declaration using arrow function
-    //name of function = (parameters) => return value;
     _keyExtractor = (item, index) => index;
-    //{} declares an object
-    //object is similar to an array but instead of indexing using numbers,
-    //object use property names
-    //property is declared in and object using ':' like this
-    //e.g. const obj = {name:"abc", age:"14"}
     _renderItem = ({item}) => {
       if(item.type == 0){
         return(
-          //text bubble design here
           <View style={[styles.balloon, {backgroundColor: '#1084ff', alignSelf: "flex-end"}]}>
               <Text style={{paddingTop: 5, color: 'white'}}>
                   {item.data}
@@ -68,7 +59,6 @@ class ChatFragment extends Component {
         )
       } else {
         return(
-          //text bubble design here
           <View style={[styles.balloon, {backgroundColor: '#dedede'}]}>
               <Text style={{paddingTop: 5, color: '#000000'}}>
                   {item.data}
