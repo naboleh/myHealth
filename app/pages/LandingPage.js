@@ -46,6 +46,5 @@ const styles = StyleSheet.create({
       fontFamily: 'Quicksand-Medium',
       marginVertical: "125%",
       marginLeft: "15%",
-      opacity: 1
     }
 });
