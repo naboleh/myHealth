@@ -17,27 +17,27 @@ export default function HomePage({ navigation }) {
             <View style={styles.overlayContainer}>
 
                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('Appointments')}>
-                  <Image style={styles.image} source={require('../icon/zzAPPT.png')}/>
+                  <Image style={styles.image1} source={require('../icon/zzAPPT.png')}/>
                 </TouchableOpacity>
 
                  <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('Econsult')}>
-                  <Image style={styles.image} source={require('../icon/zzECONSULT.png')}/>
+                  <Image style={styles.image2} source={require('../icon/zzECONSULT.png')}/>
                 </TouchableOpacity>
 
                  <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('HealthRecords')}>
-                  <Image style={styles.image} source={require('../icon/zzHEALTH.png')}/>
+                  <Image style={styles.image3} source={require('../icon/zzHEALTH.png')}/>
                 </TouchableOpacity>
 
                  <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('DietTracking')}>
-                  <Image style={styles.image} source={require('../icon/zzDIET.png')}/>
+                  <Image style={styles.image4} source={require('../icon/zzDIET.png')}/>
                 </TouchableOpacity>
 
                  <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('Payment')}>
-                  <Image style={styles.image} source={require('../icon/zzPAYMENT.png')}/>
+                  <Image style={styles.image5} source={require('../icon/zzPAYMENT.png')}/>
                 </TouchableOpacity>
 
                  <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('Caregiver')}>
-                  <Image style={styles.image} source={require('../icon/zzCAREGIVER.png')}/>
+                  <Image style={styles.image6} source={require('../icon/zzCAREGIVER.png')}/>
                 </TouchableOpacity>
 
                 
@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         margin: 10
     },
-    image: {
-        backgroundColor: "#e6fff9",
+    image1: {
+        backgroundColor: "#c76d73",
         width: 155,
         height: 135,
         margin: 1,
@@ -90,6 +90,51 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 7,
     },
+    image2: {
+      backgroundColor: "#83b7b5",
+      width: 155,
+      height: 135,
+      margin: 1,
+      borderRadius: 15,
+      alignItems: 'center',
+      padding: 7,
+  },
+  image3: {
+    backgroundColor: "#edd0d9",
+    width: 155,
+    height: 135,
+    margin: 1,
+    borderRadius: 15,
+    alignItems: 'center',
+    padding: 7,
+},
+image4: {
+  backgroundColor: "#f2ae80",
+  width: 155,
+  height: 135,
+  margin: 1,
+  borderRadius: 15,
+  alignItems: 'center',
+  padding: 7,
+},
+image5: {
+  backgroundColor: "#f4d286",
+  width: 155,
+  height: 135,
+  margin: 1,
+  borderRadius: 15,
+  alignItems: 'center',
+  padding: 7,
+},
+image6: {
+  backgroundColor: "#dff5f4",
+  width: 155,
+  height: 135,
+  margin: 1,
+  borderRadius: 15,
+  alignItems: 'center',
+  padding: 7,
+},
   MainItem: {
       backgroundColor: '#e9b430',
       color: 'white',

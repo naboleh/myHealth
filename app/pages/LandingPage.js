@@ -18,9 +18,7 @@ export default function LandingPage({ navigation }) {
 
     return (
       <View style={styles.container}>
-        <ImageBackground source={require('../backgrounds/zzLOGINBG.jpg')} style={{height: '100%', width: '100%'}}>
-          <Logo/>
-          <FatherLion style={{width:250, height:250}}/>
+        <ImageBackground source={require('../backgrounds/zzLOGINBG.png')} style={{height: '100%', width: '100%'}}>
           <TouchableOpacity onPress={() => navigation.navigate('SingpassLogin')}>
             <Text style={styles.loginbutton}>Login with Singpass</Text>
           </TouchableOpacity>
@@ -46,7 +44,8 @@ const styles = StyleSheet.create({
       paddingVertical: 20,
       fontSize:  18,
       fontFamily: 'Quicksand-Medium',
-      marginVertical: "20%",
-      marginLeft: "15%"
+      marginVertical: "125%",
+      marginLeft: "15%",
+      opacity: 1
     }
 });
