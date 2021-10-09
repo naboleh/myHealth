@@ -16,6 +16,7 @@
     "@react-navigation/stack": "^6.0.9",
     "@svgator/react-native": "^1.0.0",
     "install": "^0.13.0",
+    "opentok-react-native": "^0.18.0",
     "or": "^0.2.0",
     "react": "17.0.2",
     "react-native": "0.65.1",

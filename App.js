@@ -20,6 +20,7 @@ import BillsLO from './app/pages/BillsLO';
 import Caregiver from './app/pages/Caregiver';
 import HealthRecords from './app/pages/HealthRecords';
 import DietTracking from './app/pages/DietTracking2';
+import ChatFragment from './app/pages/ChatFragment';
 
 const Stack = createNativeStackNavigator();
 
@@ -86,7 +87,10 @@ export default function App() {
           options={{headerShown: false}}
         />
 
-
+        <Stack.Screen 
+          name="ChatFragment" 
+          component={ChatFragment} 
+          options={{headerShown: false}}/>
 
       </Stack.Navigator>
     </NavigationContainer>

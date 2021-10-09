@@ -12,6 +12,8 @@ target 'MyHealth' do
     :hermes_enabled => false
   )
 
+  pod 'opentok-react-native', :path => '../node_modules/opentok-react-native'
+
   target 'MyHealthTests' do
     inherit! :complete
     # Pods for testing

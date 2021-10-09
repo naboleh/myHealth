@@ -1,5 +1,4 @@
 import React from 'react';
-import type {Node} from 'react';
 import {
   StyleSheet,
   Text,
@@ -20,7 +19,7 @@ export default function HomePage({ navigation }) {
                   <Image style={styles.image1} source={require('../icon/zzAPPT.png')}/>
                 </TouchableOpacity>
 
-                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('Econsult')}>
+                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('ChatFragment')}>
                   <Image style={styles.image2} source={require('../icon/zzECONSULT.png')}/>
                 </TouchableOpacity>
 
