@@ -14,7 +14,8 @@ export default function Appointments({ navigation }) {
     return (
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../backgrounds/zzAPPTBG.png')} style={{height:'100%', width: '100%'}}>
-        <ScrollView> 
+        <ScrollView>
+
         <Text style={styles.titleText}>Appointments</Text>
 
             <View style={styles.overlayContainer}>
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
     marginVertical: "5%",
   },
   newapptbutton: {
-      backgroundColor: '#e9b430',
+      backgroundColor: '#AD656C',
       color: 'white',
       width: '90%',
       height: '90%',
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
     },
   apptbutton: {
       flexDirection: 'column',
-      backgroundColor: '#fbe5a0',
+      backgroundColor: '#C98B91',
       color: 'black',
       width: '90%',
       height: '30%',

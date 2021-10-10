@@ -6,7 +6,8 @@ import {
   View,
   ImageBackground,
   TouchableOpacity,
-  Image
+  Image,
+  ScrollView,
 } from 'react-native';
 
 import NurseLion from '../mascots/LionNurse.js';
@@ -15,6 +16,8 @@ export default function HealthRecords({ navigation }) {
     return (
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../backgrounds/zzHEALTHBG.png')} style={{height:'100%', width: '100%'}}>
+        <ScrollView>
+
         <Text style={styles.titleText}>Health Records</Text>
             <View style={styles.overlayContainer}>
               <TouchableOpacity style={styles.menubtn}>
@@ -38,8 +41,8 @@ export default function HealthRecords({ navigation }) {
                  <NurseLion width={220} height={220} marginRight={30}/>
                  <Text style={styles.subtitleText}>Your one stop access to all Health Records!</Text>
                </View>
-               
-            </View>
+               </View>
+        </ScrollView>
       </ImageBackground>
       </View>
       );
@@ -59,13 +62,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   overlayContainer: {
-    flexGrow: 1,
     textAlign: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap',
     backgroundColor: '#fff',
-    height: '90%',
-    width: '90%',
+    height: 640,
+    width: 375,
     borderRadius: 25,
     marginLeft: '5%'
   },
@@ -83,20 +85,20 @@ const styles = StyleSheet.create({
     marginVertical: "5%",
   },
   menubtn: {
-    backgroundColor: '#e8ba91',
-    width: '42%',
-    height: '25%',
+    backgroundColor: '#E3C3CD',
+    width: 155,
+    height: 175,
     borderRadius: 15,
     textAlign: 'center',
     paddingVertical: 20,
     fontSize:  18,
     fontFamily: 'Quicksand-Bold',
-    marginTop: "5%",
+    marginTop: "3%",
     marginLeft: "5%"
     },
   btnimg: {
     justifyContent: 'center',
-    height: '40%',
+    height: '43%',
     width: '40%',
     alignSelf: 'center',
     marginVertical: "10%",

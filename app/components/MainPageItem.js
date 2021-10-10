@@ -22,7 +22,7 @@ export default class MainPageItem extends React.Component{
 const styles = StyleSheet.create({
     MainPageItem: {
         width: 150,
-        height: 130,
+        height: 135,
         padding: 50,
         alignItems: 'center',
         margin: 5
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     image: {
         backgroundColor: "#f5fffd",
         width: 155,
-        height: 135,
+        height: 145,
         margin: 1,
         borderRadius: 15,
         alignItems: 'center',

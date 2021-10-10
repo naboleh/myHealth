@@ -17,6 +17,11 @@ export default function HomePage({ navigation }) {
 
           <ScrollView>
 
+            <View style={styles.HeaderContainer}>
+            <Image source={require('../icon/menu.png')} style={{height: 45, width: 45, position: 'absolute', left: 10, }}/>
+            <Image source={require('../icon/icon.jpeg')} style={{height: 55, width: 55, flexDirection: 'row', marginLeft: '43%'}}/>
+            <Image source={require('../icon/search.png')} style={{height: 45, width: 45, position: 'absolute', right: 10, }}/>
+            </View>
             <View style={styles.carouselContainer}>
               <Image source={require('../backgrounds/carousel-image.jpg')} style={styles.carouselimg}/>
             </View>
@@ -46,6 +51,7 @@ export default function HomePage({ navigation }) {
                  <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('Caregiver')}>
                   <Image style={[styles.image, {backgroundColor: "#dff5f4"}]} source={require('../icon/zzCAREGIVER.png')}/>
                 </TouchableOpacity>
+
               </View>
             </ScrollView>
           </ImageBackground>
@@ -54,6 +60,15 @@ export default function HomePage({ navigation }) {
   }
 
 const styles = StyleSheet.create({
+  HeaderContainer:{
+    backgroundColor: "white",
+    width: '100%',
+    height: 55,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+    borderRadius: 5
+  },
   topcontainer: {
     flexGrow: 1,
     justifyContent: 'space-between',
@@ -89,24 +104,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginVertical: 20
   },
-  titleText: {
-    marginLeft: "7%",
-    marginVertical: "2%",
-    fontFamily: 'Roboto-Medium',
-    fontSize: 28,
-  },
   MainPageItem: {
     width: 80,
-    height: 80,
+    height: 60,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 43
+    margin: 47
   },
   image: {
     backgroundColor: "#fff",
     width: 155,
     height: 135,
-    margin: 1,
     borderRadius: 15,
     alignItems: 'center',
     padding: 7,
