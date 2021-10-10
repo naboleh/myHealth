@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'center',
-    marginHorizontal: 10,
   },
   carouselimg: {
     borderRadius: 25,
@@ -101,7 +100,7 @@ const styles = StyleSheet.create({
     height: 80,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 40
+    margin: 43
   },
   image: {
     backgroundColor: "#fff",
@@ -112,15 +111,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 7,
   },
-  MainItem: {
-    backgroundColor: '#e9b430',
-    width: '90%',
-    height: '80%',
-    borderRadius: 15,
-    textAlign: 'center',
-    justifyContent: 'center',
-    fontSize:  18,
-    fontFamily: 'Quicksand-Bold',
-    marginLeft: "5%",
-  }
 });
