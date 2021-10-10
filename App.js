@@ -82,13 +82,13 @@ export default function App() {
           component={Caregiver}
           options={{headerShown: false}}
         />
-        <Stack.Screen
-          name="Payment"
-          component={Payment}
+        <Stack.Screen 
+          name="Payment" 
+          component={Payment} 
           options={{headerShown: false}}
         />
 
-        <Stack.Screen 
+         <Stack.Screen 
           name="Bills" 
           component={Bills} 
           options={{headerShown: false}}
