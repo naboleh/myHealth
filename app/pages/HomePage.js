@@ -6,14 +6,16 @@ import {
   ImageBackground,
   Image,
   TouchableOpacity,
-  SafeAreaView
+  SafeAreaView,
+  ScrollView
 } from 'react-native';
 
 export default function HomePage({ navigation }) {
    return (
       <SafeAreaView style={styles.topcontainer}>
-        <ImageBackground source={require('../backgrounds/zzMAINBG.png')} style={{height:'100%', width: '100%'}}>
-        <Text style={[styles.titleText, {flexShrink: 0.1}]}>Home</Text>
+          <ImageBackground source={require('../backgrounds/zzMAINBG.png')} style={{height:'100%', width: '100%'}}>
+
+          <ScrollView>
 
             <View style={styles.carouselContainer}>
               <Image source={require('../backgrounds/carousel-image.jpg')} style={styles.carouselimg}/>
@@ -44,10 +46,9 @@ export default function HomePage({ navigation }) {
                  <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('Caregiver')}>
                   <Image style={[styles.image, {backgroundColor: "#dff5f4"}]} source={require('../icon/zzCAREGIVER.png')}/>
                 </TouchableOpacity>
-
-            </View>
-
-        </ImageBackground>
+              </View>
+            </ScrollView>
+          </ImageBackground>
       </SafeAreaView>
       );
   }
@@ -70,6 +71,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'center',
+    marginHorizontal: 10,
   },
   carouselimg: {
     borderRadius: 25,
@@ -79,14 +81,14 @@ const styles = StyleSheet.create({
   overlayContainer: {
     flexShrink: 0.8,
     backgroundColor: '#fff',
-    width: '90%',
+    width: '95%',
     borderRadius: 25,
-    marginLeft: '5%',
+    marginLeft: '3%',
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 10
+    marginVertical: 20
   },
   titleText: {
     marginLeft: "7%",
