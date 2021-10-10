@@ -14,6 +14,8 @@ target 'MyHealth' do
 
   pod 'opentok-react-native', :path => '../node_modules/opentok-react-native'
 
+  pod 'RNCCheckbox', :path => '../node_modules/@react-native-community/checkbox'
+
   target 'MyHealthTests' do
     inherit! :complete
     # Pods for testing

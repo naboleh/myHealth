@@ -6,6 +6,7 @@ Stack navigator to move between the pages
 */
 import * as React from 'react';
 
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -21,6 +22,13 @@ import Caregiver from './app/pages/Caregiver';
 import HealthRecords from './app/pages/HealthRecords';
 import DietTracking from './app/pages/DietTracking2';
 import ChatFragment from './app/pages/ChatFragment';
+import EConsultsQnASymptoms from './app/pages/EConsultsQnASymptoms';
+import EConsultsQnAMedication from './app/pages/EConsultsQnAMedication';
+import EConsultsQnAMedName from './app/pages/EConsultsQnAMedName';
+import EConsultsQnADrugAllergy from './app/pages/EConsultsQnADrugAllergy';
+import EConsultsQnADrugName from './app/pages/EConsultsQnADrugName';
+import EConsultsQnAFever from './app/pages/EConsultsQnAFever';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -74,6 +82,11 @@ export default function App() {
           component={Caregiver}
           options={{headerShown: false}}
         />
+        <Stack.Screen
+          name="Payment"
+          component={Payment}
+          options={{headerShown: false}}
+        />
 
         <Stack.Screen 
           name="Bills" 
@@ -90,7 +103,46 @@ export default function App() {
         <Stack.Screen 
           name="ChatFragment" 
           component={ChatFragment} 
-          options={{headerShown: false}}/>
+          options={{headerShown: false}}
+          />
+
+        <Stack.Screen
+          name="EConsultsQnASymptoms"
+          component={EConsultsQnASymptoms}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="EConsultsQnAMedication"
+          component={EConsultsQnAMedication}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="EConsultsQnAMedName"
+          component={EConsultsQnAMedName}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="EConsultsQnADrugAllergy"
+          component={EConsultsQnADrugAllergy}
+          options={{headerShown: false}}
+        />
+
+         <Stack.Screen
+           name="EConsultsQnADrugName"
+           component={EConsultsQnADrugName}
+           options={{headerShown: false}}
+         />
+
+         <Stack.Screen
+           name="EConsultsQnAFever"
+           component={EConsultsQnAFever}
+           options={{headerShown: false}}
+         />
+
+
 
       </Stack.Navigator>
     </NavigationContainer>

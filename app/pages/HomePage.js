@@ -19,7 +19,7 @@ export default function HomePage({ navigation }) {
                   <Image style={styles.image1} source={require('../icon/zzAPPT.png')}/>
                 </TouchableOpacity>
 
-                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('ChatFragment')}>
+                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('EConsultsQnASymptoms')}>
                   <Image style={styles.image2} source={require('../icon/zzECONSULT.png')}/>
                 </TouchableOpacity>
 
