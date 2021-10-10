@@ -4,18 +4,22 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
-  ImageBackground
+  ImageBackground,
+  ScrollView
 } from 'react-native';
 
 import NurseSmiling from '../components/NurseSmiling';
 
 export default function Appointments({ navigation }) {
     return (
+
+    <ScrollView>
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../dummypages/appt_booked.png')} style={{height:'100%', width: '100%'}}>
       </ImageBackground>
       </View>
-      );
+      </ScrollView>
+      ); 
   }
 
 const styles = StyleSheet.create({

@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   ImageBackground,
+  ScrollView,
 } from 'react-native';
 
 import NurseSmiling from '../components/NurseSmiling';
@@ -13,6 +14,7 @@ export default function Appointments({ navigation }) {
     return (
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../backgrounds/zzAPPTBG.png')} style={{height:'100%', width: '100%'}}>
+        <ScrollView> 
         <Text style={styles.titleText}>Appointments</Text>
 
             <View style={styles.overlayContainer}>
@@ -27,6 +29,8 @@ export default function Appointments({ navigation }) {
                   <Text style={styles.title2Text}>3 Oct 2021 (Sunday)</Text>
                   <Text style={styles.subtitleText}>10:30 AM</Text>
                   <Text style={styles.subtitleText}>Bedok Polyclinic</Text>
+                  <Text style={styles.subtitle2Text}>Clinic A</Text>
+                  <Text style={styles.subtitleText}>Building 1</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.apptbutton} onPress={() => navigation.navigate('nil')}>
@@ -44,9 +48,9 @@ export default function Appointments({ navigation }) {
                   <Text style={styles.subtitle2Text}>Clinic H</Text>
                   <Text style={styles.subtitleText}>Building 2</Text>
                 </TouchableOpacity>
-
             </View>
-      </ImageBackground>
+            </ScrollView>
+        </ImageBackground>
       </View>
       );
   }
@@ -70,9 +74,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#fff',
     height: '30%',
-    width: '90%',
+    width: '100%',
     borderRadius: 25,
-    marginLeft: '5%',
+    marginLeft: '0%',
+    marginBottom: 10
+    
   },
   titleText: {
     marginLeft: "7%",
@@ -104,7 +110,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#e9b430',
       color: 'white',
       width: '90%',
-      height: '80%',
+      height: '90%',
       borderRadius: 15,
       textAlign: 'center',
       justifyContent: 'center',
