@@ -38,7 +38,7 @@ export default function HealthRecords({ navigation }) {
               </TouchableOpacity>
 
                <View style={styles.container}>
-                 <NurseLion width={220} height={220} marginRight={30}/>
+                 <NurseLion width={200} height={200} marginRight={40}/>
                  <Text style={styles.subtitleText}>Your one stop access to all Health Records!</Text>
                </View>
                </View>
@@ -59,17 +59,18 @@ const styles = StyleSheet.create({
     width: '50%',
     marginLeft: '18%',
     paddingHorizontal: 30,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   overlayContainer: {
     textAlign: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap',
     backgroundColor: '#fff',
-    height: 640,
+    height: 600,
     width: 375,
     borderRadius: 25,
-    marginLeft: '5%'
+    marginLeft: '5%',
+    marginBottom: 5,
   },
   titleText: {
     marginLeft: "7%",

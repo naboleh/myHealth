@@ -15,10 +15,10 @@ import CatDrop from '../components/CatDrop';
 import TypeDrop from '../components/TypeDrop';
 import PortionDrop from '../components/PortionDrop';
 
-export default function DietTracking({ navigation }) {
+export default function DietTracking2({ navigation }) {
     return (
       <View style={styles.topcontainer}>
-        <ImageBackground source={require('../backgrounds/zzDIETBG.png')} resizeMode= "cover" style={styles.image}>
+        <ImageBackground source={require('../backgrounds/zzDIETBG.png')} style={{height:'100%', width: '100%'}}>
         <Text style={styles.titleText}>Diet Tracking</Text>
             <View style={styles.overlayContainer}>
                 <View style={styles.messageContainer}>
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     marginBottom: '3%',
   },
   message: {
-    backgroundColor: '#00CCCC',
+    backgroundColor: '#FFB778',
     color: 'white',
     width: '60%',
     height: '80%',
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     marginVertical: "10%",
   },
   addbtn: {
-    backgroundColor: '#C0C0C0',
+    backgroundColor: '#F7A760',
     width: '30%',
     height: '30%',
     borderRadius: 30,
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   checkmymealbtn: {
-    backgroundColor: '#C0C0C0',
+    backgroundColor: '#F7A760',
     width: '60%',
     height: '30%',
     borderRadius: 30,
