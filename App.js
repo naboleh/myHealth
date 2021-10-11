@@ -21,14 +21,15 @@ import BillsLO from './app/pages/BillsLO';
 import Caregiver from './app/pages/Caregiver';
 import HealthRecords from './app/pages/HealthRecords';
 import DietTracking from './app/pages/DietTracking2';
-import ChatFragment from './app/pages/ChatFragment';
+import EConsultsChat from './app/pages/EConsultsChat';
 import EConsultsQnASymptoms from './app/pages/EConsultsQnASymptoms';
 import EConsultsQnAMedication from './app/pages/EConsultsQnAMedication';
 import EConsultsQnAMedName from './app/pages/EConsultsQnAMedName';
 import EConsultsQnADrugAllergy from './app/pages/EConsultsQnADrugAllergy';
 import EConsultsQnADrugName from './app/pages/EConsultsQnADrugName';
 import EConsultsQnAFever from './app/pages/EConsultsQnAFever';
-
+import EConsultsVideo from './app/pages/EConsultsVideo';
+import EConsultsStart from './app/pages/EConsultsStart';
 
 const Stack = createNativeStackNavigator();
 
@@ -101,8 +102,8 @@ export default function App() {
         />
 
         <Stack.Screen 
-          name="ChatFragment" 
-          component={ChatFragment} 
+          name="EConsultsChat" 
+          component={EConsultsChat} 
           options={{headerShown: false}}
           />
 
@@ -142,9 +143,20 @@ export default function App() {
            options={{headerShown: false}}
          />
 
+         <Stack.Screen
+           name="EConsultsVideo"
+           component={EConsultsVideo}
+           options={{headerShown: false}}
+         />
+
+         <Stack.Screen
+           name="EConsultsStart"
+           component={EConsultsStart}
+           options={{headerShown: false}}
+         />
 
 
-      </Stack.Navigator>
+      </Stack.Navigator> 
     </NavigationContainer>
   );
 };

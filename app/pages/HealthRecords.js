@@ -19,31 +19,33 @@ export default function HealthRecords({ navigation }) {
         <ScrollView>
 
         <Text style={styles.titleText}>Health Records</Text>
-            <View style={styles.overlayContainer}>
-              <TouchableOpacity style={styles.menubtn}>
-                <Image style={styles.btnimg} source={require('../icon/chas.png')}/>
-                <Text style={styles.subtitleText}>CHAS Balance</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.menubtn}>
-                <Image style={styles.btnimg} source={require('../icon/medication.png')}/>
-                <Text style={styles.subtitleText}>Medication</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.menubtn}>
-                <Image style={styles.btnimg} source={require('../icon/labtest.png')}/>
-                <Text style={styles.subtitleText}>Lab Test Results</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.menubtn}>
-                <Image style={styles.btnimg} source={require('../icon/immunisation.png')}/>
-                <Text style={styles.subtitleText}>Immunisation Records</Text>
-              </TouchableOpacity>
 
-               <View style={styles.container}>
-                 <NurseLion width={200} height={200} marginRight={40}/>
-                 <Text style={styles.subtitleText}>Your one stop access to all Health Records!</Text>
-               </View>
-               </View>
+          <View style={styles.overlayContainer}>
+            <TouchableOpacity style={styles.menubtn}>
+              <Image style={styles.btnimg} source={require('../icon/chas.png')}/>
+              <Text style={styles.subtitleText}>CHAS Balance</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menubtn}>
+              <Image style={styles.btnimg} source={require('../icon/medication.png')}/>
+              <Text style={styles.subtitleText}>Medication</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menubtn}>
+              <Image style={styles.btnimg} source={require('../icon/labtest.png')}/>
+              <Text style={styles.subtitleText}>Lab Test Results</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menubtn}>
+              <Image style={styles.btnimg} source={require('../icon/immunisation.png')}/>
+              <Text style={styles.subtitleText}>Immunisation Records</Text>
+            </TouchableOpacity>
+
+            <View style={styles.container}>
+              <NurseLion width={200} height={200} marginRight={40}/>
+              <Text style={styles.subtitleText}>Your one-stop access to all Health Records!</Text>
+            </View>
+          </View>
+
         </ScrollView>
-      </ImageBackground>
+        </ImageBackground>
       </View>
       );
   }
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
     marginVertical: "5%",
   },
   menubtn: {
-    backgroundColor: '#E3C3CD',
+    backgroundColor: '#EDD0D9',
     width: 155,
     height: 175,
     borderRadius: 15,
@@ -106,6 +108,4 @@ const styles = StyleSheet.create({
 
   }
 });
-
-
 

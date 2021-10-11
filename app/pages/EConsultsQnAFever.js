@@ -7,7 +7,6 @@ import {
   ImageBackground,
 } from 'react-native';
 
-
 import NurseLion from '../mascots/LionNurse.js';
 
 export default function EConsultsQnAFever({ navigation }) {
@@ -32,7 +31,7 @@ export default function EConsultsQnAFever({ navigation }) {
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('ChatFragment')}>
+                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsStart')}>
                      <Text style={styles.title2Text}>Next</Text>
                     </TouchableOpacity>
 

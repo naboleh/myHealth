@@ -7,9 +7,8 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
+
 import CheckBox from '@react-native-community/checkbox';
-
-
 
 import NurseLion from '../mascots/LionNurse.js';
 
