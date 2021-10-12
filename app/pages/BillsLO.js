@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     marginVertical: "5%",
   },
   message: {
-      backgroundColor: '#d0981f', 
+      backgroundColor: '#c89f56', 
       color: 'white',
       width: '60%',
       height: '80%',
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     },
   carepersonbtn: {
       flexDirection: 'column',
-      backgroundColor: '#fee35d',
+      backgroundColor: '#f6ce87',
       color: 'black',
       width: '90%',
       height: '10%',

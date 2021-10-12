@@ -74,8 +74,8 @@ const styles = StyleSheet.create({
     marginVertical: "5%",
   },
   paymentbutton: {
-      backgroundColor: '#a58432',
-      color: 'white',
+      backgroundColor: '#f6ce87',
+      color: 'black',
       width: "90%",
       height: 70,
       borderRadius: 15,
