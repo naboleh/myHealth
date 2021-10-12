@@ -22,7 +22,7 @@ export default function EConsultsQnASymptoms({ navigation }) {
 
             <View style={styles.overlayContainer}>
                 <View style={styles.mascot}>
-                    <NurseLion width={260} height={220} />
+                    <NurseLion width={225} height={265} />
                 </View>
 
                 <View style={styles.symptomsQ} onPress={() => navigation.navigate('nil')}>
@@ -163,11 +163,11 @@ export default function EConsultsQnASymptoms({ navigation }) {
         flexGrow: 1,
         textAlign: 'center',
         backgroundColor: '#fff',
-        height: '90%',
+        height: '10%',
         width: '90%',
         borderRadius: 25,
         marginLeft: '5%',
-        marginBottom: '5%'
+        marginBottom: '2%'
       },
       mascot: {
         flexDirection: 'row',
@@ -176,8 +176,8 @@ export default function EConsultsQnASymptoms({ navigation }) {
         height: '40%',
         width: '38%',
         borderRadius: 25,
-        marginLeft: '19%',
-        marginBottom: '10%',
+        marginLeft: '21%',
+        marginBottom: '0%',
       },
       symptomsQ: {
               flexDirection: 'column',
@@ -190,24 +190,24 @@ export default function EConsultsQnASymptoms({ navigation }) {
               paddingVertical: '5%',
               fontSize:  18,
               fontFamily: 'Quicksand-Bold',
-              marginVertical: "2%",
+              marginVertical: "5%",
               marginLeft: "10%"
       },
       checkboxContainer: {
         flexDirection: "row",
-        marginBottom: -40,
+        marginBottom: -35,
         marginLeft: 15
       },
       checkboxContainer2: {
         flexDirection: "row",
         top: 35,
-        marginBottom: -30,
+        marginBottom: -25,
         marginLeft: 40
       },
       checkboxContainer3: {
         flexDirection: "row",
         top: 60,
-        marginBottom: -32,
+        marginBottom: -20,
         marginLeft: 20
       },
       checkboxContainer4: {
