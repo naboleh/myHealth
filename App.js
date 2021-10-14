@@ -5,10 +5,11 @@ Stack navigator to move between the pages
 3. in the page, the touchableopacity/button should have an action (e.g. onPress={() => navigation.navigate('HomePage')}>)
 */
 import * as React from 'react';
+import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import LandingPage from './app/pages/LandingPage';
 import SingpassLogin from './app/pages/SingpassLogin';
@@ -33,7 +34,6 @@ import EConsultsStart from './app/pages/EConsultsStart';
 import EConsultsQnAPainPoints from './app/pages/EConsultsQnAPainPoints';
 
 const Stack = createNativeStackNavigator();
-
 export default function App() {
   return (
     <NavigationContainer>
@@ -44,69 +44,35 @@ export default function App() {
           options={{headerShown: false}}
         />
 
-        <Stack.Screen 
-          name="SingpassLogin" 
-          component={SingpassLogin} 
-          options={{headerShown: false}}
-        />
-        <Stack.Screen 
-          name="HomePage" 
-          component={HomePage} 
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen 
-          name="Appointments" 
-          component={Appointments} 
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen 
-          name="NewAppt" 
-          component={NewAppt} 
+        <Stack.Screen
+          name="SingpassLogin"
+          component={SingpassLogin}
           options={{headerShown: false}}
         />
 
         <Stack.Screen
-          name="HealthRecords"
-          component={HealthRecords}
+          name="ButtomNavbar"
+          component={ButtomNavbar}
           options={{headerShown: false}}
         />
 
         <Stack.Screen
-          name="DietTracking"
-          component={DietTracking}
+          name="EConsultsChat"
+          component={EConsultsChat}
           options={{headerShown: false}}
         />
 
         <Stack.Screen
-          name="Caregiver"
-          component={Caregiver}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen 
-          name="Payment" 
-          component={Payment} 
+          name="EConsultsVideo"
+          component={EConsultsVideo}
           options={{headerShown: false}}
         />
 
-         <Stack.Screen 
-          name="Bills" 
-          component={Bills} 
+        <Stack.Screen
+          name="EConsultsQnAPainPoints"
+          component={EConsultsQnAPainPoints}
           options={{headerShown: false}}
         />
-
-        <Stack.Screen 
-          name="BillsLO" 
-          component={BillsLO} 
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen 
-          name="EConsultsChat" 
-          component={EConsultsChat} 
-          options={{headerShown: false}}
-          />
 
         <Stack.Screen
           name="EConsultsQnASymptoms"
@@ -132,37 +98,220 @@ export default function App() {
           options={{headerShown: false}}
         />
 
-         <Stack.Screen
-           name="EConsultsQnADrugName"
-           component={EConsultsQnADrugName}
-           options={{headerShown: false}}
-         />
+        <Stack.Screen
+          name="EConsultsQnADrugName"
+          component={EConsultsQnADrugName}
+          options={{headerShown: false}}
+        />
 
-         <Stack.Screen
-           name="EConsultsQnAFever"
-           component={EConsultsQnAFever}
-           options={{headerShown: false}}
-         />
-
-         <Stack.Screen
-           name="EConsultsVideo"
-           component={EConsultsVideo}
-           options={{headerShown: false}}
-         />
-
-         <Stack.Screen
-           name="EConsultsStart"
-           component={EConsultsStart}
-           options={{headerShown: false}}
-         />
-
-         <Stack.Screen
-           name="EConsultsQnAPainPoints"
-           component={EConsultsQnAPainPoints}
-           options={{headerShown: false}}
-         />
-
-      </Stack.Navigator> 
+        <Stack.Screen
+          name="EConsultsQnAFever"
+          component={EConsultsQnAFever}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
+}
+
+const Tab = createBottomTabNavigator();
+//put the link that you want to show on the navbar here
+const ButtomNavbar = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        tabBarHideOnKeyboard: true,
+        tabBarStyle: {
+          borderRadius: 15,
+          left: 5,
+          right: 5,
+          bottom: 5,
+          position: 'absolute',
+        },
+      }}
+      tabBarOptions={{showLabel: false}}>
+      <Tab.Screen
+        name="HomeStackScreen"
+        component={HomeStackScreen}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <Image
+                source={require('./app/icon/home-navbar.png')}
+                style={[
+                  styles.tabicons,
+                  {tintColor: focused ? '#3791fc' : '#748c94'},
+                ]}
+              />
+              <Text
+                style={[
+                  styles.tabtext,
+                  {color: focused ? '#3791fc' : '#748c94'},
+                ]}>
+                Home
+              </Text>
+            </View>
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="EConsultsStart"
+        component={EConsultsStart}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <Image
+                source={require('./app/icon/econsult-navbar.png')}
+                style={[
+                  styles.tabicons,
+                  {tintColor: focused ? '#3791fc' : '#748c94'},
+                ]}
+              />
+              <Text
+                style={[
+                  styles.tabtext,
+                  {color: focused ? '#3791fc' : '#748c94'},
+                ]}>
+                e-consult
+              </Text>
+            </View>
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Inbox"
+        component={HomeStackScreen} //placeholder
+        options={{
+          headerShown: false,
+          tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <Image
+                source={require('./app/icon/inbox-navbar.png')}
+                style={[
+                  styles.tabicons,
+                  {tintColor: focused ? '#3791fc' : '#748c94'},
+                ]}
+              />
+              <Text
+                style={[
+                  styles.tabtext,
+                  {color: focused ? '#3791fc' : '#748c94'},
+                ]}>
+                Inbox
+              </Text>
+            </View>
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Profile"
+        component={HomeStackScreen} //placeholder
+        options={{
+          headerShown: false,
+          tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <Image
+                source={require('./app/icon/profile-navbar.png')}
+                style={[
+                  styles.tabicons,
+                  {tintColor: focused ? '#3791fc' : '#748c94'},
+                ]}
+              />
+              <Text
+                style={[
+                  styles.tabtext,
+                  {color: focused ? '#3791fc' : '#748c94'},
+                ]}>
+                Profile
+              </Text>
+            </View>
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
 };
+
+const HomeStack = createNativeStackNavigator();
+function HomeStackScreen() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="HomePage"
+        component={HomePage}
+        options={{headerShown: false}}
+      />
+
+      <HomeStack.Screen
+        name="Appointments"
+        component={Appointments}
+        options={{headerShown: false}}
+      />
+
+      <HomeStack.Screen
+        name="NewAppt"
+        component={NewAppt}
+        options={{headerShown: false}}
+      />
+
+      <HomeStack.Screen
+        name="HealthRecords"
+        component={HealthRecords}
+        options={{headerShown: false}}
+      />
+
+      <HomeStack.Screen
+        name="DietTracking"
+        component={DietTracking}
+        options={{headerShown: false}}
+      />
+
+      <HomeStack.Screen
+        name="Caregiver"
+        component={Caregiver}
+        options={{headerShown: false}}
+      />
+      <HomeStack.Screen
+        name="Payment"
+        component={Payment}
+        options={{headerShown: false}}
+      />
+
+      <HomeStack.Screen
+        name="Bills"
+        component={Bills}
+        options={{headerShown: false}}
+      />
+
+      <HomeStack.Screen
+        name="BillsLO"
+        component={BillsLO}
+        options={{headerShown: false}}
+      />
+
+      <HomeStack.Screen
+        name="EConsultsStart"
+        component={EConsultsStart}
+        options={{headerShown: false}}
+      />
+    </HomeStack.Navigator>
+  );
+}
+
+const styles = StyleSheet.create({
+  tabicons: {
+    width: 35,
+    height: 35,
+    top: 2,
+    resizeMode: 'contain',
+  },
+
+  tabtext: {
+    fontSize: 12,
+  },
+});
