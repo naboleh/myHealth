@@ -30,6 +30,7 @@ import EConsultsQnADrugName from './app/pages/EConsultsQnADrugName';
 import EConsultsQnAFever from './app/pages/EConsultsQnAFever';
 import EConsultsVideo from './app/pages/EConsultsVideo';
 import EConsultsStart from './app/pages/EConsultsStart';
+import EConsultsQnAPainPoints from './app/pages/EConsultsQnAPainPoints';
 
 const Stack = createNativeStackNavigator();
 
@@ -155,6 +156,11 @@ export default function App() {
            options={{headerShown: false}}
          />
 
+         <Stack.Screen
+           name="EConsultsQnAPainPoints"
+           component={EConsultsQnAPainPoints}
+           options={{headerShown: false}}
+         />
 
       </Stack.Navigator> 
     </NavigationContainer>

@@ -13,7 +13,18 @@ import CheckBox from '@react-native-community/checkbox';
 import NurseLion from '../mascots/LionNurse.js';
 
 export default function EConsultsQnASymptoms({ navigation }) {
-    const [toggleCheckBox, setToggleCheckBox] = useState(false)
+    const [toggleFever, setToggleFever,
+           toggleCough, setToggleCough,
+           toggleColdFlu, setToggleColdFlu,
+           toggleDiarrhea, setToggleDiarrhea,
+           toggleNauseaVomit, setToggleNauseaVomit,
+           toggleHearing, setToggleHearing,
+           togglePain, setTogglePain,
+           toggleBreath, setToggleBreath,
+           toggleSwelling, setToggleSwelling,
+           toggleVision, setToggleVision,
+           toggleMenstrual, setToggleMenstrual,
+           toggleOthers, setToggleOthers] = useState(false)
 
     return (
       <View style={styles.topcontainer}>
@@ -32,32 +43,32 @@ export default function EConsultsQnASymptoms({ navigation }) {
                 <View style={styles.checkboxContainer}>
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={toggleFever}
+                    onValueChange={(newValue) => setToggleFever(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Fever</Text>
 
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={toggleCough}
+                    onValueChange={(newValue) => setToggleCough(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Cough</Text>
 
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={toggleColdFlu}
+                    onValueChange={(newValue) => setToggleColdFlu(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Cold and Flu</Text>
 
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={toggleDiarrhea}
+                    onValueChange={(newValue) => setToggleDiarrhea(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Diarrhea</Text>
@@ -67,16 +78,16 @@ export default function EConsultsQnASymptoms({ navigation }) {
                 <View style={styles.checkboxContainer2}>
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={toggleNauseaVomit}
+                    onValueChange={(newValue) => setToggleNauseaVomit(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Nausea and Vomiting</Text>
 
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={toggleHearing}
+                    onValueChange={(newValue) => setToggleHearing(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Hearing Problem</Text>
@@ -86,24 +97,24 @@ export default function EConsultsQnASymptoms({ navigation }) {
                 <View style={styles.checkboxContainer3}>
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={togglePain}
+                    onValueChange={(newValue) => setTogglePain(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Body Pain</Text>
 
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={toggleBreath}
+                    onValueChange={(newValue) => setToggleBreath(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Shortness of Breath</Text>
 
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={toggleSwelling}
+                    onValueChange={(newValue) => setToggleSwelling(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Swelling</Text>
@@ -113,24 +124,24 @@ export default function EConsultsQnASymptoms({ navigation }) {
                 <View style={styles.checkboxContainer4}>
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={toggleVision}
+                    onValueChange={(newValue) => setToggleVision(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Vision Problem</Text>
 
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={toggleMenstrual}
+                    onValueChange={(newValue) => setToggleMenstrual(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Menstrual Problem</Text>
 
                   <CheckBox
                     disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+                    value={toggleOthers}
+                    onValueChange={(newValue) => setToggleOthers(newValue)}
                     style={styles.checkbox}
                   />
                   <Text style={styles.label}>Others</Text>
@@ -144,7 +155,7 @@ export default function EConsultsQnASymptoms({ navigation }) {
 
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsQnAMedication')}>
+                <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsQnAPainPoints')}>
                    <Text style={styles.title2Text}>Next</Text>
                 </TouchableOpacity>
 

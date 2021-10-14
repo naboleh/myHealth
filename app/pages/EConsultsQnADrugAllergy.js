@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import RadioGroup from 'react-native-radio-buttons-group';
+
 import {
   Text,
   View,
@@ -9,7 +11,24 @@ import {
 
 import NurseLion from '../mascots/LionNurse.js';
 
+const radioButtonsData = [{
+    id: '1', // acts as primary key, should be unique and non-empty string
+    label: 'Yes',
+    value: 'yes'
+}, {
+    id: '2',
+    label: 'No',
+    value: 'no'
+}]
+
 export default function EConsultsQnADrugAllergy({ navigation }) {
+
+    const [radioButtons, setRadioButtons] = useState(radioButtonsData)
+
+    function onPressRadioButton(radioButtonsArray) {
+        setRadioButtons(radioButtonsArray);
+    }
+
     return (
           <View style={styles.topcontainer}>
             <ImageBackground source={require('../backgrounds/zzECONSULTBG.png')} style={{height:'100%', width: '100%'}}>
@@ -22,6 +41,15 @@ export default function EConsultsQnADrugAllergy({ navigation }) {
 
                     <View style={styles.symptomsQ} onPress={() => navigation.navigate('nil')}>
                       <Text style={styles.subtitleText}>Do you have any drug allergies?</Text>
+                    </View>
+
+                    <View style={styles.radioContainer}>
+                      <RadioGroup
+                      radioButtons={radioButtons}
+                      onPress={onPressRadioButton}
+                      layout='row'
+                      style={styles.radioBtn}
+                    />
                     </View>
 
                     <TouchableOpacity style={styles.backbutton} onPress={() => navigation.navigate('EConsultsQnAMedName')}>
@@ -78,6 +106,17 @@ export default function EConsultsQnADrugAllergy({ navigation }) {
               marginVertical: "2%",
               marginLeft: "10%"
       },
+      radioContainer: {
+        flexDirection: "row",
+        marginBottom: -35,
+        marginTop: 30,
+        marginLeft: 100
+      },
+      radioBtn: {
+        alignSelf: "center",
+        fontSize:  18,
+        fontFamily: 'Quicksand-Bold'
+      },
       titleText: {
         marginLeft: "7%",
         marginVertical: "5%",
@@ -116,7 +155,7 @@ export default function EConsultsQnADrugAllergy({ navigation }) {
           fontSize:  18,
           fontFamily: 'Quicksand-Bold',
           marginLeft: "5%",
-          marginVertical: "38%",
+          marginVertical: "30%",
         },
         nextbutton: {
               backgroundColor: '#e9b430',
@@ -130,7 +169,7 @@ export default function EConsultsQnADrugAllergy({ navigation }) {
               fontSize:  18,
               fontFamily: 'Quicksand-Bold',
               marginLeft: "81%",
-              marginVertical: "-51%",
+              marginVertical: "-42.5%",
             },
 
     });
