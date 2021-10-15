@@ -57,7 +57,7 @@ export default function EConsultsQnAFever({ navigation }) {
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsStart')}>
+                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsWaitingRoom')}>
                      <Text style={styles.title2Text}>Next</Text>
                     </TouchableOpacity>
 

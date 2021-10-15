@@ -30,8 +30,10 @@ import EConsultsQnADrugAllergy from './app/pages/EConsultsQnADrugAllergy';
 import EConsultsQnADrugName from './app/pages/EConsultsQnADrugName';
 import EConsultsQnAFever from './app/pages/EConsultsQnAFever';
 import EConsultsVideo from './app/pages/EConsultsVideo';
-import EConsultsStart from './app/pages/EConsultsStart';
+import EConsultsLandingPage from './app/pages/EConsultsLandingPage';
 import EConsultsQnAPainPoints from './app/pages/EConsultsQnAPainPoints';
+import EConsultsWaitingRoom from './app/pages/EConsultsWaitingRoom';
+
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -109,6 +111,12 @@ export default function App() {
           component={EConsultsQnAFever}
           options={{headerShown: false}}
         />
+
+        <Stack.Screen
+          name="EConsultsWaitingRoom"
+          component={EConsultsWaitingRoom}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -157,8 +165,8 @@ const ButtomNavbar = () => {
       />
 
       <Tab.Screen
-        name="EConsultsStart"
-        component={EConsultsStart}
+        name="EConsultsLandingPage"
+        component={EConsultsLandingPage}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (
@@ -295,8 +303,8 @@ function HomeStackScreen() {
       />
 
       <HomeStack.Screen
-        name="EConsultsStart"
-        component={EConsultsStart}
+        name="EConsultsLandingPage"
+        component={EConsultsLandingPage}
         options={{headerShown: false}}
       />
     </HomeStack.Navigator>

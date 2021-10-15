@@ -55,7 +55,7 @@ export default function HomePage({navigation}) {
 
             <TouchableOpacity
               style={styles.MainPageItem}
-              onPress={() => navigation.jumpTo('EConsultsStart')}>
+              onPress={() => navigation.jumpTo('EConsultsLandingPage')}>
               <Image
                 style={[styles.image, {backgroundColor: '#83b7b5'}]}
                 source={require('../icon/zzECONSULT.png')}
