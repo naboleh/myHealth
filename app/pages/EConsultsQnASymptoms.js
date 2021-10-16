@@ -150,7 +150,7 @@ export default function EConsultsQnASymptoms({ navigation }) {
 
 
 
-                <TouchableOpacity style={styles.backbutton} onPress={() => navigation.navigate('HomePage')}>
+                <TouchableOpacity style={styles.backbutton} onPress={() => navigation.navigate('EConsultsLandingPage')}>
                    <Text style={styles.title2Text}>Back</Text>
 
                 </TouchableOpacity>
