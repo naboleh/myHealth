@@ -34,7 +34,6 @@ import EConsultsLandingPage from './app/pages/EConsultsLandingPage';
 import EConsultsQnAPainPoints from './app/pages/EConsultsQnAPainPoints';
 import EConsultsWaitingRoom from './app/pages/EConsultsWaitingRoom';
 
-
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -187,6 +186,7 @@ const ButtomNavbar = () => {
               </Text>
             </View>
           ),
+          tabBarStyle: {display: 'none'},
         }}
       />
 
