@@ -94,7 +94,7 @@ export default function EConsultsQnAMedication({ navigation }) {
       },
       medicationQ: {
               flexDirection: 'column',
-              backgroundColor: '#fbe5a0',
+              backgroundColor: '#83b7b5',
               textAlign: 'center',
               color: 'black',
               width: '80%',
@@ -145,7 +145,7 @@ export default function EConsultsQnAMedication({ navigation }) {
         marginVertical: "5%",
       },
       backbutton: {
-          backgroundColor: '#e9b430',
+          backgroundColor: '#b3d3d2',
           color: 'white',
           width: '15%',
           height: '8%',
@@ -159,7 +159,7 @@ export default function EConsultsQnAMedication({ navigation }) {
           marginVertical: "30%",
         },
         nextbutton: {
-              backgroundColor: '#e9b430',
+              backgroundColor: '#b3d3d2',
               color: 'white',
               width: '15%',
               height: '8%',
