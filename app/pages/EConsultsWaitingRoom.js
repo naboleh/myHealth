@@ -18,32 +18,104 @@ export default function EConsultsWaitingRoom({ navigation }) {
     return (
       <View style={styles.container}>
         <ImageBackground source={require('../backgrounds/WaitingRoomBG.png')} style={{height:'100%', width: '100%'}}>
+              <View style={styles.topnavcontainer}>
+                 <Text style={styles.topnavcontainer}>E-Consultation</Text>
+              </View>
+                    <TouchableOpacity style={styles.backbutton} onPress={() => navigation.navigate('HomePage')}>
+                           <Image source={require('../icon/backicon.png')}/>
+                       </TouchableOpacity>
+           <View style={styles.bodycontainer}>
+
            <TouchableOpacity onPress={() => navigation.navigate('EConsultsQnASymptoms')}>
-              <Text style={styles.startsessionbutton}>Start Session</Text>
+              <Text style={styles.articlebutton}>Articles and Programmes</Text>
            </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => navigation.navigate('KnowYourBody')}>
+                           <Text style={styles.bodybutton}>Know Your Body</Text>
+                      </TouchableOpacity>
+            </View>
+
+           <View style={styles.bodycontainer}>
+           <TouchableOpacity onPress={() => navigation.navigate('EConsultsQnASymptoms')}>
+                <Text style={styles.gamebutton}>Games</Text>
+           </TouchableOpacity>
+           </View>
+
         </ImageBackground>
        </View>
               );
           }
 
 const styles = StyleSheet.create({
+  backbutton: {
+         width: 40,
+         height: 40,
+         position: 'absolute',
+         left: 10,
+         top: 8
+       },
+  topnavcontainer: {
+        width: "100%",
+        backgroundColor: '#ffffff',
+        color: '#003f5c',
+        height: 60,
+        textAlign: 'center',
+        justifyContent: 'center',
+        fontSize:  20,
+        fontFamily: 'Quicksand-Bold',
+        paddingTop: 10
+      },
   container: {
       flexGrow: 1,
       alignItems: 'center',
       justifyContent: 'flex-end'
     },
-  startsessionbutton: {
-    backgroundColor: '#edd0d9',
+    bodycontainer: {
+          alignItems: 'flex-end',
+          justifyContent: 'space-between',
+          flexDirection:"row",
+          marginLeft: 30,
+        },
+  articlebutton: {
+    backgroundColor: '#ffffff',
     color: '#003f5c',
-    width: "40%",
-    height: 70,
-    borderRadius: 25,
+    height: 50,
+    width: 105,
+    borderRadius: 15,
     textAlign: 'center',
     justifyContent: 'center',
-    paddingVertical: 20,
-    fontSize:  18,
-    fontFamily: 'Quicksand-Medium',
-    marginVertical: "75%",
-    marginLeft: "30%",
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    fontSize:  11,
+    fontFamily: 'Quicksand-Bold',
+    marginTop: "30%",
+    marginLeft: "10%",
   },
+ bodybutton: {
+      backgroundColor: '#ffffff',
+      color: '#003f5c',
+      height: 48,
+      width: 80,
+      borderRadius: 15,
+      textAlign: 'center',
+      justifyContent: 'center',
+      paddingVertical: 8,
+      marginHorizontal: 65,
+      fontSize:  11,
+      fontFamily: 'Quicksand-Bold',
+    },
+    gamebutton: {
+          backgroundColor: '#ffffff',
+          color: '#003f5c',
+          height: 35,
+          width: 70,
+          borderRadius: 15,
+          textAlign: 'center',
+          justifyContent: 'center',
+          paddingVertical: 8,
+          marginLeft: 270,
+          marginVertical: 190,
+          fontSize:  11,
+          fontFamily: 'Quicksand-Bold',
+        },
 });

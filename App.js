@@ -33,7 +33,9 @@ import EConsultsVideo from './app/pages/EConsultsVideo';
 import EConsultsLandingPage from './app/pages/EConsultsLandingPage';
 import EConsultsQnAPainPoints from './app/pages/EConsultsQnAPainPoints';
 import EConsultsWaitingRoom from './app/pages/EConsultsWaitingRoom';
-
+import KnowYourBody from './app/pages/KnowYourBody';
+import KnowYourLungs from './app/pages/KnowYourLungs';
+import KnowYourLiver from './app/pages/KnowYourLiver';
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -114,6 +116,24 @@ export default function App() {
         <Stack.Screen
           name="EConsultsWaitingRoom"
           component={EConsultsWaitingRoom}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="KnowYourBody"
+          component={KnowYourBody}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="KnowYourLungs"
+          component={KnowYourLungs}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="KnowYourLiver"
+          component={KnowYourLiver}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
@@ -213,6 +233,7 @@ const ButtomNavbar = () => {
               </Text>
             </View>
           ),
+          tabBarStyle: {display: 'none'},
         }}
       />
 
