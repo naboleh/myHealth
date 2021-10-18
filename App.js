@@ -183,10 +183,11 @@ const ButtomNavbar = () => {
                   styles.tabtext,
                   {color: focused ? '#3791fc' : '#748c94'},
                 ]}>
-                e-consult
+                E-Consultations
               </Text>
             </View>
           ),
+          tabBarStyle: {display: 'none'},
         }}
       />
 
