@@ -36,6 +36,7 @@ import EConsultsWaitingRoom from './app/pages/EConsultsWaitingRoom';
 import KnowYourBody from './app/pages/KnowYourBody';
 import KnowYourLungs from './app/pages/KnowYourLungs';
 import KnowYourLiver from './app/pages/KnowYourLiver';
+
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
