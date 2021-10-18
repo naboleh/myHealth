@@ -143,6 +143,7 @@ const styles = StyleSheet.create({
     width: '95%',
     borderRadius: 25,
     marginLeft: '3%',
+    marginBottom: 50,
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
