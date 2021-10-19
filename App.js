@@ -234,7 +234,6 @@ const ButtomNavbar = () => {
               </Text>
             </View>
           ),
-          tabBarStyle: {display: 'none'},
         }}
       />
 
