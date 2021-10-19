@@ -137,6 +137,7 @@ export default function App() {
           component={KnowYourLiver}
           options={{headerShown: false}}
         />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

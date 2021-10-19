@@ -29,7 +29,7 @@ export default function EConsultsLandingPage({ navigation }) {
                        </TouchableOpacity>
                     </View>
                         <View style={styles.startcontainer}>
-                             <Text style={styles.subtitleText}>Welcome to MyHealth E-Consultation! Click start to begin a session.</Text>
+                             <Text style={styles.subtitleText}>Welcome to MyHealth E-Consultation! {"\n"} Click start to begin a session.</Text>
                          </View>
                     <View style={styles.startcontainer}>
                       <TouchableOpacity onPress={() => navigation.navigate('EConsultsQnASymptoms')}>
@@ -63,13 +63,14 @@ const styles = StyleSheet.create({
        top: 8
      },
      startcontainer: {
-     width: '100%',
+     width: '110%',
      height: 55,
      flexDirection: 'row',
      alignItems: 'center',
-     marginLeft: "15%",
+     marginLeft: "12%",
+     marginTop: "8%",
      borderRadius: 5,
-     marginVertical: "10%"
+     marginVertical: "15%"
      },
   subtitleText: {
       fontFamily: 'Quicksand-Bold',
