@@ -11,8 +11,6 @@ import {
 
 import CheckBox from '@react-native-community/checkbox';
 
-
-
 import BodyModel from '../components/BodyModel';
 
 export default function EConsultsQnAPainPoints({ navigation }) {
@@ -53,6 +51,114 @@ export default function EConsultsQnAPainPoints({ navigation }) {
                         onValueChange={(newValue) => setToggleHead(newValue)}
                         style={styles.checkboxHead}
                     />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleEyeEarNoseMouth}
+                        onValueChange={(newValue) => setToggleEyeEarNoseMouth(newValue)}
+                        style={styles.checkboxEyeEarNoseMouth}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleNeck}
+                        onValueChange={(newValue) => setToggleNeck(newValue)}
+                        style={styles.checkboxNeck}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleShoulder}
+                        onValueChange={(newValue) => setToggleShoulder(newValue)}
+                        style={styles.checkboxShoulder}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleArm}
+                        onValueChange={(newValue) => setToggleArm(newValue)}
+                        style={styles.checkboxArm}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleHand}
+                        onValueChange={(newValue) => setToggleHand(newValue)}
+                        style={styles.checkboxHand}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleChest}
+                        onValueChange={(newValue) => setToggleChest(newValue)}
+                        style={styles.checkboxChest}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleHeart}
+                        onValueChange={(newValue) => setToggleHeart(newValue)}
+                        style={styles.checkboxHeart}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleLiver}
+                        onValueChange={(newValue) => setToggleLiver(newValue)}
+                        style={styles.checkboxLiver}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleKidney}
+                        onValueChange={(newValue) => setToggleKidney(newValue)}
+                        style={styles.checkboxKidney}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleStomach}
+                        onValueChange={(newValue) => setToggleStomach(newValue)}
+                        style={styles.checkboxStomach}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleIntestines}
+                        onValueChange={(newValue) => setToggleIntestines(newValue)}
+                        style={styles.checkboxIntestines}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleWaist}
+                        onValueChange={(newValue) => setToggleWaist(newValue)}
+                        style={styles.checkboxWaist}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleGenital}
+                        onValueChange={(newValue) => setToggleGenital(newValue)}
+                        style={styles.checkboxGenital}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleThigh}
+                        onValueChange={(newValue) => setToggleThigh(newValue)}
+                        style={styles.checkboxThigh}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleKnee}
+                        onValueChange={(newValue) => setToggleKnee(newValue)}
+                        style={styles.checkboxKnee}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleCalf}
+                        onValueChange={(newValue) => setToggleCalf(newValue)}
+                        style={styles.checkboxCalf}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleShin}
+                        onValueChange={(newValue) => setToggleShin(newValue)}
+                        style={styles.checkboxShin}
+                    />
+                    <CheckBox
+                        disabled={false}
+                        value={toggleFoot}
+                        onValueChange={(newValue) => setToggleFoot(newValue)}
+                        style={styles.checkboxFoot}
+                    />
 
 
 
@@ -88,7 +194,97 @@ export default function EConsultsQnAPainPoints({ navigation }) {
       checkboxHead: {
         alignSelf: "center",
         marginLeft: 100,
-        marginTop: 28,
+        marginTop: 18,
+        position: 'absolute'
+      },
+      checkboxEyeEarNoseMouth: {
+        marginLeft: 160,
+        marginTop: 45,
+        position: 'absolute'
+      },
+      checkboxNeck: {
+        marginLeft: 160,
+        marginTop: 80,
+        position: 'absolute'
+      },
+      checkboxShoulder: {
+        marginLeft: 130,
+        marginTop: 95,
+        position: 'absolute'
+      },
+      checkboxArm: {
+        marginLeft: 110,
+        marginTop: 170,
+        position: 'absolute'
+      },
+      checkboxHand: {
+        marginLeft: 72,
+        marginTop: 270,
+        position: 'absolute'
+      },
+      checkboxChest: {
+        marginLeft: 183,
+        marginTop: 125,
+        position: 'absolute'
+      },
+      checkboxHeart: {
+        marginLeft: 172,
+        marginTop: 140,
+        position: 'absolute'
+      },
+      checkboxLiver: {
+        marginLeft: 155,
+        marginTop: 165,
+        position: 'absolute'
+      },
+      checkboxKidney: {
+        marginLeft: 192,
+        marginTop: 170,
+        position: 'absolute'
+      },
+      checkboxStomach: {
+        marginLeft: 173,
+        marginTop: 177,
+        position: 'absolute'
+      },
+      checkboxIntestines: {
+        marginLeft: 165,
+        marginTop: 210,
+        position: 'absolute'
+      },
+      checkboxWaist: {
+        marginLeft: 205,
+        marginTop: 205,
+        position: 'absolute'
+      },
+      checkboxGenital: {
+        marginLeft: 171,
+        marginTop: 255,
+        position: 'absolute'
+      },
+      checkboxThigh: {
+        marginLeft: 140,
+        marginTop: 300,
+        position: 'absolute'
+      },
+      checkboxKnee: {
+        marginLeft: 143,
+        marginTop: 380,
+        position: 'absolute'
+      },
+      checkboxCalf: {
+        marginLeft: 160,
+        marginTop: 415,
+        position: 'absolute'
+      },
+      checkboxShin: {
+        marginLeft: 138,
+        marginTop: 450,
+        position: 'absolute'
+      },
+      checkboxFoot: {
+        marginLeft: 140,
+        marginTop: 500,
         position: 'absolute'
       },
       titleText: {
