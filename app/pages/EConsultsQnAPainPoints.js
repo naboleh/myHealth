@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {
   Text,
@@ -6,12 +6,38 @@ import {
   StyleSheet,
   TouchableOpacity,
   ImageBackground,
+  Image,
 } from 'react-native';
 
+import CheckBox from '@react-native-community/checkbox';
 
 
+
+import BodyModel from '../components/BodyModel';
 
 export default function EConsultsQnAPainPoints({ navigation }) {
+    const [toggleHead, setToggleHead] = useState(false)
+    const [toggleEyeEarNoseMouth, setToggleEyeEarNoseMouth] = useState(false)
+    const [toggleNeck, setToggleNeck] = useState(false)
+    const [toggleShoulder, setToggleShoulder] = useState(false)
+    const [toggleArm, setToggleArm] = useState(false)
+    const [toggleHand, setToggleHand] = useState(false)
+    const [toggleChest, setToggleChest] = useState(false)
+    const [toggleHeart, setToggleHeart] = useState(false)
+    const [toggleLiver, setToggleLiver] = useState(false)
+    const [toggleKidney, setToggleKidney] = useState(false)
+    const [toggleStomach, setToggleStomach] = useState(false)
+    const [toggleIntestines, setToggleIntestines] = useState(false)
+    const [toggleWaist, setToggleWaist] = useState(false)
+    const [toggleBack, setToggleBack] = useState(false)
+    const [toggleGenital, setToggleGenital] = useState(false)
+    const [toggleButtock, setToggleButtock] = useState(false)
+    const [toggleThigh, setToggleThigh] = useState(false)
+    const [toggleKnee, setToggleKnee] = useState(false)
+    const [toggleCalf, setToggleCalf] = useState(false)
+    const [toggleShin, setToggleShin] = useState(false)
+    const [toggleFoot, setToggleFoot] = useState(false)
+    const [toggleBones, setToggleBones] = useState(false)
 
     return (
       <View style={styles.topcontainer}>
@@ -19,13 +45,19 @@ export default function EConsultsQnAPainPoints({ navigation }) {
         <Text style={styles.titleText}>E-Consultations</Text>
 
             <View style={styles.overlayContainer}>
+                <BodyModel />
 
+                    <CheckBox
+                        disabled={false}
+                        value={toggleHead}
+                        onValueChange={(newValue) => setToggleHead(newValue)}
+                        style={styles.checkboxHead}
+                    />
 
 
 
                 <TouchableOpacity style={styles.backbutton} onPress={() => navigation.navigate('EConsultsQnASymptoms')}>
                    <Text style={styles.title2Text}>Back</Text>
-
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsQnAMedication')}>
@@ -53,29 +85,11 @@ export default function EConsultsQnAPainPoints({ navigation }) {
         marginLeft: '5%',
         marginBottom: '2%'
       },
-      mascot: {
-        flexDirection: 'row',
-        textAlign: 'center',
-        backgroundColor: '#fff',
-        height: '40%',
-        width: '38%',
-        borderRadius: 25,
-        marginLeft: '21%',
-        marginBottom: '0%',
-      },
-      symptomsQ: {
-              flexDirection: 'column',
-              backgroundColor: '#83b7b5',
-              textAlign: 'center',
-              color: 'black',
-              width: '80%',
-              height: '15%',
-              borderRadius: 15,
-              paddingVertical: '5%',
-              fontSize:  18,
-              fontFamily: 'Quicksand-Bold',
-              marginVertical: "5%",
-              marginLeft: "10%"
+      checkboxHead: {
+        alignSelf: "center",
+        marginLeft: 100,
+        marginTop: 28,
+        position: 'absolute'
       },
       titleText: {
         marginLeft: "7%",
@@ -114,8 +128,9 @@ export default function EConsultsQnAPainPoints({ navigation }) {
           textAlignVertical: "center",
           fontSize:  18,
           fontFamily: 'Quicksand-Bold',
-          marginLeft: "5%",
-          marginVertical: "138%",
+          marginLeft: 20,
+          marginTop: 510,
+          position: 'absolute'
         },
         nextbutton: {
               backgroundColor: '#b3d3d2',
@@ -128,8 +143,9 @@ export default function EConsultsQnAPainPoints({ navigation }) {
               textAlignVertical: "center",
               fontSize:  18,
               fontFamily: 'Quicksand-Bold',
-              marginLeft: "80%",
-              marginVertical: "-151%",
+              marginLeft: 295,
+              marginTop: 510,
+              position: 'absolute'
             },
 
     });

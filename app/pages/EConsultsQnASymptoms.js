@@ -13,18 +13,18 @@ import CheckBox from '@react-native-community/checkbox';
 import NurseLion from '../mascots/LionNurse.js';
 
 export default function EConsultsQnASymptoms({ navigation }) {
-    const [toggleFever, setToggleFever,
-           toggleCough, setToggleCough,
-           toggleColdFlu, setToggleColdFlu,
-           toggleDiarrhea, setToggleDiarrhea,
-           toggleNauseaVomit, setToggleNauseaVomit,
-           toggleHearing, setToggleHearing,
-           togglePain, setTogglePain,
-           toggleBreath, setToggleBreath,
-           toggleSwelling, setToggleSwelling,
-           toggleVision, setToggleVision,
-           toggleMenstrual, setToggleMenstrual,
-           toggleOthers, setToggleOthers] = useState(false)
+    const [toggleFever, setToggleFever] = useState(false)
+    const [toggleCough, setToggleCough] = useState(false)
+    const [toggleColdFlu, setToggleColdFlu] = useState(false)
+    const [toggleDiarrhea, setToggleDiarrhea] = useState(false)
+    const [toggleNauseaVomit, setToggleNauseaVomit] = useState(false)
+    const [toggleHearing, setToggleHearing] = useState(false)
+    const [togglePain, setTogglePain] = useState(false)
+    const [toggleBreath, setToggleBreath] = useState(false)
+    const [toggleSwelling, setToggleSwelling] = useState(false)
+    const [toggleVision, setToggleVision] = useState(false)
+    const [toggleMenstrual, setToggleMenstrual] = useState(false)
+    const [toggleOthers, setToggleOthers] = useState(false)
 
     return (
       <View style={styles.topcontainer}>

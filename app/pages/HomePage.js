@@ -32,7 +32,7 @@ export default function HomePage({ navigation }) {
                   <Image style={[styles.image, {backgroundColor: "#c76d73"}]} source={require('../icon/zzAPPT.png')}/>
                 </TouchableOpacity>
 
-                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('ChatFragment')}>
+                 <TouchableOpacity style={styles.MainPageItem} onPress={() => navigation.navigate('EConsultsLandingPage')}>
                   <Image style={[styles.image, {backgroundColor: "#83b7b5"}]} source={require('../icon/zzECONSULT.png')}/>
                 </TouchableOpacity>
 
