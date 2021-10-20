@@ -13,6 +13,7 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
+import DelayIncomingCalls from '../components/DelayIncomingCall'; //image styles change inside delayincomingcall.js
 
 export default function EConsultsWaitingRoom({ navigation }) {
     return (
@@ -39,6 +40,12 @@ export default function EConsultsWaitingRoom({ navigation }) {
            <TouchableOpacity onPress={() => navigation.navigate('Game1')}>
                 <Text style={styles.gamebutton}>Games</Text>
            </TouchableOpacity>
+           </View>
+
+           <View>
+             <TouchableOpacity onPress={() => navigation.navigate('EConsultsVideo')}>
+              <DelayIncomingCalls/>
+             </TouchableOpacity>
            </View>
 
         </ImageBackground>
