@@ -37,6 +37,7 @@ import KnowYourBody from './app/pages/KnowYourBody';
 import KnowYourLungs from './app/pages/KnowYourLungs';
 import KnowYourLiver from './app/pages/KnowYourLiver';
 import NewsPage from './app/pages/NewsPage';
+import Article1 from './app/pages/Article1';
 import Game1 from './app/games/Game1';
 
 
@@ -143,6 +144,11 @@ export default function App() {
         <Stack.Screen
           name="NewsPage"
           component={NewsPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Article1"
+          component={Article1}
           options={{headerShown: false}}
         />
 
