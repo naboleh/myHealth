@@ -18,13 +18,20 @@ import DelayIncomingCalls from '../components/DelayIncomingCall'; //image styles
 export default function EConsultsWaitingRoom({ navigation }) {
     return (
       <View style={styles.container}>
-        <ImageBackground source={require('../backgrounds/WaitingRoomBG.png')} style={{height:'100%', width: '100%'}}>
+        <ImageBackground source={require('../backgrounds/WaitingRoom.png')} style={{height:'100%', width: '100%'}}>
               <View style={styles.topnavcontainer}>
                  <Text style={styles.topnavcontainer}>E-Consultation</Text>
               </View>
                     <TouchableOpacity style={styles.backbutton} onPress={() => navigation.navigate('HomePage')}>
                            <Image source={require('../icon/backicon.png')}/>
                        </TouchableOpacity>
+
+                        <View>
+                                    <TouchableOpacity onPress={() => navigation.navigate('EConsultsVideo')}>
+                                     <DelayIncomingCalls/>
+                                    </TouchableOpacity>
+                                  </View>
+
            <View style={styles.bodycontainer}>
 
            <TouchableOpacity onPress={() => navigation.navigate('EConsultsQnASymptoms')}>
@@ -40,12 +47,6 @@ export default function EConsultsWaitingRoom({ navigation }) {
            <TouchableOpacity onPress={() => navigation.navigate('Game1')}>
                 <Text style={styles.gamebutton}>Games</Text>
            </TouchableOpacity>
-           </View>
-
-           <View>
-             <TouchableOpacity onPress={() => navigation.navigate('EConsultsVideo')}>
-              <DelayIncomingCalls/>
-             </TouchableOpacity>
            </View>
 
         </ImageBackground>
@@ -81,7 +82,8 @@ const styles = StyleSheet.create({
           alignItems: 'flex-end',
           justifyContent: 'space-between',
           flexDirection:"row",
-          marginLeft: 30,
+          marginLeft: 40,
+          marginTop: 40,
         },
   articlebutton: {
     backgroundColor: '#ffffff',
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
           justifyContent: 'center',
           paddingVertical: 8,
           marginLeft: 270,
-          marginVertical: 190,
+          marginVertical: 140,
           fontSize:  11,
           fontFamily: 'Quicksand-Bold',
         },

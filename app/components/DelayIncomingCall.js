@@ -32,7 +32,7 @@ class DelayIncomingCalls extends React.Component {
         let msg = false;
         if (this.state.show) { //so by default when timer not 0 is false, after timeout, state becomes true
             //if true update the contents to be displayed
-            msg = <Image source={require('../icon/incomingalert.png')} style={styles.alertImg}/>;
+            msg = <Image source={require('../icon/incomingcall.png')} style={styles.alertImg}/>;
         }
         return (
             msg
@@ -42,12 +42,14 @@ class DelayIncomingCalls extends React.Component {
 //change the position of the image here
 const styles = StyleSheet.create({
     alertImg: {
-        height: 70,
-        width: 350,
-        backgroundColor: '#ffffff',
-        borderRadius: 15,
-        marginLeft: '6.5%',
-        marginTop: '-30%',
+        height: 520,
+        width: 300,
+        backgroundColor: '#444444',
+        opacity: 0.9,
+        borderRadius: 25,
+        marginTop:'10%',
+        marginLeft: '15%',
+
     },
 });
 
