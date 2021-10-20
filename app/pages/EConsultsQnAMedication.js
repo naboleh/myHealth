@@ -36,7 +36,7 @@ export default function EConsultsQnAMedication({ navigation }) {
 
                 <View style={styles.overlayContainer}>
                     <View style={styles.mascot}>
-                        <NurseLion width={260} height={220} />
+                        <NurseLion width={260} height={300} />
                     </View>
 
                     <View style={styles.medicationQ} >
@@ -76,7 +76,7 @@ export default function EConsultsQnAMedication({ navigation }) {
         flexGrow: 1,
         textAlign: 'center',
         backgroundColor: '#fff',
-        height: '90%',
+        height: '95%',
         width: '90%',
         borderRadius: 25,
         marginLeft: '5%',
@@ -103,14 +103,14 @@ export default function EConsultsQnAMedication({ navigation }) {
               paddingVertical: '5%',
               fontSize:  18,
               fontFamily: 'Quicksand-Bold',
-              marginVertical: "2%",
+              marginVertical: 0.1,
               marginLeft: "10%"
       },
       radioContainer: {
         flexDirection: "row",
         marginBottom: -35,
         marginTop: 30,
-        marginLeft: 100
+        marginLeft: 120
       },
       radioBtn: {
         alignSelf: "center",
@@ -156,7 +156,7 @@ export default function EConsultsQnAMedication({ navigation }) {
           fontSize:  18,
           fontFamily: 'Quicksand-Bold',
           marginLeft: "5%",
-          marginVertical: "30%",
+          marginVertical: "29%",
         },
         nextbutton: {
               backgroundColor: '#b3d3d2',
@@ -170,7 +170,7 @@ export default function EConsultsQnAMedication({ navigation }) {
               fontSize:  18,
               fontFamily: 'Quicksand-Bold',
               marginLeft: "81%",
-              marginVertical: "-42.5%",
+              marginVertical: "-42%",
             },
 
     });

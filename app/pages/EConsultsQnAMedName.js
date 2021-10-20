@@ -20,7 +20,7 @@ export default function EConsultsQnAMedName({ navigation }) {
 
                 <View style={styles.overlayContainer}>
                     <View style={styles.mascot}>
-                        <NurseLion width={260} height={220} />
+                        <NurseLion width={260} height={300} />
                     </View>
 
                     <View style={styles.symptomsQ} onPress={() => navigation.navigate('nil')}>
@@ -58,7 +58,7 @@ export default function EConsultsQnAMedName({ navigation }) {
         flexGrow: 1,
         textAlign: 'center',
         backgroundColor: '#fff',
-        height: '90%',
+        height: '95%',
         width: '90%',
         borderRadius: 25,
         marginLeft: '5%',
@@ -140,7 +140,7 @@ export default function EConsultsQnAMedName({ navigation }) {
           fontSize:  18,
           fontFamily: 'Quicksand-Bold',
           left: 20,
-          top: 15,
+          top: -10,
         },
         nextbutton: {
               backgroundColor: '#b3d3d2',
@@ -155,7 +155,7 @@ export default function EConsultsQnAMedName({ navigation }) {
               fontFamily: 'Quicksand-Bold',
               marginLeft: "81%",
               right: 4,
-              bottom: 30,
+              bottom: 60,
             },
 
     });
