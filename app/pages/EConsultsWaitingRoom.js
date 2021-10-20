@@ -34,7 +34,7 @@ export default function EConsultsWaitingRoom({ navigation }) {
 
            <View style={styles.bodycontainer}>
 
-           <TouchableOpacity onPress={() => navigation.navigate('EConsultsQnASymptoms')}>
+           <TouchableOpacity onPress={() => navigation.navigate('NewsPage')}>
               <Text style={styles.articlebutton}>Articles and Programmes</Text>
            </TouchableOpacity>
 
