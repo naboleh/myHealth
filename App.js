@@ -36,6 +36,7 @@ import EConsultsWaitingRoom from './app/pages/EConsultsWaitingRoom';
 import KnowYourBody from './app/pages/KnowYourBody';
 import KnowYourLungs from './app/pages/KnowYourLungs';
 import KnowYourLiver from './app/pages/KnowYourLiver';
+import Game1 from './app/games/Game1';
 
 
 const Stack = createNativeStackNavigator();
@@ -139,6 +140,11 @@ export default function App() {
           options={{headerShown: false}}
         />
 
+        <Stack.Screen
+          name="Game1"
+          component={Game1}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
