@@ -26,7 +26,7 @@ export default function NewsPage({ navigation }) {
                        </TouchableOpacity>
                        <View style={styles.articlecontainer}>
                       <TouchableOpacity onPress={() => navigation.navigate('Article1')}>
-                         <Text style={styles.articlebutton}>Press here</Text>
+                         <Text style={styles.articlebutton}></Text>
                       </TouchableOpacity>
                      </View>
                     </View>
