@@ -17,11 +17,12 @@ export default function HomePage({ navigation }) {
 
           <ScrollView>
 
-            <View style={styles.HeaderContainer}>
-            <Image source={require('../icon/menu.png')} style={{height: 45, width: 45, position: 'absolute', left: 10, }}/>
-            <Image source={require('../icon/icon.jpeg')} style={{height: 55, width: 55, flexDirection: 'row', marginLeft: '43%'}}/>
-            <Image source={require('../icon/search.png')} style={{height: 45, width: 45, position: 'absolute', right: 10, }}/>
-            </View>
+          <View style={styles.HeaderContainer}>
+                      <Image source={require('../icon/menu.png')} style={{height: 45, width: 45, position: 'absolute', left: 10, }}/>
+                      <Image source={require('../icon/icon.jpeg')} style={{height: 55, width: 55, flexDirection: 'row', marginLeft: '43%'}}/>
+                      <Image source={require('../icon/search.png')} style={{height: 45, width: 45, position: 'absolute', right: 10, }}/>
+                      </View>
+
             <View style={styles.carouselContainer}>
               <Image source={require('../backgrounds/carousel-image.jpg')} style={styles.carouselimg}/>
             </View>

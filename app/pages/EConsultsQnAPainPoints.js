@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import CircleCheckBox, {LABEL_POSITION} from 'react-native-circle-checkbox';
 
 import {
   Text,
@@ -45,11 +46,18 @@ export default function EConsultsQnAPainPoints({ navigation }) {
             <View style={styles.overlayContainer}>
                 <BodyModel />
 
-                    <CheckBox
-                        disabled={false}
-                        value={toggleHead}
-                        onValueChange={(newValue) => setToggleHead(newValue)}
-                        style={styles.checkboxHead}
+                        <CheckBox
+                          disabled={false}
+                          value={toggleHead}
+                          onValueChange={(newValue) => setToggleHead(newValue)}
+                          style={styles.checkboxHead}
+
+                        /*<CircleCheckBox
+                          checked={true}
+                          onToggle={(checked) => console.log('My state is: ', checked)}
+                          labelPosition={LABEL_POSITION.RIGHT}
+                          label="Checkbox example"
+                        /> */
                     />
                     <CheckBox
                         disabled={false}

@@ -162,6 +162,7 @@ export default function App() {
   );
 }
 
+
 const Tab = createBottomTabNavigator();
 //put the link that you want to show on the navbar here
 const ButtomNavbar = () => {
@@ -170,10 +171,6 @@ const ButtomNavbar = () => {
       screenOptions={{
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          borderRadius: 15,
-          left: 5,
-          right: 5,
-          bottom: 5,
           position: 'absolute',
         },
       }}
