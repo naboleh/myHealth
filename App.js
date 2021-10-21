@@ -18,6 +18,7 @@ import Appointments from './app/pages/Appointments';
 import NewAppt from './app/pages/NewAppt';
 import Payment from './app/pages/Payment';
 import Bills from './app/pages/Bills';
+import EConsultBill from './app/pages/EConsultBill';
 import BillsLO from './app/pages/BillsLO';
 import Caregiver from './app/pages/Caregiver';
 import HealthRecords from './app/pages/HealthRecords';
@@ -33,6 +34,7 @@ import EConsultsVideo from './app/pages/EConsultsVideo';
 import EConsultsLandingPage from './app/pages/EConsultsLandingPage';
 import EConsultsQnAPainPoints from './app/pages/EConsultsQnAPainPoints';
 import EConsultsWaitingRoom from './app/pages/EConsultsWaitingRoom';
+import EConsultCallEnd from './app/pages/EConsultCallEnd';
 import KnowYourBody from './app/pages/KnowYourBody';
 import KnowYourLungs from './app/pages/KnowYourLungs';
 import KnowYourLiver from './app/pages/KnowYourLiver';
@@ -331,6 +333,12 @@ function HomeStackScreen() {
       <HomeStack.Screen
         name="Bills"
         component={Bills}
+        options={{headerShown: false}}
+      />
+
+      <HomeStack.Screen
+        name="EConsultBill"
+        component={EConsultBill}
         options={{headerShown: false}}
       />
 

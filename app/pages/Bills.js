@@ -21,10 +21,27 @@ export default function Bills({ navigation }) {
         <ImageBackground source={require('../backgrounds/zzPAYMENTBG.png')} style={{height:'100%', width: '100%'}}>
         <Text style={styles.titleText}>Payment</Text>
             <View style={styles.overlayContainer}>
-                <Text style={styles.title2Text}>View your bills</Text>
+                <Text style={[styles.title2Text, {marginVertical: "5%"}]}>View your bills</Text>
 
-                <Text style={styles.subtitleText}>You have no outstanding bills currently.</Text>
-                <Text style={styles.subtitleText}>If you are expecting a bill, our system may still be processing it. Please check back tomorrow. Thank you. </Text>
+            <TouchableOpacity
+              style={styles.billbutton}
+              onPress={() => navigation.navigate('EConsultBill')}>
+              <Text style={styles.title2Text}>PATIENT NAME</Text>
+              <Text style={[styles.title2Text, {fontSize: 20}, , {marginVertical: "5%"}]}>e-Consultation</Text>
+              <Text style={styles.subtitleText}>Invoice 12345678</Text>
+              <Text style={styles.subtitleText}>Balance Due: $24.69</Text>
+              <Text style={styles.subtitleText}>Date of visit: 27 Oct 2021</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.billbutton}
+              onPress={() => navigation.navigate('nil')}>
+              <Text style={styles.title2Text}>PATIENT NAME</Text>
+              <Text style={[styles.title2Text, {fontSize: 20}, , {marginVertical: "5%"}]}>Singapore General Hospital</Text>
+              <Text style={styles.subtitleText}>Invoice 9876543</Text>
+              <Text style={styles.subtitleText}>Balance Due: $38.90</Text>
+              <Text style={styles.subtitleText}>Date of visit: 22 Oct 2021</Text>
+            </TouchableOpacity>
 
             </View>
       </ImageBackground>
@@ -55,7 +72,6 @@ const styles = StyleSheet.create({
   },
     title2Text: {
     marginLeft: "5%",
-    marginVertical: "5%",
     fontFamily: 'Roboto-Medium',
     fontSize: 24,
   },
@@ -66,22 +82,20 @@ const styles = StyleSheet.create({
     marginLeft: '5%',
     marginRight: '5%',
     textAlign: 'justify',
-    marginVertical: "5%",
   },
-  singpassbutton: {
-      backgroundColor: '#ce2029',
-      color: 'white',
-      width: "90%",
-      height: 70,
-      borderRadius: 15,
-      textAlign: 'center',
-      justifyContent: 'center',
-      paddingVertical: 20,
-      fontSize:  18,
-      fontFamily: 'Quicksand-Bold',
-      marginVertical: "5%",
-      marginLeft: "5%"
-    },
+  billbutton: {
+    flexDirection: 'column',
+    backgroundColor: '#f6ce87',
+    color: 'black',
+    width: '90%',
+    height: '30%',
+    borderRadius: 15,
+    paddingVertical: '5%',
+    fontSize: 18,
+    fontFamily: 'Quicksand-Bold',
+    marginVertical: '2%',
+    marginLeft: '5%',
+  },
   TextInput: {
       backgroundColor: '#F6F6F6',
       width: "90%",
