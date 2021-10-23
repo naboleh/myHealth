@@ -20,7 +20,7 @@ class DelayIncomingCalls extends React.Component {
     componentDidMount() {
         this.timer = setTimeout(() => {
             this.setState((state) => ({show: true}));
-        }, 2000); //in milisecs, change this to change delay
+        }, 100000); //in milisecs, change this to change delay
     }
     //clearing timer
     componentWillUnmount() {

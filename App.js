@@ -40,7 +40,9 @@ import KnowYourLungs from './app/pages/KnowYourLungs';
 import KnowYourLiver from './app/pages/KnowYourLiver';
 import NewsPage from './app/pages/NewsPage';
 import Article1 from './app/pages/Article1';
-import Game1 from './app/games/Game1';
+import GamesLandingPage from './app/pages/GamesLandingPage';
+import GameSnake from './app/games/GameSnake';
+import Game2048 from './app/games/Game2048';
 
 
 const Stack = createNativeStackNavigator();
@@ -155,10 +157,23 @@ export default function App() {
         />
 
         <Stack.Screen
-          name="Game1"
-          component={Game1}
+          name="GamesLandingPage"
+          component={GamesLandingPage}
           options={{headerShown: false}}
         />
+
+        <Stack.Screen
+          name="GameSnake"
+          component={GameSnake}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="Game2048"
+          component={Game2048}
+          options={{headerShown: false}}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

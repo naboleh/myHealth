@@ -33,7 +33,6 @@ export default function EConsultsWaitingRoom({ navigation }) {
                                   </View>
 
            <View style={styles.bodycontainer}>
-
            <TouchableOpacity onPress={() => navigation.navigate('NewsPage')}>
               <Text style={styles.articlebutton}>Articles and Programmes</Text>
            </TouchableOpacity>
@@ -44,7 +43,7 @@ export default function EConsultsWaitingRoom({ navigation }) {
             </View>
 
            <View style={styles.bodycontainer}>
-           <TouchableOpacity onPress={() => navigation.navigate('Game1')}>
+           <TouchableOpacity onPress={() => navigation.navigate('GamesLandingPage')}>
                 <Text style={styles.gamebutton}>Games</Text>
            </TouchableOpacity>
            </View>
