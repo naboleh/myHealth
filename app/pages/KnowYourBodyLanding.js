@@ -28,20 +28,15 @@ export default function KnowYourBody({ navigation }) {
                            />
                        </TouchableOpacity>
                     </View>
-
-               <View style={styles.startcontainer}>
-                    <View style={styles.organcontainer}>
-                      <TouchableOpacity onPress={() => navigation.navigate('KnowYourLungs')}>
-                         <Text style={styles.lungsbutton}>L U N G S</Text>
-                      </TouchableOpacity>
-                     </View>
-
-                    <View style={styles.organcontainer}>
-                      <TouchableOpacity onPress={() => navigation.navigate('KnowYourLiver')}>
-                         <Text style={styles.lungsbutton}>L I V E R</Text>
-                      </TouchableOpacity>
-                     </View>
-               </View>
+                        <View style={styles.startcontainer}>
+                         <View style={styles.mascot}>
+                            <NurseLion width={200} height={200} />
+                            <Text style={styles.subtitleText}>The Human Body is an amazing machine. Learn more about the human body and prevention tips to keep your body healthy here.</Text>
+                          <TouchableOpacity onPress={() => navigation.navigate('KnowYourBody')}>
+                               <Text style={styles.closebutton}>Learn More</Text>
+                          </TouchableOpacity>
+                         </View>
+                    </View>
 
                    </ImageBackground>
                   </View>
@@ -52,7 +47,7 @@ const styles = StyleSheet.create({
  mascot:{
         height: '100%',
         width: '100%',
-        marginLeft: '38%',
+        marginLeft: '35%',
 
       },
   container: {
@@ -77,19 +72,16 @@ const styles = StyleSheet.create({
      },
    startcontainer: {
      width: '100%',
-     height: 470,
+     height: 380,
      width: 270,
      alignItems: 'center',
-     marginTop: "26%",
-     marginLeft: "20.5%",
+     marginTop: "20%",
+     marginLeft: "18%",
+     backgroundColor:'#ffffff',
+     opacity: 0.9,
+     borderRadius: 20
      },
 
-   organcontainer: {
-     width: '100%',
-     alignItems: 'flex-start',
-     marginRight: "48%",
-     marginBottom: "7.5%",
-     },
   subtitleText: {
       fontFamily: 'Quicksand-Bold',
       fontSize: 12,
@@ -97,14 +89,14 @@ const styles = StyleSheet.create({
       marginLeft: "-5%",
       marginTop: "5%",
       width: "75%",
-
     },
-  lungsbutton: {
-    backgroundColor: '#ffffff',
-    color: '#808080',
+
+  closebutton: {
+    backgroundColor: '#808080',
+    color: '#ffffff',
     height: 35,
-    width: 75,
-    borderRadius: 25,
+    width: 95,
+    borderRadius: 65,
     textAlign: 'center',
     justifyContent: 'center',
     paddingVertical: 10,

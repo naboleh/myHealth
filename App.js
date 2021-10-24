@@ -35,6 +35,7 @@ import EConsultsLandingPage from './app/pages/EConsultsLandingPage';
 import EConsultsQnAPainPoints from './app/pages/EConsultsQnAPainPoints';
 import EConsultsWaitingRoom from './app/pages/EConsultsWaitingRoom';
 import EConsultCallEnd from './app/pages/EConsultCallEnd';
+import KnowYourBodyLanding from './app/pages/KnowYourBodyLanding';
 import KnowYourBody from './app/pages/KnowYourBody';
 import KnowYourLungs from './app/pages/KnowYourLungs';
 import KnowYourLiver from './app/pages/KnowYourLiver';
@@ -131,6 +132,12 @@ export default function App() {
         <Stack.Screen
           name="KnowYourBody"
           component={KnowYourBody}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="KnowYourBodyLanding"
+          component={KnowYourBodyLanding}
           options={{headerShown: false}}
         />
 

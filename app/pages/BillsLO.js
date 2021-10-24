@@ -22,15 +22,15 @@ export default function BillsLO({ navigation }) {
                 </View>
 
                 <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('BillsLO')}>
-                  <Text style={styles.title2Text}>Careperson 1</Text>
+                  <Text style={styles.title2Text}>Tan Mei Hua</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('BillsLO')}>
-                  <Text style={styles.title2Text}>Careperson 2</Text>
+                  <Text style={styles.title2Text}>Ng Bee Choo</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('BillsLO')}>
-                  <Text style={styles.title2Text}>Careperson 3</Text>
+                  <Text style={styles.title2Text}>Robert Wong</Text>
                 </TouchableOpacity>
             </View>
       </ImageBackground>
@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     height: '30%',
     width: '100%',
+    marginBottom: '5%',
     borderRadius: 25,
 
   },
@@ -68,9 +69,9 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   title2Text: {
-    marginLeft: "5%",
+    textAlign: 'center',
     fontFamily: 'Roboto-Medium',
-    fontSize: 20,
+    fontSize: 18,
   },
   subtitleText: {
     fontFamily: 'Quicksand-Medium',
@@ -99,14 +100,14 @@ const styles = StyleSheet.create({
       fontSize:  18,
       fontFamily: 'Quicksand-Bold',
       marginLeft: "5%",
-      marginVertical: "10%",
+      marginTop: "10%",
     },
   carepersonbtn: {
       flexDirection: 'column',
       backgroundColor: '#f6ce87',
       color: 'black',
       width: '90%',
-      height: '10%',
+      height: '11%',
       borderRadius: 15,
       paddingVertical: '5%',
       fontSize:  18,

@@ -18,19 +18,19 @@ export default function Caregiver({ navigation }) {
             <View style={styles.overlayContainer}>
                 <View style={styles.messageContainer}>
                       <Text style={styles.message}>Hi User, who will you be caring for today?</Text>
-                      <MotherLion />
+                      <MotherLion/>
                 </View>
 
                 <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('nil')}>
-                  <Text style={styles.title2Text}>Careperson 1</Text>
+                  <Text style={styles.title2Text}>Tan Mei Hua</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('nil')}>
-                  <Text style={styles.title2Text}>Careperson 2</Text>
+                  <Text style={styles.title2Text}>Ng Bee Choo</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.carepersonbtn} onPress={() => navigation.navigate('nil')}>
-                  <Text style={styles.title2Text}>Careperson 3</Text>
+                  <Text style={styles.title2Text}>Robert Wong</Text>
                 </TouchableOpacity>
             </View>
       </ImageBackground>
@@ -51,7 +51,8 @@ const styles = StyleSheet.create({
     height: '90%',
     width: '90%',
     borderRadius: 25,
-    marginLeft: '5%'
+    marginLeft: '5%',
+    marginBottom: '35%'
   },
   messageContainer: {
     flexDirection: 'row',
@@ -59,6 +60,7 @@ const styles = StyleSheet.create({
     height: '30%',
     width: '100%',
     borderRadius: 25,
+    marginVertical: '5%'
 
   },
   titleText: {
@@ -68,9 +70,9 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   title2Text: {
-    marginLeft: "5%",
+    textAlign: 'center',
     fontFamily: 'Roboto-Medium',
-    fontSize: 20,
+    fontSize: 18,
   },
   subtitleText: {
     fontFamily: 'Quicksand-Medium',
@@ -99,14 +101,15 @@ const styles = StyleSheet.create({
       fontSize:  18,
       fontFamily: 'Quicksand-Bold',
       marginLeft: "5%",
-      marginVertical: "10%",
+      marginVertical: "8%",
+      paddingHorizontal: "10%"
     },
   carepersonbtn: {
       flexDirection: 'column',
       backgroundColor: '#c7e1e0',
       color: 'black',
       width: '90%',
-      height: '10%',
+      height: '11%',
       borderRadius: 15,
       paddingVertical: '5%',
       fontSize:  18,

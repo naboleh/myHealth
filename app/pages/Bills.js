@@ -73,11 +73,11 @@ const styles = StyleSheet.create({
     title2Text: {
     marginLeft: "5%",
     fontFamily: 'Roboto-Medium',
-    fontSize: 24,
+    fontSize: 20,
   },
   subtitleText: {
     fontFamily: 'Quicksand-Medium',
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'left',
     marginLeft: '5%',
     marginRight: '5%',
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f6ce87',
     color: 'black',
     width: '90%',
-    height: '30%',
+    height: '32%',
     borderRadius: 15,
     paddingVertical: '5%',
     fontSize: 18,

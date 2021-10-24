@@ -178,7 +178,7 @@ export default function EConsultsQnASymptoms({ navigation }) {
         width: '90%',
         borderRadius: 25,
         marginLeft: '5%',
-        marginBottom: '2%'
+        marginBottom: '5%'
       },
       mascot: {
         flexDirection: 'row',
@@ -245,9 +245,9 @@ export default function EConsultsQnASymptoms({ navigation }) {
         fontSize: 28,
       },
       title2Text: {
-        marginLeft: "10%",
         fontFamily: 'Roboto-Medium',
-        fontSize: 20,
+        fontSize: 16,
+        textAlign:'center',
       },
       subtitleText: {
         fontFamily: 'Quicksand-Medium',
@@ -267,30 +267,26 @@ export default function EConsultsQnASymptoms({ navigation }) {
       backbutton: {
           backgroundColor: '#b3d3d2',
           color: 'white',
-          width: '15%',
-          height: '8%',
+          width: '20%',
+          height: '6%',
           borderRadius: 15,
           textAlign: 'center',
           justifyContent: 'center',
           textAlignVertical: "center",
-          fontSize:  18,
-          fontFamily: 'Quicksand-Bold',
-          marginLeft: "5%",
+          marginLeft: "13%",
           marginVertical: "38%",
         },
         nextbutton: {
               backgroundColor: '#b3d3d2',
               color: 'white',
-              width: '15%',
-              height: '8%',
+              width: '20%',
+              height: '6%',
               borderRadius: 15,
               textAlign: 'center',
               justifyContent: 'center',
               textAlignVertical: "center",
-              fontSize:  18,
-              fontFamily: 'Quicksand-Bold',
-              marginLeft: "81%",
-              marginVertical: "-51%",
+              marginLeft: "70%",
+              marginVertical: "-47%",
             },
 
     });

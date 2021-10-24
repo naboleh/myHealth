@@ -37,7 +37,7 @@ export default function EConsultsWaitingRoom({ navigation }) {
               <Text style={styles.articlebutton}>Articles and Programmes</Text>
            </TouchableOpacity>
 
-                      <TouchableOpacity onPress={() => navigation.navigate('KnowYourBody')}>
+                      <TouchableOpacity onPress={() => navigation.navigate('KnowYourBodyLanding')}>
                            <Text style={styles.bodybutton}>Know Your Body</Text>
                       </TouchableOpacity>
             </View>

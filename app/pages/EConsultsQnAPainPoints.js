@@ -197,7 +197,7 @@ export default function EConsultsQnAPainPoints({ navigation }) {
         width: '90%',
         borderRadius: 25,
         marginLeft: '5%',
-        marginBottom: '2%'
+        marginBottom: '5%'
       },
       checkboxHead: {
         alignSelf: "center",
@@ -302,9 +302,9 @@ export default function EConsultsQnAPainPoints({ navigation }) {
         fontSize: 28,
       },
       title2Text: {
-        marginLeft: "10%",
+        textAlign:'center',
         fontFamily: 'Roboto-Medium',
-        fontSize: 20,
+        fontSize: 16,
       },
       subtitleText: {
         fontFamily: 'Quicksand-Medium',
@@ -324,14 +324,12 @@ export default function EConsultsQnAPainPoints({ navigation }) {
       backbutton: {
           backgroundColor: '#b3d3d2',
           color: 'white',
-          width: '15%',
-          height: '8%',
+          width: '20%',
+          height: '6%',
           borderRadius: 15,
           textAlign: 'center',
           justifyContent: 'center',
           textAlignVertical: "center",
-          fontSize:  18,
-          fontFamily: 'Quicksand-Bold',
           marginLeft: 20,
           marginTop: 510,
           position: 'absolute'
@@ -339,15 +337,15 @@ export default function EConsultsQnAPainPoints({ navigation }) {
         nextbutton: {
               backgroundColor: '#b3d3d2',
               color: 'white',
-              width: '15%',
-              height: '8%',
+              width: '20%',
+              height: '6%',
               borderRadius: 15,
               textAlign: 'center',
               justifyContent: 'center',
               textAlignVertical: "center",
               fontSize:  18,
               fontFamily: 'Quicksand-Bold',
-              marginLeft: 295,
+              marginLeft: 280,
               marginTop: 510,
               position: 'absolute'
             },

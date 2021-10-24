@@ -58,7 +58,7 @@ export default function EConsultsQnAFever({ navigation }) {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsWaitingRoom')}>
-                     <Text style={styles.title2Text}>Next</Text>
+                     <Text style={styles.title2Text}>Submit</Text>
                     </TouchableOpacity>
 
                 </View>
@@ -76,7 +76,7 @@ export default function EConsultsQnAFever({ navigation }) {
         flexGrow: 1,
         textAlign: 'center',
         backgroundColor: '#fff',
-        height: '95%',
+        height: '85%',
         width: '90%',
         borderRadius: 25,
         marginLeft: '5%',
@@ -86,7 +86,7 @@ export default function EConsultsQnAFever({ navigation }) {
         flexDirection: 'row',
         textAlign: 'center',
         backgroundColor: '#fff',
-        height: '40%',
+        height: '45%',
         width: '38%',
         borderRadius: 25,
         marginLeft: '19%',
@@ -124,9 +124,9 @@ export default function EConsultsQnAFever({ navigation }) {
         fontSize: 28,
       },
       title2Text: {
-        marginLeft: "10%",
+        textAlign: 'center',
         fontFamily: 'Roboto-Medium',
-        fontSize: 20,
+        fontSize: 16,
       },
       subtitleText: {
         fontFamily: 'Quicksand-Medium',
@@ -146,30 +146,30 @@ export default function EConsultsQnAFever({ navigation }) {
       backbutton: {
           backgroundColor: '#b3d3d2',
           color: 'white',
-          width: '15%',
-          height: '8%',
+          width: '20%',
+          height: '6%',
           borderRadius: 15,
           textAlign: 'center',
           justifyContent: 'center',
           textAlignVertical: "center",
           fontSize:  18,
           fontFamily: 'Quicksand-Bold',
-          marginLeft: "5%",
-          marginVertical: "23%",
+          marginLeft: "13%",
+          marginVertical: "20%",
         },
         nextbutton: {
               backgroundColor: '#b3d3d2',
               color: 'white',
-              width: '15%',
-              height: '8%',
+              width: '20%',
+              height: '6%',
               borderRadius: 15,
               textAlign: 'center',
               justifyContent: 'center',
               textAlignVertical: "center",
               fontSize:  18,
               fontFamily: 'Quicksand-Bold',
-              marginLeft: "81%",
-              marginVertical: "-36%",
+              marginLeft: "68%",
+              marginVertical: "-29%",
             },
 
     });
