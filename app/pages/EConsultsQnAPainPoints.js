@@ -46,126 +46,177 @@ export default function EConsultsQnAPainPoints({ navigation }) {
             <View style={styles.overlayContainer}>
                 <BodyModel />
 
+                        <View style={styles.squareHead}>
+                        </View>
+
                         <CheckBox
                           disabled={false}
                           value={toggleHead}
                           onValueChange={(newValue) => setToggleHead(newValue)}
                           style={styles.checkboxHead}
-
-                        /*<CircleCheckBox
-                          checked={true}
-                          onToggle={(checked) => console.log('My state is: ', checked)}
-                          labelPosition={LABEL_POSITION.RIGHT}
-                          label="Checkbox example"
-                        /> */
+                          tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareEyeEarNoseMouth}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleEyeEarNoseMouth}
                         onValueChange={(newValue) => setToggleEyeEarNoseMouth(newValue)}
                         style={styles.checkboxEyeEarNoseMouth}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareNeck}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleNeck}
                         onValueChange={(newValue) => setToggleNeck(newValue)}
                         style={styles.checkboxNeck}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareShoulder}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleShoulder}
                         onValueChange={(newValue) => setToggleShoulder(newValue)}
                         style={styles.checkboxShoulder}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareArm}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleArm}
                         onValueChange={(newValue) => setToggleArm(newValue)}
                         style={styles.checkboxArm}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareHand}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleHand}
                         onValueChange={(newValue) => setToggleHand(newValue)}
                         style={styles.checkboxHand}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareChest}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleChest}
                         onValueChange={(newValue) => setToggleChest(newValue)}
                         style={styles.checkboxChest}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareHeart}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleHeart}
                         onValueChange={(newValue) => setToggleHeart(newValue)}
                         style={styles.checkboxHeart}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareLiver}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleLiver}
                         onValueChange={(newValue) => setToggleLiver(newValue)}
                         style={styles.checkboxLiver}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareKidney}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleKidney}
                         onValueChange={(newValue) => setToggleKidney(newValue)}
                         style={styles.checkboxKidney}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareStomach}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleStomach}
                         onValueChange={(newValue) => setToggleStomach(newValue)}
                         style={styles.checkboxStomach}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareIntestines}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleIntestines}
                         onValueChange={(newValue) => setToggleIntestines(newValue)}
                         style={styles.checkboxIntestines}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareWaist}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleWaist}
                         onValueChange={(newValue) => setToggleWaist(newValue)}
                         style={styles.checkboxWaist}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareGenital}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleGenital}
                         onValueChange={(newValue) => setToggleGenital(newValue)}
                         style={styles.checkboxGenital}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareThigh}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleThigh}
                         onValueChange={(newValue) => setToggleThigh(newValue)}
                         style={styles.checkboxThigh}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareKnee}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleKnee}
                         onValueChange={(newValue) => setToggleKnee(newValue)}
                         style={styles.checkboxKnee}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareCalf}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleCalf}
                         onValueChange={(newValue) => setToggleCalf(newValue)}
                         style={styles.checkboxCalf}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareShin}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleShin}
                         onValueChange={(newValue) => setToggleShin(newValue)}
                         style={styles.checkboxShin}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
+                    <View style={styles.squareFoot}>
+                    </View>
                     <CheckBox
                         disabled={false}
                         value={toggleFoot}
                         onValueChange={(newValue) => setToggleFoot(newValue)}
                         style={styles.checkboxFoot}
+                        tintColors={{true: '#abede0'}, {false: '#abede0'}}
                     />
 
 
@@ -177,6 +228,8 @@ export default function EConsultsQnAPainPoints({ navigation }) {
                 <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsQnAMedication')}>
                    <Text style={styles.title2Text}>Next</Text>
                 </TouchableOpacity>
+
+
 
                 </View>
           </ImageBackground>
@@ -232,7 +285,7 @@ export default function EConsultsQnAPainPoints({ navigation }) {
       },
       checkboxChest: {
         marginLeft: 183,
-        marginTop: 125,
+        marginTop: 121,
         position: 'absolute'
       },
       checkboxHeart: {
@@ -348,6 +401,182 @@ export default function EConsultsQnAPainPoints({ navigation }) {
               marginLeft: 280,
               marginTop: 510,
               position: 'absolute'
-            },
+        },
+        squareHead: {
+              backgroundColor: '#f5f5f5',
+              width: '4%',
+              height: '3%',
+              borderRadius: 2,
+              alignSelf: "center",
+              marginLeft: 100,
+              marginTop: 25,
+              position: 'absolute'
+        },
+        squareEyeEarNoseMouth: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 168,
+              marginTop: 52,
+              position: 'absolute'
+        },
+        squareNeck: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 168,
+              marginTop: 87,
+              position: 'absolute'
+        },
+        squareShoulder: {
+              backgroundColor: '#f5f5f5',
+              width: '4%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 138.5,
+              marginTop: 102,
+              position: 'absolute'
+        },
+        squareChest: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 191,
+              marginTop: 128,
+              position: 'absolute'
+        },
+        squareHeart: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 179,
+              marginTop: 147,
+              position: 'absolute'
+        },
+        squareArm: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 118,
+              marginTop: 178,
+              position: 'absolute'
+        },
+        squareHand: {
+              backgroundColor: '#f5f5f5',
+              width: '5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 79,
+              marginTop: 277,
+              position: 'absolute'
+        },
+        squareLiver: {
+              backgroundColor: '#f5f5f5',
+              width: '4%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 164,
+              marginTop: 172.5,
+              position: 'absolute'
+        },
+        squareStomach: {
+              backgroundColor: '#f5f5f5',
+              width: '4%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 182,
+              marginTop: 184.5,
+              position: 'absolute'
+        },
+        squareKidney: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 200,
+              marginTop: 177,
+              position: 'absolute'
+        },
+        squareIntestines: {
+              backgroundColor: '#f5f5f5',
+              width: '4%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 174,
+              marginTop: 217,
+              position: 'absolute'
+        },
+        squareWaist: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 213,
+              marginTop: 212,
+              position: 'absolute'
+        },
+        squareGenital: {
+              backgroundColor: '#f5f5f5',
+              width: '4%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 180,
+              marginTop: 262,
+              position: 'absolute'
+        },
+        squareThigh: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 148,
+              marginTop: 308,
+              position: 'absolute'
+        },
+        squareKnee: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 151,
+              marginTop: 388,
+              position: 'absolute'
+        },
+        squareCalf: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 168,
+              marginTop: 423,
+              position: 'absolute'
+        },
+        squareShin: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 146,
+              marginTop: 457,
+              position: 'absolute'
+        },
+        squareFoot: {
+              backgroundColor: '#f5f5f5',
+              width: '4.5%',
+              height: '3%',
+              borderRadius: 2,
+              marginLeft: 148,
+              marginTop: 507,
+              position: 'absolute'
+        },
+
+
+
+
 
     });
