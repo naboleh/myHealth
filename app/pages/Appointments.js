@@ -16,7 +16,7 @@ export default function Appointments({navigation}) {
       <ImageBackground
         source={require('../backgrounds/zzAPPTBG.png')}
         style={{height: '100%', width: '100%'}}>
-        <ScrollView contentContainerStyle={{paddingBottom: 260}}>
+        <ScrollView contentContainerStyle={{paddingBottom: 200}}>
           <Text style={styles.titleText}>Appointments</Text>
 
           <View style={styles.overlayContainer}>
@@ -26,6 +26,8 @@ export default function Appointments({navigation}) {
               </TouchableOpacity>
               <NurseSmiling />
             </View>
+
+            <Text style={styles.title2Text}>Your Appointment History:</Text>
 
             <TouchableOpacity
               style={styles.apptbutton}
@@ -76,19 +78,19 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     textAlign: 'center',
     backgroundColor: '#fff',
-    height: '90%',
     width: '90%',
     borderRadius: 25,
     marginLeft: '5%',
+    paddingBottom: 35
+
   },
   makeappt: {
     flexDirection: 'row',
     textAlign: 'center',
-    backgroundColor: '#fff',
-    height: '30%',
-    width: '100%',
+    height: '25%',
+    width: '101%',
     borderRadius: 25,
-    marginLeft: '0%',
+    marginLeft: '2%',
     marginBottom: 10,
   },
   titleText: {
@@ -105,6 +107,7 @@ const styles = StyleSheet.create({
   subtitleText: {
     fontFamily: 'Quicksand-Medium',
     fontSize: 18,
+    color: 'white',
     textAlign: 'left',
     marginLeft: '5%',
     marginRight: '5%',
@@ -112,6 +115,7 @@ const styles = StyleSheet.create({
   subtitle2Text: {
     fontFamily: 'Quicksand-Medium',
     fontSize: 18,
+    color: 'white',
     textAlign: 'left',
     marginLeft: '5%',
     marginRight: '5%',
@@ -136,7 +140,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#C98B91',
     color: 'black',
     width: '90%',
-    height: '30%',
+    height: '23%',
     borderRadius: 15,
     paddingVertical: '5%',
     fontSize: 18,

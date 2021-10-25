@@ -14,6 +14,8 @@ import {
   ImageBackground
 } from 'react-native';
 
+import Grandpa from '../mascots/Grandma.js';
+import Father from '../mascots/fatherLion.png';
 
 export default function GamesLandingPage({ navigation }) {
     return (
@@ -29,9 +31,16 @@ export default function GamesLandingPage({ navigation }) {
                   source={require('../icon/backicon.png')}
                />
            </TouchableOpacity>
+
         <Text style={styles.titleText}></Text>
             <View style={styles.overlayContainer}>
                 <Text style={styles.title2Text}>Select your game!</Text>
+
+                 <View style={styles.mascotContainer}>
+                                  <Image source={require('../mascots/fatherLion.png')} style={{height: 150, width: 150, position: 'absolute', left: 80 }}/>
+                                  <Image source={require('../mascots/boylion.png')} style={{height: 150, width: 150, position: 'absolute', left: 8,}}/>
+                                  <Image source={require('../mascots/daughterLion.png')} style={{height: 140, width: 110, position: 'absolute', left: 160, }}/>
+                                </View>
 
                 <TouchableOpacity onPress={() => navigation.navigate('GameSnake')}>
                   <Text style={styles.gamesbutton}>Snake</Text>
@@ -41,7 +50,9 @@ export default function GamesLandingPage({ navigation }) {
                   <Text style={styles.gamesbutton}>2048</Text>
                 </TouchableOpacity>
 
-            </View>
+
+              </View>
+
       </ImageBackground>
       </View>
       );
@@ -57,10 +68,11 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     textAlign: 'center',
     backgroundColor: '#fff',
-    height: '90%',
     width: '90%',
     borderRadius: 25,
-    marginLeft: '5%'
+    marginLeft: '5%',
+    marginTop: -50,
+    marginBottom: 25
   },
   titleText: {
     marginLeft: "7%",
@@ -69,24 +81,25 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
     title2Text: {
-    marginLeft: "5%",
-    marginVertical: "5%",
+    textAlign: 'center',
+    marginTop: "10%",
+    marginBottom: '5%',
     fontFamily: 'Roboto-Medium',
-    fontSize: 24,
+    fontSize: 20,
   },
   gamesbutton: {
       backgroundColor: '#f6ce87',
       color: 'black',
-      width: "90%",
+      width: "50%",
       height: 70,
-      borderRadius: 15,
+      borderRadius: 35,
       textAlign: 'center',
       justifyContent: 'center',
       paddingVertical: 20,
       fontSize:  18,
       fontFamily: 'Quicksand-Bold',
-      marginVertical: "5%",
-      marginLeft: "5%"
+      marginBottom: "5%",
+      marginLeft: "25%"
   },
   topnavcontainer: {
       width: "100%",
@@ -106,4 +119,12 @@ const styles = StyleSheet.create({
        left: 10,
        top: 8
   },
+   mascotContainer: {
+       width: '85%',
+       height: '30%',
+       marginTop: 20,
+       marginLeft: 30,
+       justifyContent: 'center',
+       marginBottom: 40,
+        },
 });

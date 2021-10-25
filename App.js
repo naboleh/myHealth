@@ -189,6 +189,7 @@ export default function App() {
 
 const Tab = createBottomTabNavigator();
 //put the link that you want to show on the navbar here
+
 const ButtomNavbar = () => {
   return (
     <Tab.Navigator
@@ -196,9 +197,11 @@ const ButtomNavbar = () => {
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
           position: 'absolute',
+          height: 60,
         },
       }}
       tabBarOptions={{showLabel: false}}>
+
       <Tab.Screen
         name="HomeStackScreen"
         component={HomeStackScreen}
@@ -381,13 +384,15 @@ function HomeStackScreen() {
 
 const styles = StyleSheet.create({
   tabicons: {
-    width: 35,
-    height: 35,
-    top: 2,
+    width: 33,
+    height: 33,
+    top: 10,
     resizeMode: 'contain',
   },
 
   tabtext: {
     fontSize: 12,
+    paddingTop: 8,
+    paddingBottom: 10,
   },
 });
