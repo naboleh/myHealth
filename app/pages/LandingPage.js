@@ -12,7 +12,6 @@ import {
 } from 'react-native';
 
 import Logo from '../components/Logo';
-import FatherLion from '../components/FatherLion';
 
 export default function LandingPage({ navigation }) {
 
