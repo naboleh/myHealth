@@ -73,7 +73,7 @@ class EConsultsChat extends Component {
         <View style={styles.container}>
             <View style={styles.topBar}>
                 {/*Havent added a onPress event for the close button*/}
-                <TouchableOpacity onPress={() => {}} style={{position: 'absolute', left: 0 }}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('EConsultsVideo')} style={{position: 'absolute', left: 0 }}>
                     <Image 
                     source={require('../icon/close-x.png')}
                     style={styles.closeButton}

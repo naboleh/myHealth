@@ -21,8 +21,8 @@ class EConsultsVideo extends Component {
   constructor(props) {
     super(props);
     this.apiKey = '47332281';
-    this.sessionId = '1_MX40NzMzMjI4MX5-MTYzMzk0NTY1MDc5OX52aE55VktaTzZqVUpoRS9GQlREKzkvZW5-fg';
-    this.token = '';
+    this.sessionId = '1_MX40NzMzMjI4MX5-MTYzNTI4NTMyMTI1OH4rdjc5T2xxbXM4aHdoRmJEaW1wVzRTbk9-fg';
+    this.token = 'T1==cGFydG5lcl9pZD00NzMzMjI4MSZzaWc9YWViYzA3YzgzZTc2MDM5MmRhMmU0MzMyZDViMjFhMWRhY2NkNTEzNTpzZXNzaW9uX2lkPTFfTVg0ME56TXpNakk0TVg1LU1UWXpOVEk0TlRNeU1USTFPSDRyZGpjNVQyeHhiWE00YUhkb1JtSkVhVzF3VnpSVGJrOS1mZyZjcmVhdGVfdGltZT0xNjM1Mjg1MzQwJm5vbmNlPTAuMTAwNzMwNTkwODY2NDc2ODQmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTYzNTM3MTczOSZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ==';
     this.state = {
       subscriberIds: [], // Array for storing subscribers
       localPublishAudio: true, // Local Audio state
@@ -239,6 +239,8 @@ class EConsultsVideo extends Component {
               style={{
                 width: '100%',
                 height: '100%',
+                position: 'absolute',
+                zIndex: 0,
               }}
             />
           </TouchableOpacity>
@@ -271,6 +273,8 @@ class EConsultsVideo extends Component {
                   style={{
                     width: '100%',
                     height: '100%',
+                    position: 'absolute',
+                    zIndex: 0,
                   }}
                   key={streamId}
                   streamId={streamId}
@@ -285,7 +289,7 @@ class EConsultsVideo extends Component {
         <OTSubscriberView
           streamId={subscribers[0]}
           key={subscribers[0]}
-          style={{width: '100%', height: '100%'}}
+          style={{width: '100%', height: '100%', position: 'absolute', zIndex: 0}}
         />
       </TouchableOpacity>
     ) : (
@@ -309,7 +313,7 @@ class EConsultsVideo extends Component {
               style={styles.publisherStyle}
             />
             <OTSubscriber
-              style={{height: dimensions.height, width: dimensions.width}}
+              style={{height: dimensions.height, width: dimensions.width, position: 'absolute', zIndex: 0}}
               eventHandlers={this.subscriberEventHandlers}
               streamProperties={this.state.streamProperties}>
               {this.renderSubscribers}
@@ -319,22 +323,32 @@ class EConsultsVideo extends Component {
 
         <View style={styles.buttonView}>
           <Icon.Button
-            style={styles.iconStyle}
-            backgroundColor="#DEE2E6"
+            style={styles.iconStyle2}
+            iconStyle={{ marginRight: 0 }}
+            backgroundColor="#6c757d"
             name={this.state.localPublishAudio ? 'mic' : 'mic-off'}
             onPress={this.toggleAudio}
           />
           <Icon.Button
-            style={styles.iconStyle}
-            backgroundColor="#DEE2E6"
+            style={styles.iconStyle2}
+            iconStyle={{ marginRight: 0 }}
+            backgroundColor="#ba181b"
             name="call-end"
             onPress={this.endCall}
           />
           <Icon.Button
-            style={styles.iconStyle}
-            backgroundColor="#DEE2E6"
+            style={styles.iconStyle2}
+            iconStyle={{ marginRight: 0 }}
+            backgroundColor="#6c757d"
             name={this.state.localPublishVideo ? 'videocam' : 'videocam-off'}
             onPress={this.toggleVideo}
+          />
+          <Icon.Button
+            style={styles.iconStyle2}
+            iconStyle={{ marginRight: 0 }}
+            backgroundColor="#6c757d"
+            name={'chat-bubble'}
+            onPress={() => this.props.navigation.navigate('EConsultsChat')}
           />
         </View>
       </>
@@ -343,15 +357,22 @@ class EConsultsVideo extends Component {
 
   joinVideoCall = () => {
     return (
-      <SafeAreaView style={styles.fullView}>
-        <Button
-          onPress={this.joinCall}
-          title="Join Call"
-          color="#841584"
-          accessibilityLabel="Join call">
-          Join Call
-        </Button>
-      </SafeAreaView>
+      <View style={styles.fullView}>
+        <ImageBackground source={require('../backgrounds/zzECONSULTBG.png')} style={{height:'100%', width: '100%'}}>
+        <Text style={styles.titleText}></Text>
+          <View style={styles.overlayContainer}>
+              <Text style={styles.title2Text}>Welcome!</Text>
+
+              <View style={styles.mascotContainer}>
+                  <Image source={require('../mascots/NuseLion.png')} style={{height: 250, width: 250, position: 'absolute', left: 40}}/>
+              </View>
+
+              <TouchableOpacity onPress={this.joinCall}>
+                <Text style={styles.joinCallBtn}>Join Call</Text>
+              </TouchableOpacity>
+          </View>
+        </ImageBackground>
+      </View>
     );
   };
 
@@ -363,25 +384,75 @@ class EConsultsVideo extends Component {
 // Tweak styles here
 
 const styles = StyleSheet.create({
+  topcontainer: {
+    flexGrow: 1,
+    textAlign: 'center',
+    justifyContent: 'flex-end',
+    backgroundColor: 'green',
+  },
+  overlayContainer: {
+    flexGrow: 1,
+    textAlign: 'center',
+    backgroundColor: '#fff',
+    width: '90%',
+    borderRadius: 25,
+    marginLeft: '5%',
+    marginTop: -50,
+    marginBottom: 50,
+  },
+  titleText: {
+    marginLeft: "7%",
+    marginVertical: "5%",
+    fontFamily: 'Roboto-Medium',
+    fontSize: 28,
+  },
+  title2Text: {
+    textAlign: 'center',
+    marginTop: "10%",
+    marginBottom: '5%',
+    fontFamily: 'Roboto-Medium',
+    fontSize: 20,
+  },
+  mascotContainer: {
+       width: '85%',
+       height: '30%',
+       marginTop: 15,
+       marginLeft: 30,
+       marginBottom: 15,
+       justifyContent: 'center',
+  },
+  joinCallBtn: {
+      backgroundColor: '#f6ce87',
+      color: 'black',
+      width: "50%",
+      height: 70,
+      borderRadius: 35,
+      textAlign: 'center',
+      justifyContent: 'center',
+      paddingVertical: 20,
+      fontSize:  18,
+      fontFamily: 'Quicksand-Bold',
+      marginTop: "15%",
+      marginBottom: "5%",
+      marginLeft: "25%",
+  },
   buttonView: {
     height: 50,
-    backgroundColor: '#fff', //'#131415' Vonage Black
+    backgroundColor: '#ced4da', //'#131415' Vonage Black
     display: 'flex',
     width: '100%',
     position: 'absolute',
     bottom: 0,
     left: 0,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     alignContent: 'center',
   },
-  iconStyle: {
-    fontSize: 34,
-    paddingTop: 15,
-    paddingLeft: 40,
-    paddingRight: 40,
-    paddingBottom: 15,
-    /* borderRadius: 50 */
+  iconStyle2: {
+    paddingLeft: 10,
+    marginHorizontal: 10,
+    marginVertical: 5,
+    borderRadius: 10,
   },
   fullView: {
     flex: 1,
@@ -399,11 +470,11 @@ const styles = StyleSheet.create({
   },
   publisherStyle: {
     width: 100,
-    height: 100,
+    height: 150,
     position: 'absolute',
     top: 5,
     right: 5,
-    zIndex: 5,
+    zIndex: 10,
   },
   mainSubscriberStyle: {
     height: (dimensions.height * 3) / 4 - 50,

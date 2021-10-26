@@ -36,11 +36,11 @@ export default function GamesLandingPage({ navigation }) {
             <View style={styles.overlayContainer}>
                 <Text style={styles.title2Text}>Select your game!</Text>
 
-                 <View style={styles.mascotContainer}>
-                                  <Image source={require('../mascots/fatherLion.png')} style={{height: 150, width: 150, position: 'absolute', left: 80 }}/>
-                                  <Image source={require('../mascots/boylion.png')} style={{height: 150, width: 150, position: 'absolute', left: 8,}}/>
-                                  <Image source={require('../mascots/daughterLion.png')} style={{height: 140, width: 110, position: 'absolute', left: 160, }}/>
-                                </View>
+                <View style={styles.mascotContainer}>
+                    <Image source={require('../mascots/fatherLion.png')} style={{height: 150, width: 150, position: 'absolute', left: 80 }}/>
+                    <Image source={require('../mascots/boylion.png')} style={{height: 150, width: 150, position: 'absolute', left: 8 }}/>
+                    <Image source={require('../mascots/daughterLion.png')} style={{height: 140, width: 110, position: 'absolute', left: 160 }}/>
+                </View>
 
                 <TouchableOpacity onPress={() => navigation.navigate('GameSnake')}>
                   <Text style={styles.gamesbutton}>Snake</Text>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginLeft: '5%',
     marginTop: -50,
-    marginBottom: 25
+    marginBottom: 25,
   },
   titleText: {
     marginLeft: "7%",
