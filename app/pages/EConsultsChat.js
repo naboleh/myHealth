@@ -42,8 +42,8 @@ class EConsultsChat extends Component {
           const oldMessages = this.state.messages;
           const messages =
             event.connectionId === myConnectionId
-              ? [...oldMessages, {data: `Me: ${event.data}`, type: 0}]
-              : [...oldMessages, {data: `Other: ${event.data}`, type: 1}];
+              ? [...oldMessages, {data: `${event.data}`, type: 0}]
+              : [...oldMessages, {data: `${event.data}`, type: 1}];
           this.setState({
             messages,
           });

@@ -69,123 +69,12 @@ export default function App() {
           component={DrawerNav}
           options={{headerShown: false}}
         />
-
-        <Stack.Screen
-          name="EConsultsChat"
-          component={EConsultsChat}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="EConsultsVideo"
-          component={EConsultsVideo}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="EConsultsQnAPainPoints"
-          component={EConsultsQnAPainPoints}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="EConsultsQnASymptoms"
-          component={EConsultsQnASymptoms}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="EConsultsQnAMedication"
-          component={EConsultsQnAMedication}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="EConsultsQnAMedName"
-          component={EConsultsQnAMedName}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="EConsultsQnADrugAllergy"
-          component={EConsultsQnADrugAllergy}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="EConsultsQnADrugName"
-          component={EConsultsQnADrugName}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="EConsultsQnAFever"
-          component={EConsultsQnAFever}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="EConsultsWaitingRoom"
-          component={EConsultsWaitingRoom}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="KnowYourBody"
-          component={KnowYourBody}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="KnowYourBodyLanding"
-          component={KnowYourBodyLanding}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="KnowYourLungs"
-          component={KnowYourLungs}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="KnowYourLiver"
-          component={KnowYourLiver}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="NewsPage"
-          component={NewsPage}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Article1"
-          component={Article1}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="GamesLandingPage"
-          component={GamesLandingPage}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="GameSnake"
-          component={GameSnake}
-          options={{headerShown: false}}
-        />
-
-        <Stack.Screen
-          name="Game2048"
-          component={Game2048}
-          options={{headerShown: false}}
-        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
+//put the link that you want to show up on the drawer here
 const Drawer = createDrawerNavigator();
 function DrawerNav() {
   return (
@@ -200,15 +89,14 @@ function DrawerNav() {
         drawerActiveTintColor: '#748c94',
         drawerLabelStyle: {color: '#748c94', fontSize: 15},
       }}>
-      <Drawer.Screen name="Home" component={ButtomNavbar} />
-      <Drawer.Screen name="Appointments" component={Appointments} />
+      <Drawer.Screen name="Home" component={HomeStack} />
       <Drawer.Screen name="Settings" component={Settings} />
     </Drawer.Navigator>
   );
 }
 
+//put the link that you want to show up on the navbar here
 const Tab = createBottomTabNavigator();
-//put the link that you want to show on the navbar here
 const ButtomNavbar = () => {
   return (
     <Tab.Navigator
@@ -221,8 +109,8 @@ const ButtomNavbar = () => {
       }}
       tabBarOptions={{showLabel: false}}>
       <Tab.Screen
-        name="HomeStackScreen"
-        component={HomeStackScreen}
+        name="ScreensWithBar"
+        component={ScreensWithBar}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (
@@ -275,7 +163,7 @@ const ButtomNavbar = () => {
 
       <Tab.Screen
         name="Inbox"
-        component={HomeStackScreen} //placeholder
+        component={ScreensWithBar} //placeholder
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (
@@ -301,7 +189,7 @@ const ButtomNavbar = () => {
 
       <Tab.Screen
         name="Profile"
-        component={HomeStackScreen} //placeholder
+        component={ScreensWithBar} //placeholder
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (
@@ -328,75 +216,202 @@ const ButtomNavbar = () => {
   );
 };
 
-const HomeStack = createNativeStackNavigator();
-function HomeStackScreen() {
+//those pages you want to have bottom bar goes here
+const ScreenWithBarStack = createNativeStackNavigator();
+function ScreensWithBar() {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen
+    <ScreenWithBarStack.Navigator>
+      <ScreenWithBarStack.Screen
         name="HomePage"
         component={HomePage}
         options={{headerShown: false}}
       />
 
-      <HomeStack.Screen
+      <ScreenWithBarStack.Screen
         name="Appointments"
         component={Appointments}
         options={{headerShown: false}}
       />
 
-      <HomeStack.Screen
+      <ScreenWithBarStack.Screen
         name="NewAppt"
         component={NewAppt}
         options={{headerShown: false}}
       />
 
-      <HomeStack.Screen
+      <ScreenWithBarStack.Screen
         name="HealthRecords"
         component={HealthRecords}
         options={{headerShown: false}}
       />
 
-      <HomeStack.Screen
+      <ScreenWithBarStack.Screen
         name="DietTracking"
         component={DietTracking}
         options={{headerShown: false}}
       />
 
-      <HomeStack.Screen
+      <ScreenWithBarStack.Screen
         name="Caregiver"
         component={Caregiver}
         options={{headerShown: false}}
       />
-      <HomeStack.Screen
+      <ScreenWithBarStack.Screen
         name="Payment"
         component={Payment}
         options={{headerShown: false}}
       />
 
-      <HomeStack.Screen
+      <ScreenWithBarStack.Screen
         name="Bills"
         component={Bills}
         options={{headerShown: false}}
       />
 
-      <HomeStack.Screen
+      <ScreenWithBarStack.Screen
         name="EConsultBill"
         component={EConsultBill}
         options={{headerShown: false}}
       />
 
-      <HomeStack.Screen
+      <ScreenWithBarStack.Screen
         name="BillsLO"
         component={BillsLO}
         options={{headerShown: false}}
       />
 
-      <HomeStack.Screen
+      <ScreenWithBarStack.Screen
         name="EConsultsLandingPage"
         component={EConsultsLandingPage}
         options={{headerShown: false}}
       />
-    </HomeStack.Navigator>
+    </ScreenWithBarStack.Navigator>
+  );
+}
+
+//those pages you want to have drawer goes here
+const ScreenWithDrawerStack = createNativeStackNavigator();
+function HomeStack() {
+  return (
+    <ScreenWithDrawerStack.Navigator>
+      <ScreenWithDrawerStack.Screen
+        name="ButtomNavbar"
+        component={ButtomNavbar}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultsChat"
+        component={EConsultsChat}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultsVideo"
+        component={EConsultsVideo}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultsQnAPainPoints"
+        component={EConsultsQnAPainPoints}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultsQnASymptoms"
+        component={EConsultsQnASymptoms}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultsQnAMedication"
+        component={EConsultsQnAMedication}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultsQnAMedName"
+        component={EConsultsQnAMedName}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultsQnADrugAllergy"
+        component={EConsultsQnADrugAllergy}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultsQnADrugName"
+        component={EConsultsQnADrugName}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultsQnAFever"
+        component={EConsultsQnAFever}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultsWaitingRoom"
+        component={EConsultsWaitingRoom}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="KnowYourBody"
+        component={KnowYourBody}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="KnowYourBodyLanding"
+        component={KnowYourBodyLanding}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="KnowYourLungs"
+        component={KnowYourLungs}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="KnowYourLiver"
+        component={KnowYourLiver}
+        options={{headerShown: false}}
+      />
+      <ScreenWithDrawerStack.Screen
+        name="NewsPage"
+        component={NewsPage}
+        options={{headerShown: false}}
+      />
+      <ScreenWithDrawerStack.Screen
+        name="Article1"
+        component={Article1}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="GamesLandingPage"
+        component={GamesLandingPage}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="GameSnake"
+        component={GameSnake}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="Game2048"
+        component={Game2048}
+        options={{headerShown: false}}
+      />
+    </ScreenWithDrawerStack.Navigator>
   );
 }
 
