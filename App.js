@@ -10,6 +10,7 @@ import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import LandingPage from './app/pages/LandingPage';
 import SingpassLogin from './app/pages/SingpassLogin';
@@ -44,7 +45,7 @@ import Article1 from './app/pages/Article1';
 import GamesLandingPage from './app/pages/GamesLandingPage';
 import GameSnake from './app/games/GameSnake';
 import Game2048 from './app/games/Game2048';
-
+import Settings from './app/pages/Settings';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -64,8 +65,8 @@ export default function App() {
         />
 
         <Stack.Screen
-          name="ButtomNavbar"
-          component={ButtomNavbar}
+          name="DrawerNav"
+          component={DrawerNav}
           options={{headerShown: false}}
         />
 
@@ -180,16 +181,34 @@ export default function App() {
           component={Game2048}
           options={{headerShown: false}}
         />
-
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
+const Drawer = createDrawerNavigator();
+function DrawerNav() {
+  return (
+    <Drawer.Navigator
+      screenOptions={{
+        drawerStyle: {
+          backgroundColor: '#fff',
+          width: 240,
+        },
+        headerShown: false,
+        drawerActiveBackgroundColor: '#fff',
+        drawerActiveTintColor: '#748c94',
+        drawerLabelStyle: {color: '#748c94', fontSize: 15},
+      }}>
+      <Drawer.Screen name="Home" component={ButtomNavbar} />
+      <Drawer.Screen name="Appointments" component={Appointments} />
+      <Drawer.Screen name="Settings" component={Settings} />
+    </Drawer.Navigator>
+  );
+}
 
 const Tab = createBottomTabNavigator();
 //put the link that you want to show on the navbar here
-
 const ButtomNavbar = () => {
   return (
     <Tab.Navigator
@@ -201,7 +220,6 @@ const ButtomNavbar = () => {
         },
       }}
       tabBarOptions={{showLabel: false}}>
-
       <Tab.Screen
         name="HomeStackScreen"
         component={HomeStackScreen}

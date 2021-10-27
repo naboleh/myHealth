@@ -60,7 +60,7 @@ export default function SingpassLogin({navigation}) {
           secureTextEntry={true}
         />
 
-        <TouchableOpacity onPress={() => navigation.navigate('ButtomNavbar')}>
+        <TouchableOpacity onPress={() => navigation.navigate('DrawerNav')}>
           <Text style={styles.singpassbutton}>Log In</Text>
         </TouchableOpacity>
 
