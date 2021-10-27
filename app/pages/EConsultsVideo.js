@@ -306,7 +306,7 @@ class EConsultsVideo extends Component {
             sessionId={this.sessionId}
             token={this.token}
             eventHandlers={this.sessionEventHandlers}
-            options={{enableStereoOutput: true}}>
+            >
             <OTPublisher
               properties={this.publisherProperties}
               eventHandlers={this.publisherEventHandlers}
