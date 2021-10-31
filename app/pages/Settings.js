@@ -44,7 +44,7 @@ export default function Settings({navigation}) {
   return (
     <View>
       <Text style={styles.titleText}>Settings</Text>
-      <Text style={styles.title2Text}>Account</Text>
+      <Text style={styles.title2Text}>Account {"\n"}</Text>
       <View>
         {accountlist.map((item, i) => (
           <ListItem key={i} bottomDivider>
@@ -57,7 +57,7 @@ export default function Settings({navigation}) {
         ))}
       </View>
 
-      <Text style={styles.title2Text}>Help & Feedback</Text>
+      <Text style={styles.title2Text}>Help & Feedback {"\n"}</Text>
       <View>
         {otherlist.map((item, i) => (
           <ListItem key={i} bottomDivider>

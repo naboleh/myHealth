@@ -27,7 +27,7 @@ export default function DietTracking2({ navigation }) {
                 </View>
 
                 <Text style={styles.title2Text} >Check if your meals are balanced by selecting the Category, Type and Portion Size.
-                             Click 'Check my meal!' to get feedback!</Text>
+                             {"\n"} Click 'Check my meal' to get feedback!</Text>
 
                <CatDrop/>
                <TypeDrop/>
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7A760',
     width: '60%',
     height: '30%',
-    borderRadius: 30,
+    borderRadius: 25,
     textAlignVertical: 'center',
     fontSize:  18,
     fontFamily: 'Quicksand-Bold',
