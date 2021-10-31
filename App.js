@@ -24,6 +24,7 @@ import BillsLO from './app/pages/BillsLO';
 import Caregiver from './app/pages/Caregiver';
 import HealthRecords from './app/pages/HealthRecords';
 import DietTracking from './app/pages/DietTracking2';
+import Profile from './app/pages/Profile';
 import EConsultsChat from './app/pages/EConsultsChat';
 import EConsultsQnASymptoms from './app/pages/EConsultsQnASymptoms';
 import EConsultsQnAMedication from './app/pages/EConsultsQnAMedication';
@@ -189,7 +190,7 @@ const ButtomNavbar = () => {
 
       <Tab.Screen
         name="Profile"
-        component={ScreensWithBar} //placeholder
+        component={Profile}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (
@@ -283,6 +284,12 @@ function ScreensWithBar() {
       <ScreenWithBarStack.Screen
         name="EConsultsLandingPage"
         component={EConsultsLandingPage}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithBarStack.Screen
+        name="Profile"
+        component={Profile}
         options={{headerShown: false}}
       />
     </ScreenWithBarStack.Navigator>
@@ -422,7 +429,6 @@ const styles = StyleSheet.create({
     top: 10,
     resizeMode: 'contain',
   },
-
   tabtext: {
     fontSize: 12,
     paddingTop: 8,
