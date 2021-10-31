@@ -110,7 +110,7 @@ const ButtomNavbar = () => {
       tabBarOptions={{showLabel: false}}>
       <Tab.Screen
         name="ScreensWithBar"
-        component={ScreensWithBar}
+        component={HomePage}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (
@@ -153,7 +153,7 @@ const ButtomNavbar = () => {
                   styles.tabtext,
                   {color: focused ? '#3791fc' : '#748c94'},
                 ]}>
-                E-Consultations
+                E-Consultation
               </Text>
             </View>
           ),
@@ -162,14 +162,14 @@ const ButtomNavbar = () => {
       />
 
       <Tab.Screen
-        name="Inbox"
-        component={ScreensWithBar} //placeholder
+        name="Appointments"
+        component={Appointments}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
               <Image
-                source={require('./app/icon/inbox-navbar.png')}
+                source={require('./app/icon/appt-navbar.jpeg')}
                 style={[
                   styles.tabicons,
                   {tintColor: focused ? '#3791fc' : '#748c94'},
@@ -180,7 +180,7 @@ const ButtomNavbar = () => {
                   styles.tabtext,
                   {color: focused ? '#3791fc' : '#748c94'},
                 ]}>
-                Inbox
+                Appointments
               </Text>
             </View>
           ),
