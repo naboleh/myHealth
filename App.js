@@ -142,7 +142,7 @@ const ButtomNavbar = () => {
           tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
               <Image
-                source={require('./app/icon/econsult-navbar.png')}
+                source={require('./app/icon/econsultnavbar.png')}
                 style={[
                   styles.tabicons,
                   {tintColor: focused ? '#3791fc' : '#748c94'},

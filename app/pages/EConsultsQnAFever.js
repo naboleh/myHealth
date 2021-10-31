@@ -21,7 +21,7 @@ const radioButtonsData = [{
     value: 'no'
 }]
 
-export default function EConsultsQnAFever({ navigation }) {
+const EConsultsQnAFever = ({navigation}) => {
 
     const [radioButtons, setRadioButtons] = useState(radioButtonsData)
 
@@ -32,7 +32,7 @@ export default function EConsultsQnAFever({ navigation }) {
     return (
           <View style={styles.topcontainer}>
             <ImageBackground source={require('../backgrounds/zzECONSULTBG.png')} style={{height:'100%', width: '100%'}}>
-            <Text style={styles.titleText}>E-Consultations</Text>
+            <Text style={styles.titleText}>E-Consultation</Text>
 
                 <View style={styles.overlayContainer}>
                     <View style={styles.mascot}>
@@ -173,3 +173,5 @@ export default function EConsultsQnAFever({ navigation }) {
             },
 
     });
+
+export default EConsultsQnAFever;

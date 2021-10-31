@@ -12,7 +12,7 @@ import CheckBox from '@react-native-community/checkbox';
 
 import NurseLion from '../mascots/LionNurse.js';
 
-export default function EConsultsQnASymptoms({ navigation }) {
+const EConsultsQnASymptoms = ({ navigation }) => {
     const [toggleFever, setToggleFever] = useState(false)
     const [toggleCough, setToggleCough] = useState(false)
     const [toggleColdFlu, setToggleColdFlu] = useState(false)
@@ -26,10 +26,16 @@ export default function EConsultsQnASymptoms({ navigation }) {
     const [toggleMenstrual, setToggleMenstrual] = useState(false)
     const [toggleOthers, setToggleOthers] = useState(false)
 
+    const goToPainPoints = () => {
+    if (togglePain) return;
+    setTogglePain(true);
+    
+    }
+
     return (
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../backgrounds/zzECONSULTBG.png')} style={{height:'100%', width: '100%'}}>
-        <Text style={styles.titleText}>E-Consultations</Text>
+        <Text style={styles.titleText}>E-Consultation</Text>
 
             <View style={styles.overlayContainer}>
                 <View style={styles.mascot}>
@@ -291,3 +297,4 @@ export default function EConsultsQnASymptoms({ navigation }) {
 
     });
 
+export default EConsultsQnASymptoms;

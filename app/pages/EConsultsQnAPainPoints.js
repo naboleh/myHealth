@@ -14,7 +14,7 @@ import CheckBox from '@react-native-community/checkbox';
 
 import BodyModel from '../components/BodyModel';
 
-export default function EConsultsQnAPainPoints({ navigation }) {
+const EConsultsQnAPainPoints = ({ navigation }) => {
     const [toggleHead, setToggleHead] = useState(false)
     const [toggleEyeEarNoseMouth, setToggleEyeEarNoseMouth] = useState(false)
     const [toggleNeck, setToggleNeck] = useState(false)
@@ -41,7 +41,7 @@ export default function EConsultsQnAPainPoints({ navigation }) {
     return (
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../backgrounds/zzECONSULTBG.png')} style={{height:'100%', width: '100%'}}>
-        <Text style={styles.titleText}>E-Consultations</Text>
+        <Text style={styles.titleText}>E-Consultation</Text>
 
             <View style={styles.overlayContainer}>
                 <BodyModel />
@@ -580,3 +580,5 @@ export default function EConsultsQnAPainPoints({ navigation }) {
 
 
     });
+
+export default EConsultsQnAPainPoints;
