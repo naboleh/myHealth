@@ -1,17 +1,20 @@
 import React from 'react';
 import {
-  Text,
-  View,
   StyleSheet,
-  TouchableOpacity,
-  ImageBackground,
-  ScrollView,
+    Text,
+    View,
+    ImageBackground,
+    TouchableOpacity,
+    Image,
+    ScrollView,
 } from 'react-native';
 
 export default function Profile({ navigation }) {
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../backgrounds/profilebg.png')} style={{height:'100%', width: '100%'}}>
+      <ImageBackground
+      source={require('../backgrounds/profilebg.png')}
+      style={{height:'100%', width: '100%'}}>
           <View style={styles.topcontainer}>
                       <View style={styles.topnavcontainer}>
                            <Text style={styles.topnavcontainer}>Profile</Text>

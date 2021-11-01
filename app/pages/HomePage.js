@@ -82,7 +82,7 @@ export default function HomePage({navigation}) {
 
             <TouchableOpacity
               style={styles.MainPageItem}
-              onPress={() => navigation.navigate('DietTracking')}>
+              onPress={() => navigation.navigate('DietTracking2')}>
               <Image
                 style={[styles.image, {backgroundColor: '#f2ae80'}]}
                 source={require('../icon/zzDIET.png')}
