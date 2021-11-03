@@ -110,7 +110,7 @@ const ButtomNavbar = () => {
       }}
       tabBarOptions={{showLabel: false}}>
       <Tab.Screen
-        name="ScreensWithBar"
+        name="HomePage"
         component={HomePage}
         options={{
           headerShown: false,
