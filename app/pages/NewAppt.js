@@ -9,7 +9,7 @@ import {
 
 import NurseSmiling from '../components/NurseSmiling';
 
-export default function Appointments({ navigation }) {
+export default function NewAppt({ navigation }) {
     return (
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../dummypages/appt_booked.png')} style={{height:'100%', width: '100%'}}>

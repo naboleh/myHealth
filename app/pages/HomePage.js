@@ -55,7 +55,7 @@ export default function HomePage({navigation}) {
           <View style={styles.overlayContainer}>
             <TouchableOpacity
               style={styles.MainPageItem}
-              onPress={() => navigation.navigate('Appointments')}>
+              onPress={() => navigation.navigate('ApptsStack')}>
               <Image
                 style={[styles.image, {backgroundColor: '#c76d73'}]}
                 source={require('../icon/zzAPPT.png')}

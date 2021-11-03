@@ -1,8 +1,8 @@
 /*
 Stack navigator to move between the pages
 1. import the page in here (e.g. import HomePage from './src/pages/HomePage';)
-2. enter it as a stack.screen
-3. in the page, the touchableopacity/button should have an action (e.g. onPress={() => navigation.navigate('HomePage')}>)
+2. enter it as a <Stack.Screen ../>
+3. in the page's .js file, the touchableopacity/button should have an action (e.g. onPress={() => navigation.navigate('HomePage')}>)
 */
 import * as React from 'react';
 import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
@@ -23,7 +23,7 @@ import EConsultBill from './app/pages/EConsultBill';
 import BillsLO from './app/pages/BillsLO';
 import Caregiver from './app/pages/Caregiver';
 import HealthRecords from './app/pages/HealthRecords';
-import DietTracking from './app/pages/DietTracking2';
+import DietTracking2 from './app/pages/DietTracking2';
 import Profile from './app/pages/Profile';
 import EConsultsChat from './app/pages/EConsultsChat';
 import EConsultsQnASymptoms from './app/pages/EConsultsQnASymptoms';
@@ -48,8 +48,10 @@ import GameSnake from './app/games/GameSnake';
 import Game2048 from './app/games/Game2048';
 import Settings from './app/pages/Settings';
 
+
 const Stack = createNativeStackNavigator();
-export default function App() {
+
+export default function App() {  // Main app stack
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -70,13 +72,15 @@ export default function App() {
           component={DrawerNav}
           options={{headerShown: false}}
         />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-//put the link that you want to show up on the drawer here
-const Drawer = createDrawerNavigator();
+
+// Put the pages that you want to show in the left sidebar Drawer here
+const Drawer = createDrawerNavigator();  // See: https://reactnavigation.org/docs/drawer-navigator/
 function DrawerNav() {
   return (
     <Drawer.Navigator
@@ -96,130 +100,10 @@ function DrawerNav() {
   );
 }
 
-//put the link that you want to show up on the navbar here
-const Tab = createBottomTabNavigator();
-const ButtomNavbar = () => {
-  return (
-    <Tab.Navigator
-      screenOptions={{
-        tabBarHideOnKeyboard: true,
-        tabBarStyle: {
-          position: 'absolute',
-          height: 60,
-        },
-      }}
-      tabBarOptions={{showLabel: false}}>
-      <Tab.Screen
-        name="HomePage"
-        component={HomePage}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Image
-                source={require('./app/icon/home-navbar.png')}
-                style={[
-                  styles.tabicons,
-                  {tintColor: focused ? '#3791fc' : '#748c94'},
-                ]}
-              />
-              <Text
-                style={[
-                  styles.tabtext,
-                  {color: focused ? '#3791fc' : '#748c94'},
-                ]}>
-                Home
-              </Text>
-            </View>
-          ),
-        }}
-      />
 
-      <Tab.Screen
-        name="EConsultsLandingPage"
-        component={EConsultsLandingPage}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Image
-                source={require('./app/icon/econsultnavbar.png')}
-                style={[
-                  styles.tabicons,
-                  {tintColor: focused ? '#3791fc' : '#748c94'},
-                ]}
-              />
-              <Text
-                style={[
-                  styles.tabtext,
-                  {color: focused ? '#3791fc' : '#748c94'},
-                ]}>
-                E-Consultation
-              </Text>
-            </View>
-          ),
-          tabBarStyle: {display: 'none'},
-        }}
-      />
-
-      <Tab.Screen
-        name="Appointments"
-        component={Appointments}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Image
-                source={require('./app/icon/appt-navbar.jpeg')}
-                style={[
-                  styles.tabicons,
-                  {tintColor: focused ? '#3791fc' : '#748c94'},
-                ]}
-              />
-              <Text
-                style={[
-                  styles.tabtext,
-                  {color: focused ? '#3791fc' : '#748c94'},
-                ]}>
-                Appointments
-              </Text>
-            </View>
-          ),
-        }}
-      />
-
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Image
-                source={require('./app/icon/profile-navbar.png')}
-                style={[
-                  styles.tabicons,
-                  {tintColor: focused ? '#3791fc' : '#748c94'},
-                ]}
-              />
-              <Text
-                style={[
-                  styles.tabtext,
-                  {color: focused ? '#3791fc' : '#748c94'},
-                ]}>
-                Profile
-              </Text>
-            </View>
-          ),
-        }}
-      />
-    </Tab.Navigator>
-  );
-};
-
-//those pages you want to have bottom bar goes here
+// Put the pages where you want the bottom navbar included, here
 const ScreenWithBarStack = createNativeStackNavigator();
-function ScreensWithBar() {
+function BarStack() {
   return (
     <ScreenWithBarStack.Navigator>
       <ScreenWithBarStack.Screen
@@ -229,14 +113,8 @@ function ScreensWithBar() {
       />
 
       <ScreenWithBarStack.Screen
-        name="Appointments"
-        component={Appointments}
-        options={{headerShown: false}}
-      />
-
-      <ScreenWithBarStack.Screen
-        name="NewAppt"
-        component={NewAppt}
+        name="ApptsStack"
+        component={ApptsStack}
         options={{headerShown: false}}
       />
 
@@ -247,8 +125,8 @@ function ScreensWithBar() {
       />
 
       <ScreenWithBarStack.Screen
-        name="DietTracking"
-        component={DietTracking}
+        name="DietTracking2"
+        component={DietTracking2}
         options={{headerShown: false}}
       />
 
@@ -296,14 +174,34 @@ function ScreensWithBar() {
   );
 }
 
-//those pages you want to have drawer goes here
+// For Appointments pages
+function ApptsStack() {
+  return (
+    <ScreenWithBarStack.Navigator>
+      <ScreenWithBarStack.Screen
+        name="Appointments"
+        component={Appointments}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithBarStack.Screen
+        name="NewAppt"
+        component={NewAppt}
+        options={{headerShown: false}}
+      />
+    </ScreenWithBarStack.Navigator>
+  );
+}
+
+
+// Put the pages where you want the left sidebar Drawer included, here
 const ScreenWithDrawerStack = createNativeStackNavigator();
 function HomeStack() {
   return (
     <ScreenWithDrawerStack.Navigator>
       <ScreenWithDrawerStack.Screen
-        name="ButtomNavbar"
-        component={ButtomNavbar}
+        name="BottomNavbar"
+        component={BottomNavbar}
         options={{headerShown: false}}
       />
 
@@ -421,6 +319,129 @@ function HomeStack() {
     </ScreenWithDrawerStack.Navigator>
   );
 }
+
+
+// 4 tabs in bottom Navbar here
+const Tab = createBottomTabNavigator();
+const BottomNavbar = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        tabBarHideOnKeyboard: true,
+        tabBarStyle: {
+          position: 'absolute',
+          height: 60,
+        },
+      }}
+      tabBarOptions={{showLabel: false}}>
+      <Tab.Screen
+        name="BarStack"
+        component={BarStack}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <Image
+                source={require('./app/icon/home-navbar.png')}
+                style={[
+                  styles.tabicons,
+                  {tintColor: focused ? '#3791fc' : '#748c94'},
+                ]}
+              />
+              <Text
+                style={[
+                  styles.tabtext,
+                  {color: focused ? '#3791fc' : '#748c94'},
+                ]}>
+                Home
+              </Text>
+            </View>
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="EConsultsLandingPage"
+        component={EConsultsLandingPage}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <Image
+                source={require('./app/icon/econsultnavbar.png')}
+                style={[
+                  styles.tabicons,
+                  {tintColor: focused ? '#3791fc' : '#748c94'},
+                ]}
+              />
+              <Text
+                style={[
+                  styles.tabtext,
+                  {color: focused ? '#3791fc' : '#748c94'},
+                ]}>
+                E-Consultation
+              </Text>
+            </View>
+          ),
+          tabBarStyle: {display: 'none'},
+        }}
+      />
+
+      <Tab.Screen
+        name="ApptsStack"
+        component={ApptsStack}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <Image
+                source={require('./app/icon/appt-navbar.jpeg')}
+                style={[
+                  styles.tabicons,
+                  {tintColor: focused ? '#3791fc' : '#748c94'},
+                ]}
+              />
+              <Text
+                style={[
+                  styles.tabtext,
+                  {color: focused ? '#3791fc' : '#748c94'},
+                ]}>
+                Appointments
+              </Text>
+            </View>
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <Image
+                source={require('./app/icon/profile-navbar.png')}
+                style={[
+                  styles.tabicons,
+                  {tintColor: focused ? '#3791fc' : '#748c94'},
+                ]}
+              />
+              <Text
+                style={[
+                  styles.tabtext,
+                  {color: focused ? '#3791fc' : '#748c94'},
+                ]}>
+                Profile
+              </Text>
+            </View>
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
+
 
 const styles = StyleSheet.create({
   tabicons: {
