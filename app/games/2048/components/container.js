@@ -117,7 +117,13 @@ class Container extends Component {
       <View {...this._panResponder.panHandlers} style={styles.container}>
         <Heading score={this.state.score} best={this.state.best} />
 
-        <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            flex: 1,
+            marginBottom: 50,
+          }}>
           <GameContainer
             size={this.state.size}
             tiles={this.state.tiles}
