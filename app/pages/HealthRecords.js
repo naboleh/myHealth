@@ -18,7 +18,18 @@ export default function HealthRecords({navigation}) {
         source={require('../backgrounds/zzHEALTHBG.png')}
         style={{height: '100%', width: '100%'}}>
         <ScrollView>
-          <Text style={styles.titleText}>Health Records</Text>
+          <View style={styles.topbarcontainer}>
+            <View style={styles.topnavcontainer}>
+             <Text style={styles.topnavcontainer}>Health Records</Text>
+            </View>
+            <TouchableOpacity
+             style={styles.backbutton}
+             onPress={() => navigation.navigate('HomePage')}>
+              <Image
+              source={require('../icon/backicon.png')}
+              />
+               </TouchableOpacity>
+               </View>
 
           <View style={styles.overlayContainer}>
             <TouchableOpacity style={styles.menubtn}>
@@ -119,4 +130,30 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginVertical: '10%',
   },
+  topbarcontainer: {
+     width: '100%',
+     height: 55,
+     flexDirection: 'column',
+     alignItems: 'center',
+     marginBottom: 20,
+     borderRadius: 5,
+    },
+    topnavcontainer: {
+     width: "100%",
+     backgroundColor: '#ffffff',
+     color: '#003f5c',
+     height: 60,
+     textAlign: 'center',
+     justifyContent: 'center',
+     fontSize:  20,
+     fontFamily: 'Quicksand-Bold',
+     paddingTop: 10
+    },
+    backbutton: {
+     width: 40,
+     height: 40,
+     position: 'absolute',
+     left: 10,
+     top: 8
+    },
 });

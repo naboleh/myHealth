@@ -1,10 +1,13 @@
 import React from 'react';
 import { 
-  Text, 
-  View,
   StyleSheet,
+  Text,
+  Image,
+  View,
+  TextInput,
+  Button,
   TouchableOpacity,
-  ImageBackground,
+  ImageBackground
 } from 'react-native';
 
 import MotherLion from '../components/MotherLion';
@@ -13,7 +16,18 @@ export default function Caregiver({ navigation }) {
     return (
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../backgrounds/zzCAREGIVERBG.png')} style={{height:'100%', width: '100%'}}>
-        <Text style={styles.titleText}>Caregiver</Text>
+        <View style={styles.topbarcontainer}>
+                  <View style={styles.topnavcontainer}>
+                  <Text style={styles.topnavcontainer}>Caregiver</Text>
+                   </View>
+                   <TouchableOpacity
+                    style={styles.backbutton}
+                    onPress={() => navigation.navigate('HomePage')}>
+                    <Image
+                    source={require('../icon/backicon.png')}
+                     />
+                     </TouchableOpacity>
+                     </View>
 
             <View style={styles.overlayContainer}>
                 <View style={styles.messageContainer}>
@@ -116,5 +130,31 @@ const styles = StyleSheet.create({
       fontFamily: 'Quicksand-Bold',
       marginVertical: "3%",
       marginLeft: "5%"
-    }
+    },
+    topbarcontainer: {
+     width: '100%',
+     height: 55,
+     flexDirection: 'column',
+     alignItems: 'center',
+     marginBottom: 20,
+     borderRadius: 5,
+     },
+     topnavcontainer: {
+     width: "100%",
+     backgroundColor: '#ffffff',
+     color: '#003f5c',
+     height: 60,
+     textAlign: 'center',
+      justifyContent: 'center',
+      fontSize:  20,
+       fontFamily: 'Quicksand-Bold',
+       paddingTop: 10
+     },
+      backbutton: {
+      width: 40,
+      height: 40,
+      position: 'absolute',
+      left: 10,
+      top: 8
+     },
 });

@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ImageBackground,
   ScrollView,
+  Image,
 } from 'react-native';
 
 import NurseSmiling from '../components/NurseSmiling';
@@ -17,7 +18,18 @@ export default function Appointments({navigation}) {
         source={require('../backgrounds/zzAPPTBG.png')}
         style={{height: '100%', width: '100%'}}>
         <ScrollView contentContainerStyle={{paddingBottom: 200}}>
-          <Text style={styles.titleText}>Appointments</Text>
+          <View style={styles.topbarcontainer}>
+                     <View style={styles.topnavcontainer}>
+                        <Text style={styles.topnavcontainer}>Appointments</Text>
+                      </View>
+                      <TouchableOpacity
+                       style={styles.backbutton}
+                          onPress={() => navigation.navigate('HomePage')}>
+                          <Image
+                          source={require('../icon/backicon.png')}
+                          />
+                       </TouchableOpacity>
+                       </View>
 
           <View style={styles.overlayContainer}>
             <View style={styles.makeappt}>
@@ -147,5 +159,31 @@ const styles = StyleSheet.create({
     fontFamily: 'Quicksand-Bold',
     marginVertical: '2%',
     marginLeft: '5%',
+    },
+    topbarcontainer: {
+   width: '100%',
+   height: 55,
+   flexDirection: 'column',
+   alignItems: 'center',
+   marginBottom: 20,
+   borderRadius: 5,
+  },
+  topnavcontainer: {
+   width: "100%",
+   backgroundColor: '#ffffff',
+   color: '#003f5c',
+   height: 60,
+   textAlign: 'center',
+   justifyContent: 'center',
+   fontSize:  20,
+   fontFamily: 'Quicksand-Bold',
+   paddingTop: 10
+  },
+  backbutton: {
+   width: 40,
+   height: 40,
+   position: 'absolute',
+   left: 10,
+   top: 8
   },
 });

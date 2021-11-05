@@ -19,7 +19,18 @@ export default function Payment({ navigation }) {
     return (
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../backgrounds/zzPAYMENTBG.png')} style={{height:'100%', width: '100%'}}>
-        <Text style={styles.titleText}>Payment</Text>
+        <View style={styles.topbarcontainer}>
+          <View style={styles.topnavcontainer}>
+          <Text style={styles.topnavcontainer}>Payment</Text>
+           </View>
+           <TouchableOpacity
+            style={styles.backbutton}
+            onPress={() => navigation.navigate('HomePage')}>
+            <Image
+            source={require('../icon/backicon.png')}
+             />
+             </TouchableOpacity>
+             </View>
             <View style={styles.overlayContainer}>
                 <Text style={styles.title2Text}>View your bills</Text>
 
@@ -86,5 +97,31 @@ const styles = StyleSheet.create({
       fontFamily: 'Quicksand-Bold',
       marginVertical: "5%",
       marginLeft: "5%"
-    }
+    },
+    topbarcontainer: {
+         width: '100%',
+         height: 55,
+         flexDirection: 'column',
+         alignItems: 'center',
+         marginBottom: 20,
+         borderRadius: 5,
+        },
+        topnavcontainer: {
+         width: "100%",
+         backgroundColor: '#ffffff',
+         color: '#003f5c',
+         height: 60,
+         textAlign: 'center',
+         justifyContent: 'center',
+         fontSize:  20,
+         fontFamily: 'Quicksand-Bold',
+         paddingTop: 10
+        },
+        backbutton: {
+         width: 40,
+         height: 40,
+         position: 'absolute',
+         left: 10,
+         top: 8
+        },
 });

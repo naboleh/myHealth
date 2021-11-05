@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ImageBackground,
   Picker,
+  Image,
 } from 'react-native';
 
 import { useState } from "react";
@@ -19,7 +20,18 @@ export default function DietTracking2({ navigation }) {
     return (
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../backgrounds/zzDIETBG.png')} style={{height:'100%', width: '100%'}}>
-        <Text style={styles.titleText}>Diet Tracking</Text>
+        <View style={styles.topbarcontainer}>
+           <View style={styles.topnavcontainer}>
+              <Text style={styles.topnavcontainer}>Diet Tracking</Text>
+            </View>
+            <TouchableOpacity
+             style={styles.backbutton}
+                onPress={() => navigation.navigate('HomePage')}>
+                <Image
+                source={require('../icon/backicon.png')}
+                />
+             </TouchableOpacity>
+             </View>
             <View style={styles.overlayContainer}>
                 <View style={styles.messageContainer}>
                       <Text style={styles.message}>Take charge of your health by having balanced meals!</Text>
@@ -135,6 +147,32 @@ const styles = StyleSheet.create({
     marginLeft: '10%',
     marginRight: '10%',
     flexDirection: 'row'
-  }
+  },
+  topbarcontainer: {
+   width: '100%',
+   height: 55,
+   flexDirection: 'column',
+   alignItems: 'center',
+   marginBottom: 20,
+   borderRadius: 5,
+  },
+  topnavcontainer: {
+   width: "100%",
+   backgroundColor: '#ffffff',
+   color: '#003f5c',
+   height: 60,
+   textAlign: 'center',
+   justifyContent: 'center',
+   fontSize:  20,
+   fontFamily: 'Quicksand-Bold',
+   paddingTop: 10
+  },
+  backbutton: {
+   width: 40,
+   height: 40,
+   position: 'absolute',
+   left: 10,
+   top: 8
+  },
 });
 
