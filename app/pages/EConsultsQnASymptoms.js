@@ -26,11 +26,6 @@ const EConsultsQnASymptoms = ({ navigation }) => {
     const [toggleMenstrual, setToggleMenstrual] = useState(false)
     const [toggleOthers, setToggleOthers] = useState(false)
 
-    const goToPainPoints = () => {
-    if (togglePain) return;
-    setTogglePain(true);
-    
-    }
 
     return (
       <View style={styles.topcontainer}>
