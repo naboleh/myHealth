@@ -1,27 +1,56 @@
 /* 
 The landing page that leads to the Singpass Login page
 */
-import React from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 import {
   StyleSheet,
   Text,
   ImageBackground,
   View,
   Button,
-  TouchableOpacity
+  TouchableOpacity,
+  Animated,
+  Dimensions
 } from 'react-native';
 
 import Logo from '../components/Logo';
 
-export default function LandingPage({ navigation }) {
+/*fade in to landing page when loading*/
+const FadeInView = (props) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current
 
+ React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 3000, //in millisec
+      }
+    ).start();
+  }, [fadeAnim])
+
+  return (
+      <Animated.View                 // Special animatable View
+        style={{
+          ...props.style,
+          opacity: fadeAnim,         // Bind opacity to animated value
+        }}
+      >
+        {props.children}
+      </Animated.View>
+    );
+  }
+
+export default LandingPage = ({navigation}) => {
     return (
       <View style={styles.container}>
+      <FadeInView>
         <ImageBackground source={require('../backgrounds/zzLOGINBG.png')} style={{height: '100%', width: '100%'}}>
           <TouchableOpacity onPress={() => navigation.navigate('SingpassLogin')}>
             <Text style={styles.loginbutton}>Login with Singpass</Text>
           </TouchableOpacity>
         </ImageBackground>
+        </FadeInView>
       </View>
       );
   }
@@ -29,8 +58,8 @@ export default function LandingPage({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-end'
+    alignItems: 'stretch',
+    justifyContent: 'flex-end',
   },
   loginbutton: {
       backgroundColor: '#ce2029',

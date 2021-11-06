@@ -32,9 +32,12 @@
     "react-native-reanimated": "^2.2.3",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
+    "react-native-splash-screen": "^3.2.0",
     "react-native-vector-icons": "^8.1.0",
     "react-native-webview": "^11.14.0",
     "react-native-windows": "^0.66.0",
+    "react-navigation": "^3.0.0",
+    "react-navigation-fluid-transitions": "^0.3.2",
     "typescript": "^4.4.3",
     "yarn": "^1.22.15"
   },
