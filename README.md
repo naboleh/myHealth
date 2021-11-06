@@ -1,4 +1,4 @@
-<img src="https://github.com/naboleh/myHealth/blob/2351bf7daea8826d228badb692fffeac78a087df/app/icon/logopink.png" width=30% height="30%" align="left"> <br /><br /><br /><br /><br /><br />
+<img src="https://github.com/naboleh/myHealth/blob/2351bf7daea8826d228badb692fffeac78a087df/app/icon/logopink.png" width=30% height="30%" align="left"> <br /><br /><br /><br /><br />
 
 # About myHealth
 **myHealth** is a health application that encompasses various health services for patients in Singapore. Its main function is to allow users to arrange online consultations (e-consultations) with certified doctors while incorporating elements of interactiveness and engagement when visiting a doctor. <br /><br />
