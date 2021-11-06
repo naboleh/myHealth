@@ -52,11 +52,11 @@ export default function EConsultsQnAMedication({ navigation }) {
                       />
                     </View>
 
-                    <TouchableOpacity style={styles.backbutton} onPress={() => navigation.navigate('EConsultsQnASymptoms')}>
+                    <TouchableOpacity style={styles.backbutton} onPress={() => navigation.replace('EConsultsQnASymptoms')}>
                       <Text style={styles.title2Text}>Back</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsQnAMedName')}>
+                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.replace('EConsultsQnAMedName')}>
                      <Text style={styles.title2Text}>Next</Text>
                     </TouchableOpacity>
 

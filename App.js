@@ -8,7 +8,8 @@ import * as React from 'react';
 import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+//import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
@@ -49,7 +50,8 @@ import Game2048 from './app/games/Game2048';
 import Settings from './app/pages/Settings';
 
 
-const Stack = createNativeStackNavigator();
+//const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {  // Main app stack
   return (
@@ -64,7 +66,10 @@ export default function App() {  // Main app stack
         <Stack.Screen
           name="SingpassLogin"
           component={SingpassLogin}
-          options={{headerShown: false}}
+          options={{
+            headerShown: false,
+            ...TransitionPresets.ModalSlideFromBottomIOS,
+          }}
         />
 
         <Stack.Screen
@@ -102,7 +107,8 @@ function DrawerNav() {
 
 
 // Put the pages where you want the bottom navbar included, here
-const ScreenWithBarStack = createNativeStackNavigator();
+//const ScreenWithBarStack = createNativeStackNavigator();
+const ScreenWithBarStack = createStackNavigator();
 function BarStack() {
   return (
     <ScreenWithBarStack.Navigator>
@@ -195,7 +201,8 @@ function ApptsStack() {
 
 
 // Put the pages where you want the left sidebar Drawer included, here
-const ScreenWithDrawerStack = createNativeStackNavigator();
+//const ScreenWithDrawerStack = createNativeStackNavigator();
+const ScreenWithDrawerStack = createStackNavigator();
 function HomeStack() {
   return (
     <ScreenWithDrawerStack.Navigator>

@@ -151,12 +151,12 @@ const EConsultsQnASymptoms = ({ navigation }) => {
 
 
 
-                <TouchableOpacity style={styles.backbutton} onPress={() => navigation.navigate('EConsultsLandingPage')}>
+                <TouchableOpacity style={styles.backbutton} onPress={() => navigation.replace('EConsultsLandingPage')}>
                    <Text style={styles.title2Text}>Back</Text>
 
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsQnAPainPoints')}>
+                <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.replace('EConsultsQnAPainPoints')}>
                    <Text style={styles.title2Text}>Next</Text>
                 </TouchableOpacity>
 

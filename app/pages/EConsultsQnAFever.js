@@ -52,12 +52,12 @@ const EConsultsQnAFever = ({navigation}) => {
                     />
                     </View>
 
-                    <TouchableOpacity style={styles.backbutton} onPress={() => navigation.navigate('EConsultsQnADrugName')}>
+                    <TouchableOpacity style={styles.backbutton} onPress={() => navigation.replace('EConsultsQnADrugName')}>
                       <Text style={styles.title2Text}>Back</Text>
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsWaitingRoom')}>
+                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.replace('EConsultsWaitingRoom')}>
                      <Text style={styles.title2Text}>Submit</Text>
                     </TouchableOpacity>
 

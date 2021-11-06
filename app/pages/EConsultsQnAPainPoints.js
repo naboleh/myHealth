@@ -221,11 +221,11 @@ const EConsultsQnAPainPoints = ({ navigation }) => {
 
 
 
-                <TouchableOpacity style={styles.backbutton} onPress={() => navigation.navigate('EConsultsQnASymptoms')}>
+                <TouchableOpacity style={styles.backbutton} onPress={() => navigation.replace('EConsultsQnASymptoms')}>
                    <Text style={styles.title2Text}>Back</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.navigate('EConsultsQnAMedication')}>
+                <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.replace('EConsultsQnAMedication')}>
                    <Text style={styles.title2Text}>Next</Text>
                 </TouchableOpacity>
 
