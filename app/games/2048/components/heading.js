@@ -86,8 +86,8 @@ const Heading = props => (
           fontSize: 16,
           color: '#858585',
         }}>
-        Combine like-numbered tiles and get to 2048! Play to learn about the
-        food pyramid.
+        Combine like-numbered tiles and get to 2048! Play to learn more about
+        the food pyramid.
       </Text>
     </View>
   </View>

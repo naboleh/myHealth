@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Avatar} from 'react-native-elements';
 import {
   View,
   Button,
@@ -69,17 +70,38 @@ class EConsultsChat extends Component {
     if (item.type == 0) {
       return (
         <View
-          style={[
-            styles.balloon,
-            {backgroundColor: '#1084ff', alignSelf: 'flex-end'},
-          ]}>
-          <Text style={{paddingTop: 5, color: 'white'}}>{item.data}</Text>
+          style={{
+            flexDirection: 'row',
+            alignSelf: 'flex-end',
+            marginRight: 10,
+          }}>
+          <View style={[styles.balloon, {backgroundColor: '#1084ff'}]}>
+            <Text style={{paddingTop: 3, color: 'white'}}>{item.data}</Text>
+          </View>
+          <Avatar
+            rounded
+            source={{
+              uri: 'https://i.kym-cdn.com/entries/icons/facebook/000/016/546/hidethepainharold.jpg',
+            }}
+          />
         </View>
       );
     } else {
       return (
-        <View style={[styles.balloon, {backgroundColor: '#dedede'}]}>
-          <Text style={{paddingTop: 5, color: '#000000'}}>{item.data}</Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            marginLeft: 10,
+          }}>
+          <Avatar
+            rounded
+            source={{
+              uri: 'https://www.rafflesmedicalgroup.com/wp-content/uploads/2020/06/placeholder-doctor-m-320x320.jpg',
+            }}
+          />
+          <View style={[styles.balloon, {backgroundColor: '#dedede'}]}>
+            <Text style={{paddingTop: 5, color: '#000000'}}>{item.data}</Text>
+          </View>
         </View>
       );
     }
@@ -164,11 +186,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 20,
   },
   chatboxContainer: {
     flexDirection: 'row',
     marginBottom: 5,
     minHeight: 50,
+    backgroundColor: 'transparent',
   },
   chatBox: {
     height: 'auto',
@@ -177,6 +201,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#40444a',
     color: 'white',
     fontSize: 17,
+    borderRadius: 25,
+    paddingLeft: 20,
   },
   button: {
     marginLeft: 3,
