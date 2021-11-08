@@ -120,7 +120,7 @@ class EConsultsChat extends Component {
               style={styles.closeButton}
             />
           </TouchableOpacity>
-          <Text style={styles.mainText}> Dr. Stephen Strange </Text>
+          <Text style={styles.mainText}> Dr. Cheng Tian Hong </Text>
         </View>
         <OTSession
           apiKey={this.apiKey}

@@ -33,6 +33,7 @@ import EConsultsQnAMedName from './app/pages/EConsultsQnAMedName';
 import EConsultsQnADrugAllergy from './app/pages/EConsultsQnADrugAllergy';
 import EConsultsQnADrugName from './app/pages/EConsultsQnADrugName';
 import EConsultsQnAFever from './app/pages/EConsultsQnAFever';
+import EConsultsDataPage from './app/pages/EConsultsDataPage';
 import EConsultsVideo from './app/pages/EConsultsVideo';
 import EConsultsLandingPage from './app/pages/EConsultsLandingPage';
 import EConsultsQnAPainPoints from './app/pages/EConsultsQnAPainPoints';
@@ -263,6 +264,12 @@ function HomeStack() {
       <ScreenWithDrawerStack.Screen
         name="EConsultsQnAFever"
         component={EConsultsQnAFever}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultsDataPage"
+        component={EConsultsDataPage}
         options={{headerShown: false}}
       />
 

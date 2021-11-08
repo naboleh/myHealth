@@ -1,37 +1,22 @@
 import React, {useState} from 'react';
-import RadioGroup from 'react-native-radio-buttons-group';
-
 import {
   Text,
   View,
   StyleSheet,
   TouchableOpacity,
   ImageBackground,
+  TextInput,
+  ScrollView,
 } from 'react-native';
 
 import NurseLion from '../mascots/LionNurse.js';
 
-const radioButtonsData = [{
-    id: '1', // acts as primary key, should be unique and non-empty string
-    label: 'Yes',
-    value: 'yes'
-}, {
-    id: '2',
-    label: 'No',
-    value: 'no'
-}]
-
-const EConsultsQnAFever = ({navigation}) => {
-
-    const [radioButtons, setRadioButtons] = useState(radioButtonsData)
-
-    function onPressRadioButton(radioButtonsArray) {
-        setRadioButtons(radioButtonsArray);
-    }
+export default function EConsultsDataPage({ navigation }) {
 
     return (
           <View style={styles.topcontainer}>
             <ImageBackground source={require('../backgrounds/zzECONSULTBG.png')} style={{height:'100%', width: '100%'}}>
+            <ScrollView>
             <Text style={styles.titleText}>E-Consultation</Text>
 
                 <View style={styles.overlayContainer}>
@@ -39,29 +24,25 @@ const EConsultsQnAFever = ({navigation}) => {
                         <NurseLion width={260} height={300} />
                     </View>
 
-                    <View style={styles.symptomsQ} onPress={() => navigation.navigate('nil')}>
-                      <Text style={styles.subtitleText}>Do you have a fever above 38°C?</Text>
+                    <View style={styles.dataQ} onPress={() => navigation.navigate('nil')}>
+                      <Text style={styles.subtitleText}>Please confirm your details.</Text>
                     </View>
 
-                    <View style={styles.radioContainer}>
-                      <RadioGroup
-                      radioButtons={radioButtons}
-                      onPress={onPressRadioButton}
-                      layout='row'
-                      style={styles.radioBtn}
-                    />
+                    <View style={styles.questionsContainer}>
+
                     </View>
 
-                    <TouchableOpacity style={styles.backbutton} onPress={() => navigation.replace('EConsultsQnADrugName')}>
-                      <Text style={styles.title2Text}>Back</Text>
+                    <TouchableOpacity style={styles.backbutton} onPress={() => navigation.replace('EConsultsQnAFever')}>
+                      <Text style={styles.title2Text}>Edit</Text>
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.replace('EConsultsDataPage')}>
-                     <Text style={styles.title2Text}>Submit</Text>
+                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.replace('EConsultsWaitingRoom')}>
+                     <Text style={styles.title2Text}>Confirm</Text>
                     </TouchableOpacity>
 
                 </View>
+            </ScrollView>
           </ImageBackground>
           </View>
           );
@@ -76,7 +57,7 @@ const EConsultsQnAFever = ({navigation}) => {
         flexGrow: 1,
         textAlign: 'center',
         backgroundColor: '#fff',
-        height: '85%',
+        height: 1000,
         width: '90%',
         borderRadius: 25,
         marginLeft: '5%',
@@ -90,32 +71,35 @@ const EConsultsQnAFever = ({navigation}) => {
         width: '38%',
         borderRadius: 25,
         marginLeft: '19%',
-        marginBottom: '10%',
+        marginBottom: '-50%',
       },
-      symptomsQ: {
+      dataQ: {
               flexDirection: 'column',
               backgroundColor: '#83b7b5',
               textAlign: 'center',
               color: 'black',
               width: '80%',
-              height: '15%',
+              height: '7%',
               borderRadius: 15,
               paddingVertical: '5%',
               fontSize:  18,
               fontFamily: 'Quicksand-Bold',
-              marginVertical: "2%",
+              marginVertical: "10%",
               marginLeft: "10%"
       },
-      radioContainer: {
-        flexDirection: "row",
-        marginBottom: -35,
-        marginTop: 30,
-        marginLeft: 120
+      questionsContainer: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
       },
-      radioBtn: {
-        alignSelf: "center",
-        fontSize:  18,
-        fontFamily: 'Quicksand-Bold'
+      input: {
+        borderWidth: 1,
+        borderColor: '#777',
+        padding: 8,
+        bottom:10 ,
+        width: 270,
+        borderRadius: 10,
       },
       titleText: {
         marginLeft: "7%",
@@ -146,32 +130,30 @@ const EConsultsQnAFever = ({navigation}) => {
       backbutton: {
           backgroundColor: '#b3d3d2',
           color: 'white',
-          width: '20%',
-          height: '6%',
+          width: '25%',
+          height: '4%',
           borderRadius: 15,
           textAlign: 'center',
           justifyContent: 'center',
           textAlignVertical: "center",
           fontSize:  18,
           fontFamily: 'Quicksand-Bold',
-          marginLeft: "13%",
-          marginVertical: "20%",
+          marginLeft: '13%',
+          bottom: '-1%',
         },
         nextbutton: {
               backgroundColor: '#b3d3d2',
               color: 'white',
-              width: '20%',
-              height: '6%',
+              width: '25%',
+              height: '4%',
               borderRadius: 15,
               textAlign: 'center',
               justifyContent: 'center',
               textAlignVertical: "center",
               fontSize:  18,
               fontFamily: 'Quicksand-Bold',
-              marginLeft: "68%",
-              marginVertical: "-29%",
+              marginLeft: "65%",
+              bottom: '3%',
             },
 
     });
-
-export default EConsultsQnAFever;
