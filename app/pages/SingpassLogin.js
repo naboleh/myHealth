@@ -1,26 +1,4 @@
-/* Singpass Login page
-I'll look into databases later
-  const auth = useSelector((state: any) => state.auth);
-  const error = useSelector((state: any) => state.err);
 
-  const [singpassID, setUser] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-
-  const onLogin() => {
-    navigate('HomePage');
-  }
-
-  useEffect(() => {
-    if (auth.isAuthenticated) {
-      onLogin();
-    }
-  }, [auth]);
-
-
-  onChangeText={(singpassID)} => setUser(singpassID)}
-  onChangeText={(password)} => setUser(password)}
-
-*/
 
 import React, {useState, useEffect} from 'react';
 import {
@@ -33,7 +11,60 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import { openDatabase } from 'react-native-sqlite-storage';
+
+const db = openDatabase({
+  name:'MyHealth',
+});
+
 export default function SingpassLogin({navigation}) {
+
+  const [UserName, setUsername] = useState('');
+  const [Password, setPassword] = useState('');
+
+  const [name, setoutName] = useState('');
+  const [password, setoutPassword] = useState('');
+
+  const createTables=()=>{
+    db.transaction(txn =>{
+      txn.executeSql(
+        'CREATE TABLE IF NOT EXISTS userInfo (id INTEGER PRIMARY KEY AUTOINCREMENT, Name VARCHAR(30), Password VARCHAR(30))',
+        [],
+        ()=>{
+          console.log('creating table successfully');
+        },
+        error =>{
+          console.log('error on creating table '+error.message);
+
+        },
+      );
+    });
+  };
+
+  const addUser = () =>{
+    createTables();
+    if(!UserName || !Password){
+      alert("Enter category and Password");
+      return false;
+    }
+
+    db.transaction(txn =>{
+      txn.executeSql(
+        'INSERT INTO userInfo (Name, Password) VALUES(?,?)',
+        [UserName,Password],
+        ()=>{
+          console.log('User: '+[UserName] +' added successfully');
+          console.log('Password: '+[Password] +' added successfully');
+          setUsername("");
+        },
+        error=>{console.log('error on adding user info '+error.message);
+      }
+      )
+    })
+
+    navigation.navigate('DrawerNav')
+  };
+
   return (
     <View style={styles.topcontainer}>
       <Image
@@ -51,16 +82,18 @@ export default function SingpassLogin({navigation}) {
           style={styles.TextInput}
           placeholder="Singpass ID"
           placeholderTextColor="#003f5c"
+          onChangeText={setUsername}
         />
 
         <TextInput
           style={styles.TextInput}
           placeholder="Password"
           placeholderTextColor="#003f5c"
+          onChangeText={setPassword}
           secureTextEntry={true}
         />
 
-        <TouchableOpacity onPress={() => navigation.navigate('DrawerNav')}>
+        <TouchableOpacity  onPress={addUser}>
           <Text style={styles.singpassbutton}>Log In</Text>
         </TouchableOpacity>
 

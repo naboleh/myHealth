@@ -10,7 +10,56 @@ import {
   ScrollView,
 } from 'react-native';
 
+import { openDatabase } from 'react-native-sqlite-storage';
+
+import {useState, useEffect} from 'react';
+
+const db = openDatabase({
+  name:'MyHealth',
+});
+
+
 export default function HomePage({navigation}) {
+
+
+  const [name, setoutName] = useState('');
+  const [password, setoutPassword] = useState('');
+
+
+  
+  const getUserName = ()=>{
+    db.transaction(txn =>{
+      txn.executeSql(
+        'SELECT * FROM userInfo ORDER BY id DESC LIMIT 1',
+        [],  
+        (txn, results)=> {
+          console.log("user retrieved successfully!");
+         var len =results.rows.length
+         if(len>0){
+           var userName1 =results.rows.item(0).Name;
+           var password1 =results.rows.item(0).Password;
+           console.log("user name= "+userName1);
+           console.log("pasword name= "+password1);
+
+           setoutName(userName1);
+           setoutPassword(password1);
+           console.log()
+
+         }
+         
+        },
+        error => {console.log("error "+ error.message);
+      }
+      )
+    }
+
+    )
+  }
+
+  useEffect(()=>{
+    getUserName();
+  },);
+
   return (
     <SafeAreaView style={styles.topcontainer}>
       <ImageBackground
@@ -39,10 +88,10 @@ export default function HomePage({navigation}) {
                 marginLeft: '43%',
               }}
             />
-            <Image
-              source={require('../icon/search.png')}
-              style={{height: 35, width: 35, position: 'absolute', right: 10}}
-            />
+             <Text style={styles.subtitleText}>
+            {name}
+        </Text>
+          
           </View>
 
           <View style={styles.carouselContainer}>
@@ -176,5 +225,11 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     alignItems: 'center',
     padding: 7,
+  },
+  subtitleText: {
+    fontFamily: 'Quicksand-Medium',
+    fontSize: 20,
+    paddingLeft:80,
+   
   },
 });
