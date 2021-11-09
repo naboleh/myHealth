@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {
   Text,
   View,
@@ -11,7 +11,76 @@ import {
 
 import NurseLion from '../mascots/LionNurse.js';
 
+import { openDatabase } from 'react-native-sqlite-storage';
+
+const db = openDatabase({
+  name:'MyHealth',
+});
+
+
 export default function EConsultsDataPage({ navigation }) {
+
+  
+  const [DrugAllery, setDrugAllery] = useState('');
+  const [DrugName, setDurgName] = useState('');
+  const [OnMedi, setOnMedi] = useState('');
+  const [MedName, setMedName] = useState('');
+  const [PainPoint, setPainPoint] = useState('');
+  const [Symptoms, setSymptoms] = useState('');
+  const [Fever, setFever] = useState('');
+
+
+
+  const getUserInfo = ()=>{
+    db.transaction(txn =>{
+      txn.executeSql(
+         'SELECT * FROM QAInfo ORDER BY id DESC LIMIT 7',
+
+        [],  
+        (txn, results)=> {
+          console.log("user retrieved successfully!");
+         var len =results.rows.length
+         if(len>0){
+           var Symptoms1 =results.rows.item(6).Symptoms;
+           var Painpoints1 =results.rows.item(5).Painpoints;
+           var Medication1 =results.rows.item(4).Medication;
+           var MedName1 =results.rows.item(3).MedName;
+           var DrugAllergy1 =results.rows.item(2).DrugAllergy;
+           var DrugName1 =results.rows.item(1).DrugName;
+           var Fever1 =results.rows.item(0).Fever;
+        
+           console.log("Symptoms = "+Symptoms1);
+           console.log("Painpoints = "+Painpoints1);
+           console.log("Medication= "+Medication1);
+           console.log("MedName= "+MedName1);
+           console.log("DrugAllergy= "+DrugAllergy1);
+           console.log("DrugName= "+DrugName1);
+           console.log("Fever= "+Fever1);
+  
+           setDrugAllery(DrugAllergy1);
+           setDurgName(DrugName1);
+           setOnMedi(Medication1);
+           setMedName(MedName1);
+           setoutName(userName1);
+           setPainPoint(Painpoints1);
+           setSymptoms(Symptoms1);
+           setFever(Fever1);
+
+  
+         }
+         
+        },
+        error => {console.log("error "+ error.message);
+      }
+      )
+    }
+  
+    )
+  }
+  
+  useEffect(()=>{
+    getUserInfo();
+  },);
 
     return (
           <View style={styles.topcontainer}>
@@ -29,7 +98,60 @@ export default function EConsultsDataPage({ navigation }) {
                     </View>
 
                     <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>Symptoms:</Text>
+                    </View>
 
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>{Symptoms}</Text>
+                    </View>
+
+
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>PainPoint:</Text>
+                    </View>
+
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>{PainPoint}</Text>
+                    </View>
+
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>Are you currently on any Medication?</Text>
+                    </View>
+
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>{OnMedi}</Text>
+                    </View>
+
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>What are the Medications</Text>
+                    </View>
+                    
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>{MedName}</Text>
+                    </View>
+
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>Do you have any Drug Allergy?</Text>
+                    </View>
+
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>{DrugAllery}</Text>
+                    </View>
+
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>What are the Drugs that you are allergy?</Text>
+                    </View>
+
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>{DrugName}</Text>
+                    </View>
+
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>Do you have Fever above 38 degrees?</Text>
+                    </View>
+
+                    <View style={styles.questionsContainer}>
+                    <Text style={styles.subtitleText}>{Fever}</Text>
                     </View>
 
                     <TouchableOpacity style={styles.backbutton} onPress={() => navigation.replace('EConsultsQnAFever')}>
@@ -122,6 +244,7 @@ export default function EConsultsDataPage({ navigation }) {
       subtitle2Text: {
         fontFamily: 'Quicksand-Medium',
         fontSize: 18,
+        fontWeight: 'bold',
         textAlign: 'left',
         marginLeft: '5%',
         marginRight: '5%',
