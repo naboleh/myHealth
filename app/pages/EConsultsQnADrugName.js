@@ -10,8 +10,36 @@ import {
 
 import NurseLion from '../mascots/LionNurse.js';
 
+import { openDatabase } from 'react-native-sqlite-storage';
+
+const db = openDatabase({
+  name:'MyHealth',
+});
+
+
+
 export default function EConsultsQnADrugName({ navigation }) {
-    const [medname, setName] = useState('Paracetamol');
+    const [medname, setName] = useState('');
+
+
+    const addUser = () =>{
+  
+  
+      db.transaction(txn =>{
+        txn.executeSql(
+          'INSERT INTO QAInfo (DrugName) VALUES(?)',
+          [medname],
+          ()=>{
+            console.log('User: '+[medname] +' added successfully');
+
+          },
+          error=>{console.log('error on adding user info '+error.message);
+        }
+        )
+      })
+  
+      navigation.replace('EConsultsQnAFever')
+    };
 
     return (
           <View style={styles.topcontainer}>
@@ -30,6 +58,7 @@ export default function EConsultsQnADrugName({ navigation }) {
                     <View style={styles.blank}>
                      <TextInput
                         style={styles.input}
+                        onChangeText={setName}
                         placeholder='e.g. Paracetamol'
                         />
                     </View>
@@ -39,7 +68,7 @@ export default function EConsultsQnADrugName({ navigation }) {
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.replace('EConsultsQnAFever')}>
+                    <TouchableOpacity style={styles.nextbutton} onPress={addUser}>
                      <Text style={styles.title2Text}>Next</Text>
                     </TouchableOpacity>
 

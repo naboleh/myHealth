@@ -10,8 +10,35 @@ import {
 
 import NurseLion from '../mascots/LionNurse.js';
 
+import { openDatabase } from 'react-native-sqlite-storage';
+
+const db = openDatabase({
+  name:'MyHealth',
+});
+
+
+
 export default function EConsultsQnAMedName({ navigation }) {
-    const [medname, setName] = useState('Paracetamol');
+    const [medname, setName] = useState('');
+
+    const addUser = () =>{
+  
+  
+      db.transaction(txn =>{
+        txn.executeSql(
+          'INSERT INTO QAInfo (MedName) VALUES(?)',
+          [medname],
+          ()=>{
+            console.log('User: '+[medname] +' added successfully');
+
+          },
+          error=>{console.log('error on adding user info '+error.message);
+        }
+        )
+      })
+  
+      navigation.replace('EConsultsQnADrugAllergy')
+    };
 
     return (
           <View style={styles.topcontainer}>
@@ -23,13 +50,14 @@ export default function EConsultsQnAMedName({ navigation }) {
                         <NurseLion width={260} height={300} />
                     </View>
 
-                    <View style={styles.symptomsQ} onPress={() => navigation.navigate('nil')}>
+                    <View style={styles.symptomsQ}>
                       <Text style={styles.subtitleText}>Please state the name of the medication.</Text>
                     </View>
 
                     <View style={styles.blank}>
                      <TextInput
                         style={styles.input}
+                        onChangeText={setName}
                         placeholder='e.g. Paracetamol'
                         />
                     </View>
@@ -39,7 +67,7 @@ export default function EConsultsQnAMedName({ navigation }) {
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.replace('EConsultsQnADrugAllergy')}>
+                    <TouchableOpacity style={styles.nextbutton} onPress={addUser}>
                      <Text style={styles.title2Text}>Next</Text>
                     </TouchableOpacity>
 

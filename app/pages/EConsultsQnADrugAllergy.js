@@ -11,14 +11,22 @@ import {
 
 import NurseLion from '../mascots/LionNurse.js';
 
+import { openDatabase } from 'react-native-sqlite-storage';
+
+const db = openDatabase({
+  name:'MyHealth',
+});
+
+
+
 const radioButtonsData = [{
     id: '1', // acts as primary key, should be unique and non-empty string
     label: 'Yes',
-    value: 'yes'
+    value: 'Yes'
 }, {
     id: '2',
     label: 'No',
-    value: 'no'
+    value: 'No'
 }]
 
 export default function EConsultsQnADrugAllergy({ navigation }) {
@@ -28,6 +36,27 @@ export default function EConsultsQnADrugAllergy({ navigation }) {
     function onPressRadioButton(radioButtonsArray) {
         setRadioButtons(radioButtonsArray);
     }
+
+
+
+    const addUser = () =>{
+  
+  
+      db.transaction(txn =>{
+        txn.executeSql(
+          'INSERT INTO QAInfo (DrugAllergy) VALUES(?)',
+          [radioButtons[1].value],
+          ()=>{
+            console.log('User: '+[radioButtons[1].value] +' added successfully');
+
+          },
+          error=>{console.log('error on adding user info '+error.message);
+        }
+        )
+      })
+      navigation.replace('EConsultsQnADrugName')
+    };
+
 
     return (
           <View style={styles.topcontainer}>
@@ -57,7 +86,7 @@ export default function EConsultsQnADrugAllergy({ navigation }) {
 
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.replace('EConsultsQnADrugName')}>
+                    <TouchableOpacity style={styles.nextbutton} onPress={addUser}>
                      <Text style={styles.title2Text}>Next</Text>
                     </TouchableOpacity>
 

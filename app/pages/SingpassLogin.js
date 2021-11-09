@@ -28,7 +28,7 @@ export default function SingpassLogin({navigation}) {
   const createTables=()=>{
     db.transaction(txn =>{
       txn.executeSql(
-        'CREATE TABLE IF NOT EXISTS userInfo (id INTEGER PRIMARY KEY AUTOINCREMENT, Name VARCHAR(30), Password VARCHAR(30))',
+        'CREATE TABLE IF NOT EXISTS userInfo (id INTEGER PRIMARY KEY AUTOINCREMENT, Name VARCHAR(30), Password VARCHAR(30), Symptoms VARCHAR(256), Painpoints VARCHAR(128), Medication VARCHAR(128), MedName VARCHAR(128), DrugAllergy VARCHAR(128), DrugName VARCHAR(128), Fever VARCHAR(128))',
         [],
         ()=>{
           console.log('creating table successfully');

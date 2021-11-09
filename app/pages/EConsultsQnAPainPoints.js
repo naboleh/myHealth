@@ -14,7 +14,19 @@ import CheckBox from '@react-native-community/checkbox';
 
 import BodyModel from '../components/BodyModel';
 
+
+import { openDatabase } from 'react-native-sqlite-storage';
+
+const db = openDatabase({
+  name:'MyHealth',
+});
+
 const EConsultsQnAPainPoints = ({ navigation }) => {
+
+
+
+
+
     const [toggleHead, setToggleHead] = useState(false)
     const [toggleEyeEarNoseMouth, setToggleEyeEarNoseMouth] = useState(false)
     const [toggleNeck, setToggleNeck] = useState(false)
@@ -37,6 +49,118 @@ const EConsultsQnAPainPoints = ({ navigation }) => {
     const [toggleShin, setToggleShin] = useState(false)
     const [toggleFoot, setToggleFoot] = useState(false)
     const [toggleBones, setToggleBones] = useState(false)
+    var state =""; 
+    const addUser = () =>{
+
+  
+      if(toggleHead){
+  
+        state=state+"Head ";
+        
+      }
+      if(toggleEyeEarNoseMouth){
+  
+        state=state+"Eye Ear Nose Mouth ";
+        
+      } if(toggleNeck){
+  
+        state=state+"Neck ";
+        
+      } if(toggleArm){
+  
+        state=state+"Arm ";
+        
+      } if(toggleHand){
+  
+        state=state+"Hand ";
+        
+      }
+      if(toggleChest){
+  
+        state=state+"Chest ";
+        
+      }
+      if(toggleHeart){
+  
+        state=state+"Heart ";
+        
+      }
+      if(toggleLiver){
+  
+        state=state+"Liver ";
+        
+      }
+      if(toggleKidney){
+  
+        state=state+"Kidney ";
+        
+      }
+      if(toggleStomach){
+  
+        state=state+"Stomach ";
+        
+      }
+  
+      if(toggleIntestines){
+  
+        state=state+"Intestines ";
+        
+      }
+      if(toggleWaist){
+  
+        state=state+"Waist ";
+        
+      }
+      if(toggleGenital){
+  
+        state=state+"Genital ";
+        
+      }
+      if(toggleThigh){
+  
+        state=state+"Thigh ";
+        
+      }
+      if(toggleKnee){
+  
+        state=state+"Knee ";
+        
+      }
+      if(toggleCalf){
+  
+        state=state+"Calf ";
+        
+      }
+      if(toggleShin ){
+  
+        state=state+"Shin ";
+        
+      }
+      if(toggleFoot){
+  
+        state=state+"Foot ";
+        
+      }
+  
+      db.transaction(txn =>{
+        txn.executeSql(
+          'INSERT INTO QAInfo (Painpoints) VALUES(?)',
+          [state],
+          ()=>{
+            console.log('User: '+[state] +' added successfully');
+  
+          },
+          error=>{console.log('error on adding Painpoints info '+error.message);
+        }
+        )
+      })
+  
+   navigation.replace('EConsultsQnAMedication')
+    };
+
+
+
+
 
     return (
       <View style={styles.topcontainer}>
@@ -225,7 +349,7 @@ const EConsultsQnAPainPoints = ({ navigation }) => {
                    <Text style={styles.title2Text}>Back</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.replace('EConsultsQnAMedication')}>
+                <TouchableOpacity style={styles.nextbutton} onPress={addUser}>
                    <Text style={styles.title2Text}>Next</Text>
                 </TouchableOpacity>
 

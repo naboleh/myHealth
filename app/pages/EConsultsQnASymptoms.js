@@ -12,7 +12,36 @@ import CheckBox from '@react-native-community/checkbox';
 
 import NurseLion from '../mascots/LionNurse.js';
 
+import { openDatabase } from 'react-native-sqlite-storage';
+
+const db = openDatabase({
+  name:'MyHealth',
+});
+
+
 const EConsultsQnASymptoms = ({ navigation }) => {
+
+
+  const createTables=()=>{
+    db.transaction(txn =>{
+      txn.executeSql(
+        'CREATE TABLE IF NOT EXISTS QAInfo (id INTEGER PRIMARY KEY AUTOINCREMENT, Symptoms VARCHAR(256), Painpoints VARCHAR(128), Medication VARCHAR(128), MedName VARCHAR(128), DrugAllergy VARCHAR(128), DrugName VARCHAR(128), Fever VARCHAR(128))',
+        [],
+        ()=>{
+          console.log('creating table successfully');
+        },
+        error =>{
+          console.log('error on creating table '+error.message);
+
+        },
+      );
+    });
+  };
+
+
+
+
+
     const [toggleFever, setToggleFever] = useState(false)
     const [toggleCough, setToggleCough] = useState(false)
     const [toggleColdFlu, setToggleColdFlu] = useState(false)
@@ -25,6 +54,88 @@ const EConsultsQnASymptoms = ({ navigation }) => {
     const [toggleVision, setToggleVision] = useState(false)
     const [toggleMenstrual, setToggleMenstrual] = useState(false)
     const [toggleOthers, setToggleOthers] = useState(false)
+
+    // const [result, setResult] = useState('');
+
+     var state =""; 
+    
+  const addUser = () =>{
+
+    createTables();
+
+    if(toggleFever){
+
+      state=state+"Fever ";
+      
+    }
+    if(toggleCough){
+
+      state=state+"Cough ";
+      
+    } if(toggleColdFlu){
+
+      state=state+"Cold and Flu";
+      
+    } if(toggleDiarrhea){
+
+      state=state+"Diarrhea ";
+      
+    } if(toggleNauseaVomit){
+
+      state=state+"Nausea and Vomiting ";
+      
+    } if(toggleHearing){
+
+      state=state+"Hearing Problem";
+      
+    }
+    if(togglePain){
+
+      state=state+"Body Pain ";
+      
+    }
+    if(toggleBreath){
+
+      state=state+"Shortness of Breath ";
+      
+    }
+    if(toggleSwelling){
+
+      state=state+"Swelling ";
+      
+    }
+    if(toggleVision){
+
+      state=state+"Vision Problem ";
+      
+    }
+    if(toggleMenstrual){
+
+      state=state+"Menstrual Problem ";
+      
+    }
+
+    if(toggleOthers){
+
+      state=state+"Others ";
+      
+    }
+
+    db.transaction(txn =>{
+      txn.executeSql(
+        'INSERT INTO QAInfo (Symptoms) VALUES(?)',
+        [state],
+        ()=>{
+          console.log('User: '+[state] +' added successfully');
+
+        },
+        error=>{console.log('error on adding Symptoms info '+error.message);
+      }
+      )
+    })
+
+    navigation.replace('EConsultsQnAPainPoints');
+  };
 
 
     return (
@@ -156,7 +267,7 @@ const EConsultsQnASymptoms = ({ navigation }) => {
 
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.nextbutton} onPress={() => navigation.replace('EConsultsQnAPainPoints')}>
+                <TouchableOpacity style={styles.nextbutton} onPress={addUser}>
                    <Text style={styles.title2Text}>Next</Text>
                 </TouchableOpacity>
 
