@@ -112,14 +112,6 @@ class EConsultsChat extends Component {
       <View style={styles.container}>
         <View style={styles.topBar}>
           {/*Havent added a onPress event for the close button*/}
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('EConsultsVideo')}
-            style={{position: 'absolute', left: 0}}>
-            <Image
-              source={require('../icon/close-x.png')}
-              style={styles.closeButton}
-            />
-          </TouchableOpacity>
           <Text style={styles.mainText}> Dr. Cheng Tian Hong </Text>
         </View>
         <OTSession

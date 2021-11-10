@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, Dimensions, Button, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { OT, OTSession, OTPublisher, OTSubscriber, OTSubscriberView } from 'opentok-react-native';
+import EConsultsChat from './EConsultsChat';
+import { Modal } from 'react-native';
+import { Keyboard } from 'react-native';
 
 /*
 This import is only needed if we want to store API key, Session ID and Token in a separate config.js file.
@@ -20,9 +23,9 @@ const secondarySubscribersResolution = {width: 352, height: 288};
 class EConsultsVideo extends Component {
   constructor(props) {
     super(props);
-    this.apiKey = '47332281';
-    this.sessionId = '1_MX40NzMzMjI4MX5-MTYzNTI4NTMyMTI1OH4rdjc5T2xxbXM4aHdoRmJEaW1wVzRTbk9-fg';
-    this.token = 'T1==cGFydG5lcl9pZD00NzMzMjI4MSZzaWc9YWViYzA3YzgzZTc2MDM5MmRhMmU0MzMyZDViMjFhMWRhY2NkNTEzNTpzZXNzaW9uX2lkPTFfTVg0ME56TXpNakk0TVg1LU1UWXpOVEk0TlRNeU1USTFPSDRyZGpjNVQyeHhiWE00YUhkb1JtSkVhVzF3VnpSVGJrOS1mZyZjcmVhdGVfdGltZT0xNjM1Mjg1MzQwJm5vbmNlPTAuMTAwNzMwNTkwODY2NDc2ODQmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTYzNTM3MTczOSZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ==';
+    this.apiKey = '47344131';
+    this.sessionId = '2_MX40NzM0NDEzMX5-MTYzNjUzMjA1MTE1M35jbnpMWGJPT1JuUXFxWC9pWGs3TENjMyt-fg';
+    this.token = 'T1==cGFydG5lcl9pZD00NzM0NDEzMSZzaWc9ZDc3MjQ1MjdhNDk5MzQ0YThmYzFiYTJmMzY0YzkyNGJjMjZlNDQyNDpzZXNzaW9uX2lkPTJfTVg0ME56TTBOREV6TVg1LU1UWXpOalV6TWpBMU1URTFNMzVqYm5wTVdHSlBUMUp1VVhGeFdDOXBXR3MzVEVOak15dC1mZyZjcmVhdGVfdGltZT0xNjM2NTMyMTM1Jm5vbmNlPTAuMDAxNDY3MzUzOTgzMzI2NzU4JnJvbGU9cHVibGlzaGVyJmV4cGlyZV90aW1lPTE2MzkxMjQxMzUmaW5pdGlhbF9sYXlvdXRfY2xhc3NfbGlzdD0=';
     this.state = {
       subscriberIds: [], // Array for storing subscribers
       localPublishAudio: true, // Local Audio state
@@ -30,6 +33,8 @@ class EConsultsVideo extends Component {
       joinCall: false, // State variable for storing success
       streamProperties: {}, // Handle individual stream properties,
       mainSubscriberStreamId: null,
+      showChat: false,
+      isKeyboardVisible: false,
     };
 
     this.sessionEventHandlers = {
@@ -123,6 +128,13 @@ class EConsultsVideo extends Component {
     console.log('Video toggle', this.publisherProperties);
   };
 
+  //state to track for chat toggling
+  toggleChat = () => {
+    console.log('chat toggled');
+    const {showChat} = this.state;
+    this.setState({showChat: !showChat});
+  };
+
   joinCall = () => {
     const {joinCall} = this.state;
     if (!joinCall) {
@@ -136,6 +148,30 @@ class EConsultsVideo extends Component {
       this.setState({joinCall: !joinCall});
     }
   };
+
+  //states for keyboard hidding toggle ui
+  componentDidMount() {
+    this.keyboardDidShowListener = Keyboard.addListener("keyboardDidShow", this._keyboardDidShow);
+    this.keyboardDIdHideListener = Keyboard.addListener("keyboardDidHide", this._keyboardDidHide);
+  }
+
+  componentWillUnmount() {
+    this.keyboardDidShowListener.remove();
+    this.keyboardDIdHideListener.remove();
+  }
+
+  _keyboardDidShow = () => {
+    this.setState({
+      isKeyboardVisible: true
+    });
+  };
+
+  _keyboardDidHide = () => {
+    this.setState({
+      isKeyboardVisible: false
+    });
+  };
+  //end of state for keyboard hiding toggle ui
 
   /**
    * // todo check if the selected is a publisher. if so, return
@@ -321,6 +357,46 @@ class EConsultsVideo extends Component {
           </OTSession>
         </View>
 
+        {/*Modal for EConsultChat toggling including toggle controls*/} 
+        <Modal visible={this.state.showChat}>
+          {/*Hiding/showing toggle controls on keyboard showing*/}
+          {!this.state.isKeyboardVisible && (<View style={styles.buttonView}>
+            <Icon.Button
+              style={styles.iconStyle2}
+              iconStyle={{ marginRight: 0 }}
+              backgroundColor="#6c757d"
+              name={this.state.localPublishAudio ? 'mic' : 'mic-off'}
+              onPress={this.toggleAudio}
+            />
+            <Icon.Button
+              style={styles.iconStyle2}
+              iconStyle={{ marginRight: 0 }}
+              backgroundColor="#ba181b"
+              name="call-end"
+              onPress ={() => this.props.navigation.navigate('EConsultCallEnd')}
+            />
+            <Icon.Button
+              style={styles.iconStyle2}
+              iconStyle={{ marginRight: 0 }}
+              backgroundColor="#6c757d"
+              name={this.state.localPublishVideo ? 'videocam' : 'videocam-off'}
+              onPress={this.toggleVideo}
+            />
+            <Icon.Button
+              style={styles.iconStyle2}
+              iconStyle={{ marginRight: 0 }}
+              backgroundColor="#6c757d"
+              name={'chat-bubble'}
+              onPress={this.toggleChat}
+            />
+          </View>)}
+          {/*EconsultsChat as a modal, if else to remove gap after hidding toggle controls*/}
+          <View  style={this.state.isKeyboardVisible ? styles.chatView : styles.shorterChat}>
+            <EConsultsChat/>
+          </View>
+        </Modal>
+        {/*End of EConsultChat toggling modal */}
+
         <View style={styles.buttonView}>
           <Icon.Button
             style={styles.iconStyle2}
@@ -334,7 +410,7 @@ class EConsultsVideo extends Component {
             iconStyle={{ marginRight: 0 }}
             backgroundColor="#ba181b"
             name="call-end"
-            onPress={this.endCall}
+            onPress={() => this.props.navigation.navigate('EConsultCallEnd')}
           />
           <Icon.Button
             style={styles.iconStyle2}
@@ -348,7 +424,7 @@ class EConsultsVideo extends Component {
             iconStyle={{ marginRight: 0 }}
             backgroundColor="#6c757d"
             name={'chat-bubble'}
-            onPress={() => this.props.navigation.navigate('EConsultsChat')}
+            onPress={this.toggleChat}
           />
         </View>
       </>
@@ -481,6 +557,22 @@ const styles = StyleSheet.create({
   },
   secondarySubscribers: {
     height: dimensions.height / 4,
+  },
+  //next 2 styles is for the chat toggling keyboards
+  chatView: {
+    height: '100%',
+    width: '100%',
+    position: 'absolute',
+    alignSelf: 'center',
+    top: 0,
+  },
+  shorterChat: {
+    paddingBottom: 50,
+    height: '100%',
+    width: '100%',
+    position: 'absolute',
+    alignSelf: 'center',
+    top: 0,
   },
 });
 

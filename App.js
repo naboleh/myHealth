@@ -330,6 +330,12 @@ function HomeStack() {
         component={Game2048}
         options={{headerShown: false}}
       />
+
+      <ScreenWithDrawerStack.Screen
+        name="EConsultCallEnd"
+        component={EConsultCallEnd}
+        options={{headerShown: false}}
+      />
     </ScreenWithDrawerStack.Navigator>
   );
 }

@@ -30,7 +30,7 @@ export default function Bills({ navigation }) {
               <Text style={[styles.title2Text, {fontSize: 20}, , {marginVertical: "5%"}]}>e-Consultation</Text>
               <Text style={styles.subtitleText}>Invoice 12345678</Text>
               <Text style={styles.subtitleText}>Balance Due: $24.69</Text>
-              <Text style={styles.subtitleText}>Date of visit: 27 Oct 2021</Text>
+              <Text style={styles.subtitleText}>Date of visit: 15 Nov 2021</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
