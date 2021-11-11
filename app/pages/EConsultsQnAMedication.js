@@ -46,9 +46,9 @@ export default function EConsultsQnAMedication({ navigation }) {
       db.transaction(txn =>{
         txn.executeSql(
           'INSERT INTO QAInfo (Medication) VALUES(?)',
-          [radioButtons[1].value],
+          [radioButtons[0].value],
           ()=>{
-            console.log('User: '+[radioButtons[1].value] +' added successfully');
+            console.log('User: '+[radioButtons[0].value] +' added successfully');
 
           },
           error=>{console.log('error on adding user info '+error.message);

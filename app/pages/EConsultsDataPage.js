@@ -48,7 +48,7 @@ export default function EConsultsDataPage({ navigation }) {
            var DrugAllergy1 =results.rows.item(2).DrugAllergy;
            var DrugName1 =results.rows.item(1).DrugName;
            var Fever1 =results.rows.item(0).Fever;
-        
+
            console.log("Symptoms = "+Symptoms1);
            console.log("Painpoints = "+Painpoints1);
            console.log("Medication= "+Medication1);
@@ -57,16 +57,20 @@ export default function EConsultsDataPage({ navigation }) {
            console.log("DrugName= "+DrugName1);
            console.log("Fever= "+Fever1);
   
+           setPainPoint(Painpoints1);
+           setSymptoms(Symptoms1);
+           setFever(Fever1);
            setDrugAllery(DrugAllergy1);
            setDurgName(DrugName1);
            setOnMedi(Medication1);
            setMedName(MedName1);
            setoutName(userName1);
-           setPainPoint(Painpoints1);
-           setSymptoms(Symptoms1);
-           setFever(Fever1);
+         
 
-  
+
+       
+
+      
          }
          
         },
@@ -74,8 +78,11 @@ export default function EConsultsDataPage({ navigation }) {
       }
       )
     }
+
   
     )
+
+ 
   }
   
   useEffect(()=>{
@@ -97,62 +104,60 @@ export default function EConsultsDataPage({ navigation }) {
                       <Text style={styles.subtitleText}>Please confirm your details.</Text>
                     </View>
 
+
                     <View style={styles.questionsContainer}>
                     <Text style={styles.subtitleText}>Symptoms:</Text>
-                    </View>
-
-                    <View style={styles.questionsContainer}>
-                    <Text style={styles.subtitleText}>{Symptoms}</Text>
-                    </View>
 
 
-                    <View style={styles.questionsContainer}>
-                    <Text style={styles.subtitleText}>PainPoint:</Text>
-                    </View>
+ 
+                    <Text style={styles.answerText}>{Symptoms}</Text>
 
-                    <View style={styles.questionsContainer}>
-                    <Text style={styles.subtitleText}>{PainPoint}</Text>
-                    </View>
 
-                    <View style={styles.questionsContainer}>
+
+  
+                    <Text style={styles.subtitleText}>Pain Point:</Text>
+
+
+
+                    <Text style={styles.answerText}>{PainPoint}</Text>
+
+
                     <Text style={styles.subtitleText}>Are you currently on any Medication?</Text>
-                    </View>
 
-                    <View style={styles.questionsContainer}>
-                    <Text style={styles.subtitleText}>{OnMedi}</Text>
-                    </View>
 
-                    <View style={styles.questionsContainer}>
+                    <Text style={styles.answerText}>{OnMedi}</Text>
+
+
+ 
                     <Text style={styles.subtitleText}>What are the Medications</Text>
-                    </View>
+
                     
-                    <View style={styles.questionsContainer}>
-                    <Text style={styles.subtitleText}>{MedName}</Text>
-                    </View>
 
-                    <View style={styles.questionsContainer}>
+                    <Text style={styles.answerText}>{MedName}</Text>
+
+
+ 
                     <Text style={styles.subtitleText}>Do you have any Drug Allergy?</Text>
-                    </View>
 
-                    <View style={styles.questionsContainer}>
-                    <Text style={styles.subtitleText}>{DrugAllery}</Text>
-                    </View>
 
-                    <View style={styles.questionsContainer}>
-                    <Text style={styles.subtitleText}>What are the Drugs that you are allergy?</Text>
-                    </View>
 
-                    <View style={styles.questionsContainer}>
-                    <Text style={styles.subtitleText}>{DrugName}</Text>
-                    </View>
+                    <Text style={styles.answerText}>{DrugAllery}</Text>
 
-                    <View style={styles.questionsContainer}>
+
+                    <Text style={styles.subtitleText}>What are the allergies?</Text>
+                   
+
+
+                    <Text style={styles.answerText}>{DrugName}</Text>
+
+
+    
                     <Text style={styles.subtitleText}>Do you have Fever above 38 degrees?</Text>
+  
+
+                    <Text style={styles.answerText}>{Fever}</Text>
                     </View>
 
-                    <View style={styles.questionsContainer}>
-                    <Text style={styles.subtitleText}>{Fever}</Text>
-                    </View>
 
                     <TouchableOpacity style={styles.backbutton} onPress={() => navigation.replace('EConsultsQnAFever')}>
                       <Text style={styles.title2Text}>Edit</Text>
@@ -210,11 +215,12 @@ export default function EConsultsDataPage({ navigation }) {
               marginLeft: "10%"
       },
       questionsContainer: {
-        flex: 1,
+        flex: 5,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
       },
+
       input: {
         borderWidth: 1,
         borderColor: '#777',
@@ -241,14 +247,14 @@ export default function EConsultsDataPage({ navigation }) {
         marginLeft: '5%',
         marginRight: '5%',
       },
-      subtitle2Text: {
+      answerText: {
         fontFamily: 'Quicksand-Medium',
         fontSize: 18,
         fontWeight: 'bold',
-        textAlign: 'left',
+        textAlign: 'center',
         marginLeft: '5%',
         marginRight: '5%',
-        marginVertical: "5%",
+        marginVertical: "2%",
       },
       backbutton: {
           backgroundColor: '#b3d3d2',

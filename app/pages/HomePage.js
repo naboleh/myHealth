@@ -43,7 +43,7 @@ export default function HomePage({navigation}) {
 
            setoutName(userName1);
            setoutPassword(password1);
-           console.log()
+           
 
          }
          

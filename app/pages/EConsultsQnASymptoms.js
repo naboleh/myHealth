@@ -74,7 +74,7 @@ const EConsultsQnASymptoms = ({ navigation }) => {
       
     } if(toggleColdFlu){
 
-      state=state+"Cold and Flu";
+      state=state+"Cold and Flu ";
       
     } if(toggleDiarrhea){
 
@@ -86,7 +86,7 @@ const EConsultsQnASymptoms = ({ navigation }) => {
       
     } if(toggleHearing){
 
-      state=state+"Hearing Problem";
+      state=state+"Hearing Problem ";
       
     }
     if(togglePain){
