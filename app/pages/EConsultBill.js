@@ -28,7 +28,7 @@ export default function EConsultBill({ navigation }) {
 
               <Text style={styles.title2Text}>e-Consultation</Text>
               <Text style={styles.subtitleText}>Invoice 12345678</Text>
-              <Text style={styles.subtitleText}>Date of visit: 27 Oct 2021</Text>
+              <Text style={styles.subtitleText}>Date of visit: 15 Nov 2021</Text>
               <Text style={[styles.title2Text, {fontSize: 20}, {marginVertical: "5%"}]}>Itemized Bill</Text>
               <View style={{flexDirection: 'row', marginRight: '5%', justifyContent: 'space-between'}}>
               <Text style={[styles.subtitleText, {fontSize: 15}]}>e-Consultation fee: </Text>

@@ -22,16 +22,16 @@ export default function EConsultCallEnd({ navigation }) {
                     </View>
 
                     <View style={{flexDirection: 'column', marginRight: '5%', justifyContent: 'space-between'}, {marginVertical: '5%'}}>
-                      <Text style={styles.subtitleText}>Your call with Dr Blah has ended.</Text>
+                      <Text style={styles.subtitleText}>Your call with Dr. Cheng Tian Hong has ended.</Text>
                     </View>
 
                     <TouchableOpacity style={styles.econsultbtn}
-                      onPress={() => navigation.navigate('Bills')}>
+                      onPress={() => navigation.navigate('EConsultBill')}>
                       <Text style={[styles.subtitleText, {fontFamily: 'Quicksand-Bold'}]}>View bill</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.econsultbtn}
-                      onPress={() => navigation.navigate('Home')}>
+                      onPress={() => navigation.navigate('HomePage')}>
                       <Text style={[styles.subtitleText, {fontFamily: 'Quicksand-Bold'}]}>Back to Home</Text>
                     </TouchableOpacity>
                 </View>
