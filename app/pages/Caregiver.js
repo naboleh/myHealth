@@ -30,8 +30,8 @@ export default function Caregiver({ navigation }) {
                      </View>
 
             <View style={styles.overlayContainer}>
-                <View style={styles.messageContainer}>
-                      <Text style={styles.message}>Hi User, who will you be caring for today?</Text>
+                <View style={[styles.messageContainer, {flexDirection: 'row'}]}>
+                      <Text style={[styles.message]}>Hi Nikki, who will you be caring for today?</Text>
                       <MotherLion/>
                 </View>
 
@@ -74,8 +74,7 @@ const styles = StyleSheet.create({
     height: '30%',
     width: '100%',
     borderRadius: 25,
-    marginVertical: '5%'
-
+    marginVertical: '5%',
   },
   titleText: {
     marginLeft: "7%",
@@ -84,6 +83,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   title2Text: {
+    marginVertical: "2%",
     textAlign: 'center',
     fontFamily: 'Roboto-Medium',
     fontSize: 18,

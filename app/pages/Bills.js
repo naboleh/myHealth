@@ -26,7 +26,7 @@ export default function Bills({ navigation }) {
             <TouchableOpacity
               style={styles.billbutton}
               onPress={() => navigation.navigate('EConsultBill')}>
-              <Text style={styles.title2Text}>PATIENT NAME</Text>
+              <Text style={styles.title2Text}>NIKKI LIM</Text>
               <Text style={[styles.title2Text, {fontSize: 20}, , {marginVertical: "5%"}]}>e-Consultation</Text>
               <Text style={styles.subtitleText}>Invoice 12345678</Text>
               <Text style={styles.subtitleText}>Balance Due: $24.69</Text>
@@ -36,7 +36,7 @@ export default function Bills({ navigation }) {
             <TouchableOpacity
               style={styles.billbutton}
               onPress={() => navigation.navigate('nil')}>
-              <Text style={styles.title2Text}>PATIENT NAME</Text>
+              <Text style={styles.title2Text}>NIKKI LIM</Text>
               <Text style={[styles.title2Text, {fontSize: 20}, , {marginVertical: "5%"}]}>Singapore General Hospital</Text>
               <Text style={styles.subtitleText}>Invoice 9876543</Text>
               <Text style={styles.subtitleText}>Balance Due: $38.90</Text>

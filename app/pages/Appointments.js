@@ -32,7 +32,7 @@ export default function Appointments({navigation}) {
                        </View>
 
           <View style={styles.overlayContainer}>
-            <View style={styles.makeappt}>
+            <View style={[styles.makeappt, {flexDirection: 'row'}]}>
               <TouchableOpacity onPress={() => navigation.navigate('NewAppt')}>
                 <Text style={styles.newapptbutton}>Make new appointment</Text>
               </TouchableOpacity>
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     textAlign: 'center',
     height: '25%',
-    width: '101%',
+    width: '90%',
     borderRadius: 25,
     marginLeft: '2%',
     marginBottom: 10,

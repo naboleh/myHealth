@@ -9,7 +9,7 @@ import {
 export default function MotherLion() {
 		return(
 			<View style={styles.container}>
-				<Image style={{width:'100%', height:'110%'}}
+				<Image style={{width:'100%', height:'100%'}}
 					source={require('../mascots/MotherLion.png')}/>
 			</View>
 		)

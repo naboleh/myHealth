@@ -12,11 +12,8 @@ import {
 import { useState } from "react";
 
 import BoyLion from '../components/BoyLion';
-import CatDrop from '../components/CatDrop';
-import TypeDrop from '../components/TypeDrop';
-import PortionDrop from '../components/PortionDrop';
 
-export default function DietTracking2({ navigation }) {
+export default function CheckMeal({ navigation }) {
     return (
       <View style={styles.topcontainer}>
         <ImageBackground source={require('../backgrounds/zzDIETBG.png')} style={{height:'100%', width: '100%'}}>
@@ -26,7 +23,7 @@ export default function DietTracking2({ navigation }) {
             </View>
             <TouchableOpacity
              style={styles.backbutton}
-                onPress={() => navigation.navigate('HomePage')}>
+                onPress={() => navigation.navigate('DietTracking2')}>
                 <Image
                 source={require('../icon/backicon.png')}
                 />
@@ -34,23 +31,33 @@ export default function DietTracking2({ navigation }) {
              </View>
             <View style={styles.overlayContainer}>
                 <View style={styles.messageContainer}>
-                      <Text style={styles.message}>Take charge of your health by having balanced meals!</Text>
-                      <BoyLion/>
+                      <Image source={require('../icon/5stars.png')} style={[{alignItems: 'center', height:'40%', width: '100%', marginVertical: '15%'}]}/>
                 </View>
 
-                <Text style={styles.title2Text} >Check if your meals are balanced by selecting the Category, Type and Portion Size.
-                             {"\n"} Click 'Check my meal' to get feedback!</Text>
+              <Text style={styles.subtitleText}>Well balanced!</Text>
+              <Text style={[styles.subtitle2Text, {marginVertical: '5%'}]}>Your meal of: </Text>
+              
+               <View style={{flexDirection: 'row', marginRight: '50%', justifyContent: 'space-between'}}>
+                <Text style={[styles.subtitleText, {fontSize: 15, marginLeft: '15%'}]}>Rice</Text>
+                <Text style={[styles.subtitleText, {fontSize: 15}]}>1/4</Text>
+               </View>
 
-               <CatDrop/>
-               <TypeDrop/>
-               <PortionDrop/>
+              <View style={{flexDirection: 'row', marginRight: '50%', justifyContent: 'space-between'}}>
+                <Text style={[styles.subtitleText, {fontSize: 15, marginLeft: '15%'}]}>Vegetables</Text>
+                <Text style={[styles.subtitleText, {fontSize: 15}]}>1/2</Text>
+               </View>
 
-                <View style={styles.container}>
-                  <TouchableOpacity style={styles.addbtn} onPress={() => navigation.navigate('null')}>
-                    <Text style={styles.title2Text}>Add</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity style={styles.checkmymealbtn} onPress={() => navigation.navigate('CheckMeal')}>
-                    <Text style={styles.title2Text}>Check my meal</Text>
+               <View style={{flexDirection: 'row', marginRight: '50%', justifyContent: 'space-between'}}>
+                <Text style={[styles.subtitleText, {fontSize: 15, marginLeft: '15%'}]}>Meat</Text>
+                <Text style={[styles.subtitleText, {fontSize: 15}]}>1/4</Text>
+               </View>
+
+               <Text style={[styles.subtitle2Text, {marginVertical: '5%'}]}>follows the quarter, quarter, half rule. Well done!</Text>
+
+
+                <View style={[styles.container, {alignItems: 'center'}]}>
+                  <TouchableOpacity style={styles.checkmymealbtn} onPress={() => navigation.navigate('DietTracking2')}>
+                    <Text style={[styles.subtitle2Text, {textAlign: 'center', fontSize: 18, marginLeft: "0%"}]}>Check another meal</Text>
                   </TouchableOpacity>
                 </View>
 
@@ -85,7 +92,6 @@ const styles = StyleSheet.create({
     height: '28%',
     width: '100%',
     borderRadius: 25,
-
   },
   titleText: {
     marginLeft: "7%",
@@ -102,6 +108,16 @@ const styles = StyleSheet.create({
     marginRight: '5%',
     marginTop: '7%',
     marginBottom: '3%',
+  },
+  subtitleText: {
+    marginLeft: "7%",
+    fontFamily: 'Quicksand-Bold',
+    fontSize: 28,
+  },
+  subtitle2Text: {
+    marginLeft: "7%",
+    fontFamily: 'Quicksand',
+    fontSize: 24,
   },
   message: {
     backgroundColor: '#FFB778',
@@ -130,12 +146,10 @@ const styles = StyleSheet.create({
   },
   checkmymealbtn: {
     backgroundColor: '#F7A760',
-    width: '60%',
-    height: '30%',
+    width: '100%',
+    height: '40%',
     borderRadius: 25,
     textAlignVertical: 'center',
-    fontSize:  18,
-    fontFamily: 'Quicksand-Bold',
     textAlign: 'center',
     justifyContent: 'center'
   },

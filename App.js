@@ -24,6 +24,7 @@ import EConsultBill from './app/pages/EConsultBill';
 import BillsLO from './app/pages/BillsLO';
 import Caregiver from './app/pages/Caregiver';
 import HealthRecords from './app/pages/HealthRecords';
+import CheckMeal from './app/pages/CheckMeal';
 import DietTracking2 from './app/pages/DietTracking2';
 import Profile from './app/pages/Profile';
 import EConsultsChat from './app/pages/EConsultsChat';
@@ -128,6 +129,12 @@ function BarStack() {
       <ScreenWithBarStack.Screen
         name="HealthRecords"
         component={HealthRecords}
+        options={{headerShown: false}}
+      />
+
+      <ScreenWithBarStack.Screen
+        name="CheckMeal"
+        component={CheckMeal}
         options={{headerShown: false}}
       />
 
