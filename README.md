@@ -22,7 +22,7 @@ Our team used [React Native](https://reactnative.dev/) and [Android Studio](http
 # Setting up the project
 1. [Set up the environment](https://reactnative.dev/docs/environment-setup) for React Native
 2. Clone this project to your preferred directory
-3. Navigate to the myHealth project root folder on the command line, and run ``npm install``
+3. Navigate to the myHealth project root folder using the command line, and run ``npm install``
 4. Run ``npx react-native start`` to start the webserver
 5. Run ``npx react-native run-android`` to launch the application
 
