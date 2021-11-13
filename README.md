@@ -2,16 +2,16 @@
 
 # About myHealth
 **myHealth** is a health application that encompasses various health services for patients in Singapore. Its main function is to allow users to arrange online consultations with certified doctors while incorporating elements of interactiveness and engagement when visiting a doctor. <br /><br />
-This project was inspired by the **[HealthHub](https://www.healthhub.sg/)** and **[Doctor Anywhere](https://doctoranywhere.com/)** applications:
+This project was inspired by the **[HealthHub](https://www.healthhub.sg/)** and **[Doctor Anywhere](https://doctoranywhere.com/)** applications and allows users to:
 - Book physical appointments
 - Check health records
-- Online doctor consultations
+- Online doctors' consultations
 
-myHealth is currently only compatible with Android.
+myHealth is currently only available on Android devices.
 
 # Development process
 
-Our team used [React Native](https://reactnative.dev/) to develop the front-end of the Android application. We used [SQLite](https://www.sqlite.org/index.html) to assist in the back-end database programming for users' information. [Figma](https://www.figma.com/login) was used for the initial ideation and prototyping. 
+Our team used [React Native](https://reactnative.dev/) and [Android Studio](https://developer.android.com/studio) to develop the front-end of the Android application. We used [SQLite](https://www.sqlite.org/index.html) to assist in the back-end database programming for users' information. [Figma](https://www.figma.com/login) was used for our initial ideation and prototyping process.
 
 # Settings
 *(UPDATE)*
@@ -22,9 +22,9 @@ Our team used [React Native](https://reactnative.dev/) to develop the front-end 
 # Setting up the project
 1. [Set up the environment](https://reactnative.dev/docs/environment-setup) for React Native
 2. Clone this project to your preferred directory
-3. Run ``npm install`` in the terminal of the myHealth folder
+3. Navigate to the myHealth project root folder on the command line, and run ``npm install``
 4. Run ``npx react-native start`` to start the webserver
-5. Run ``npx react-native run-android`` 
+5. Run ``npx react-native run-android`` to launch the application
 
 
 # Collaborators & Contributors
