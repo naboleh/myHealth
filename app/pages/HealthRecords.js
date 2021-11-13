@@ -64,7 +64,7 @@ export default function HealthRecords({navigation}) {
             <View style={styles.container}>
               <NurseLion width={200} height={200} marginRight={40} />
               <Text style={styles.subtitleText}>
-                Your one-stop access to all Health Records!
+                Your one-stop access to all your Health Records!
               </Text>
             </View>
           </View>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     width: '50%',
     marginLeft: '18%',
-    paddingHorizontal: 30,
+    paddingHorizontal: 25,
     flexDirection: 'row',
   },
   overlayContainer: {

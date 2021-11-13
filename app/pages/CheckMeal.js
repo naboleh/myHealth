@@ -52,12 +52,14 @@ export default function CheckMeal({ navigation }) {
                 <Text style={[styles.subtitleText, {fontSize: 15}]}>1/4</Text>
                </View>
 
-               <Text style={[styles.subtitle2Text, {marginVertical: '5%'}]}>follows the quarter, quarter, half rule. Well done!</Text>
+               <Text style={[styles.subtitle2Text, {marginVertical: '5%'}]}>follows the quarter, quarter, half rule.</Text>
+
+               <Text style={styles.subtitle2Text}>Well done!</Text>
 
 
                 <View style={[styles.container, {alignItems: 'center'}]}>
                   <TouchableOpacity style={styles.checkmymealbtn} onPress={() => navigation.navigate('DietTracking2')}>
-                    <Text style={[styles.subtitle2Text, {textAlign: 'center', fontSize: 18, marginLeft: "0%"}]}>Check another meal</Text>
+                    <Text style={styles.buttonText}>Check another meal</Text>
                   </TouchableOpacity>
                 </View>
 
@@ -115,9 +117,14 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   subtitle2Text: {
-    marginLeft: "7%",
+    marginHorizontal: "7%",
     fontFamily: 'Quicksand',
-    fontSize: 24,
+    fontSize: 19,
+  },
+  buttonText: {
+    fontFamily: 'Quicksand-Bold',
+    fontSize: 18,
+    textAlign: 'center',
   },
   message: {
     backgroundColor: '#FFB778',
@@ -149,18 +156,15 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '40%',
     borderRadius: 25,
-    textAlignVertical: 'center',
-    textAlign: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginVertical: '5%',
   },
   container: {
-    flex: 1.2,
-    paddingVertical: 30,
+    flex: 1,
+    marginVertical: 25,
     alignItems: "center",
     justifyContent: 'space-between',
-    marginLeft: '10%',
-    marginRight: '10%',
-    flexDirection: 'row'
+    marginHorizontal: '15%',
   },
   topbarcontainer: {
    width: '100%',

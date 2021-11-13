@@ -10,7 +10,7 @@ import React from "react";
                  items={[
                      { label: "Fried", value: "Fried" },
                      { label: "Boiled", value: "Boiled" },
-                     { label: "Steam", value: "Steam" },
+                     { label: "Steamed", value: "Steamed" },
                      { label: "Baked", value: "Baked" },
                      { label: "Grilled", value: "Grilled" },
                      { label: "Other", value: "Other" },

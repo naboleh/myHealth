@@ -10,7 +10,7 @@ import React from "react";
                  onValueChange={(value) => console.log(value)}
                  items={[
                      { label: "Rice", value: "Rice" },
-                     { label: "Noodle", value: "Noodle" },
+                     { label: "Noodles", value: "Noodles" },
                      { label: "Bread", value: "Bread" },
                      { label: "Meat", value: "Meat" },
                      { label: "Dairy", value: "Dairy" },

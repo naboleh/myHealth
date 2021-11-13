@@ -39,7 +39,7 @@ export default function DietTracking2({ navigation }) {
                 </View>
 
                 <Text style={styles.title2Text} >Check if your meals are balanced by selecting the Category, Type and Portion Size.
-                             {"\n"} Click 'Check my meal' to get feedback!</Text>
+                             {"\n\n"} Click 'Check my meal' to get feedback!</Text>
 
                <CatDrop/>
                <TypeDrop/>
@@ -47,10 +47,10 @@ export default function DietTracking2({ navigation }) {
 
                 <View style={styles.container}>
                   <TouchableOpacity style={styles.addbtn} onPress={() => navigation.navigate('null')}>
-                    <Text style={styles.title2Text}>Add</Text>
+                    <Text style={styles.buttonText}>Add</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.checkmymealbtn} onPress={() => navigation.navigate('CheckMeal')}>
-                    <Text style={styles.title2Text}>Check my meal</Text>
+                    <Text style={styles.buttonText}>Check my meal</Text>
                   </TouchableOpacity>
                 </View>
 
@@ -87,22 +87,6 @@ const styles = StyleSheet.create({
     borderRadius: 25,
 
   },
-  titleText: {
-    marginLeft: "7%",
-    marginVertical: "5%",
-    fontFamily: 'Roboto-Bold',
-    fontSize: 28,
-  },
-  title2Text: {
-    textAlign: 'center',
-    fontFamily: 'Roboto-Medium',
-    fontSize: 13,
-    width: '80%',
-    marginLeft: '10%',
-    marginRight: '5%',
-    marginTop: '7%',
-    marginBottom: '3%',
-  },
   message: {
     backgroundColor: '#FFB778',
     color: 'white',
@@ -117,15 +101,26 @@ const styles = StyleSheet.create({
     marginLeft: "10%",
     marginVertical: "10%",
   },
+  title2Text: {
+    textAlign: 'center',
+    fontFamily: 'Roboto-Medium',
+    fontSize: 14,
+    lineHeight: 20,
+    width: '80%',
+    marginLeft: '10%',
+    marginRight: '5%',
+    marginVertical: '5%',
+  },
+  buttonText: {
+    fontFamily: 'Quicksand-Bold',
+    fontSize: 15,
+    textAlign: 'center',
+  },
   addbtn: {
     backgroundColor: '#F7A760',
     width: '30%',
     height: '30%',
     borderRadius: 30,
-    textAlignVertical: 'center',
-    fontSize:  18,
-    fontFamily: 'Quicksand-Bold',
-    textAlign: 'center',
     justifyContent: 'center',
   },
   checkmymealbtn: {
@@ -141,12 +136,12 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1.2,
-    paddingVertical: 30,
+    paddingVertical: 20,
     alignItems: "center",
     justifyContent: 'space-between',
-    marginLeft: '10%',
-    marginRight: '10%',
-    flexDirection: 'row'
+    marginHorizontal: '10%',
+    marginBottom: '5%',
+    flexDirection: 'row',
   },
   topbarcontainer: {
    width: '100%',
