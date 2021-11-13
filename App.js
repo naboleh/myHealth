@@ -103,6 +103,7 @@ function DrawerNav() {
       }}>
       <Drawer.Screen name="Home" component={HomeStack} />
       <Drawer.Screen name="Settings" component={Settings} />
+      <Drawer.Screen name="Logout" component={LandingPage} />
     </Drawer.Navigator>
   );
 }
