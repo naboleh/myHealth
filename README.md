@@ -2,7 +2,7 @@
 
 # About myHealth
 **myHealth** is a health application that encompasses various health services for patients in Singapore. Its main function is to allow users to arrange online consultations with certified doctors while incorporating elements of interactiveness and engagement when visiting a doctor. <br /><br />
-This project was inspired by the **[Healthhub](https://www.healthhub.sg/)** and **[Doctor Anywhere](https://doctoranywhere.com/)** applications:
+This project was inspired by the **[HealthHub](https://www.healthhub.sg/)** and **[Doctor Anywhere](https://doctoranywhere.com/)** applications:
 - Book physical appointments
 - Check health records
 - Online doctor consultations
