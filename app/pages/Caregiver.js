@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
   title2Text: {
-    marginVertical: "2%",
     textAlign: 'center',
     fontFamily: 'Roboto-Medium',
     fontSize: 18,
