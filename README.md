@@ -10,14 +10,11 @@ This project was inspired by the **[HealthHub](https://www.healthhub.sg/)** and 
 myHealth is currently only available on Android devices.
 
 # Development process
-
 Our team used [React Native](https://reactnative.dev/) and [Android Studio](https://developer.android.com/studio) to develop the front-end of the Android application. We used [SQLite](https://www.sqlite.org/index.html) to assist in the back-end database programming for users' information. [Figma](https://www.figma.com/login) was used for our initial ideation and prototyping process.
 
 # Settings
-*(UPDATE)*
 - Node.js v14.17.6
 - Android emulator: Pixel XL Android 10, API level 29
-- ...
 
 # Setting up the project
 1. [Set up the environment](https://reactnative.dev/docs/environment-setup) for React Native
@@ -29,6 +26,3 @@ Our team used [React Native](https://reactnative.dev/) and [Android Studio](http
 
 # Collaborators & Contributors
 myHealth was developed by 10 Information Engineering & Media (IEM) students for their Design & Innovation Project module at Nanyang Technological University (NTU).
-
-# Resources 
-*(add video link, report, etc here)*
