@@ -16,7 +16,7 @@ Our team used [React Native](https://reactnative.dev/) and [Android Studio](http
 # Settings
 *(UPDATE)*
 - Node.js v14.17.6
-- Android emulator: Pixel XL Android 10
+- Android emulator: Pixel XL Android 10, API level 29
 - ...
 
 # Setting up the project
